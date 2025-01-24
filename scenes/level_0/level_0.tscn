@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djmtmce8pftpl"]
+[gd_scene load_steps=6 format=3 uid="uid://djmtmce8pftpl"]
 
 [ext_resource type="PackedScene" uid="uid://ynqur6rwkslu" path="res://cube_collision.tscn" id="1_epnma"]
 [ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/Untergrund.png" id="1_iwtyf"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_iwtyf")
@@ -11,7 +12,8 @@ albedo_texture = ExtResource("1_iwtyf")
 [node name="Level0" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 3.52905, -0.497715, -1.86962)
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
+flip_faces = true
 size = Vector3(1, 0.25293, 1)
 material = SubResource("StandardMaterial3D_7nfv4")
 
@@ -24,15 +26,14 @@ shape = SubResource("BoxShape3D_iwtyf")
 transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
 light_energy = 0.398
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02279, -0.965338)
-light_color = Color(0.85668, 0.277169, 0.17826, 1)
-
 [node name="Node3D" parent="." instance=ExtResource("1_epnma")]
-transform = Transform3D(1, 0, 0, 0, 2.94146, 0, 0, 0, 6.22514, 5, 1.28108, 0)
-
-[node name="Node3D2" parent="." instance=ExtResource("1_epnma")]
-transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -3.05859, 1.28108, -8.65953)
+transform = Transform3D(-4.37114e-08, 0, -16.1146, 0, 2.94146, 0, 1, 0, -7.04391e-07, -28.1568, -0.795891, 40.7961)
 
 [node name="Node3D3" parent="." instance=ExtResource("1_epnma")]
-transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -7.74845, 1.28108, 1.54538)
+transform = Transform3D(-0.823704, 0, -1.43806, 0, 2.94146, 0, 0.0464411, 0, -25.5058, -25.3794, -0.792928, 27.8148)
+
+[node name="Node3D4" parent="." instance=ExtResource("1_epnma")]
+transform = Transform3D(-0.823704, 0, -1.43806, 0, 2.94146, 0, 0.0464411, 0, -25.5058, -36.9718, -0.785892, 27.8097)
+
+[node name="Player" parent="." instance=ExtResource("3_7nfv4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.8502, 0.144678, 34.6538)
