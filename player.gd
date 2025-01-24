@@ -4,13 +4,17 @@ extends RigidBody3D
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
-
+@export var scale_factor = 0.1
 @onready var camera = $Camera3D
-
+@onready var body = $bubble
 var JavaScript = JavaScriptBridge
+var target_scale = Vector3.ONE
+var previous_position = Vector3.ZERO
+var current_velocity = Vector3.ZERO
 
 func _ready():
 	lock_rotation = true
+	previous_position = position
 	
 func _init():
 	if !OS.has_feature('web'):
@@ -61,6 +65,11 @@ func _physics_process(delta):
 		var accel = get_accelerometer()
 		movement = Vector3(accel.x, 0, -accel.y) * sensitivity
 		
+		# Only apply movement if tilt is significant
+		var tilt_threshold = 0.5 # Adjust this value to require more tilt
+		if abs(accel.x) < tilt_threshold and abs(accel.y) < tilt_threshold:
+			movement = Vector3.ZERO
+			
 		if abs(movement.x) < deadzone:
 			movement.x = 0
 		if abs(movement.z) < deadzone:
@@ -71,6 +80,23 @@ func _physics_process(delta):
 	
 	# Apply movement
 	position += movement * speed * delta
+	
+	# Calculate velocity
+	current_velocity = (position - previous_position) / delta
+	previous_position = position
+	
+	# Calculate scale based on X velocity
+	var x_speed = current_velocity.length()
+	var scale_multiplier_z = 1.0 + (x_speed * scale_factor)
+	var scale_multiplier_x = 1.0 - (x_speed * scale_factor)
+	target_scale = Vector3(scale_multiplier_x, 1.0, scale_multiplier_z)
+	
+	# Smoothly interpolate body scale
+	body.scale = body.scale.lerp(target_scale, delta * 10.0)
+	
+	# Make body face movement direction
+	if movement != Vector3.ZERO:
+			body.rotation.y = lerp_angle(body.rotation.y, atan2(movement.x, -movement.z), delta * 10.0)
 	
 	# Keep Y rotation at 0
 	rotation.y = 0
