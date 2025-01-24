@@ -1,37 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgw4fx6410cso"]
 
-[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://ynqur6rwkslu" path="res://cube_collision.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://c4vwaxbs6a8cd" path="res://src/level_manager.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_0xm2m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+[sub_resource type="Environment" id="Environment_7dm0k"]
+background_mode = 1
+background_color = Color(0.0359406, 0.176158, 0.22658, 1)
 
 [node name="Node2D" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
-size = Vector3(1, 0.25293, 1)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7dm0k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("1_ig7tw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_ig7tw")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
-light_energy = 0.398
-
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73955, 1)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02279, -0.965338)
-light_color = Color(0.85668, 0.277169, 0.17826, 1)
-
-[node name="Node3D" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 2.94146, 0, 0, 0, 6.22514, 5, 1.28108, 0)
-
-[node name="Node3D2" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -3.05859, 1.28108, -8.65953)
-
-[node name="Node3D3" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -7.74845, 1.28108, 1.54538)
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33204, 0)
