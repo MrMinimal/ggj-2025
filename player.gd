@@ -1,8 +1,11 @@
-extends Node3D
+extends RigidBody3D
 
 @export var speed = 5.0
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
+@export var tilt_amount = 5
+
+@onready var camera = $Camera3D
 
 var JavaScript = JavaScriptBridge
 
@@ -42,7 +45,6 @@ func get_accelerometer() -> Vector3:
 func _physics_process(delta):
 	var movement = Vector3.ZERO
 	
-	# WASD input
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("ui_up"):
 		movement.z -= 1
 	if Input.is_action_pressed("move_backward") or Input.is_action_pressed("ui_down"):
@@ -52,20 +54,23 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right") or Input.is_action_pressed("ui_right"):
 		movement.x += 1
 		
-	# If no keyboard input, use accelerometer
 	if movement == Vector3.ZERO:
 		var accel = get_accelerometer()
 		movement = Vector3(accel.x, 0, -accel.y) * sensitivity
 		
-		# Apply deadzone
 		if abs(movement.x) < deadzone:
 			movement.x = 0
 		if abs(movement.z) < deadzone:
 			movement.z = 0
 	
-	# Normalize and apply speed
 	if movement.length() > 1:
 		movement = movement.normalized()
 	
-	# Move the node
+	# Apply movement
 	position += movement * speed * delta
+	
+	# Tilt camera slightly based on movement while maintaining top-down view
+	var target_rotation = Vector3(-90.0, 0, 0)  # Base top-down rotation
+	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
+	target_rotation.z = -movement.x * tilt_amount  # Tilt left/right slightly
+	camera.rotation_degrees = camera.rotation_degrees.lerp(target_rotation, delta * 5.0)
