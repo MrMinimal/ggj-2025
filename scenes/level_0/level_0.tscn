@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://djmtmce8pftpl"]
 
-[ext_resource type="PackedScene" uid="uid://ynqur6rwkslu" path="res://cube_collision.tscn" id="1_epnma"]
+[ext_resource type="PackedScene" path="res://cube_collision.tscn" id="1_epnma"]
 [ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/Untergrund.png" id="1_iwtyf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
