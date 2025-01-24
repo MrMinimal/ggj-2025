@@ -3,12 +3,15 @@ extends RigidBody3D
 @export var speed = 5.0
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
-@export var tilt_amount = 5
+@export var tilt_amount = 5.0
 
 @onready var camera = $Camera3D
 
 var JavaScript = JavaScriptBridge
 
+func _ready():
+	lock_rotation = true
+	
 func _init():
 	if !OS.has_feature('web'):
 		return
@@ -68,6 +71,9 @@ func _physics_process(delta):
 	
 	# Apply movement
 	position += movement * speed * delta
+	
+	# Keep Y rotation at 0
+	rotation.y = 0
 	
 	# Tilt camera slightly based on movement while maintaining top-down view
 	var target_rotation = Vector3(-90.0, 0, 0)  # Base top-down rotation
