@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://djmtmce8pftpl"]
+
+[ext_resource type="PackedScene" uid="uid://ynqur6rwkslu" path="res://cube_collision.tscn" id="1_epnma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwtyf"]
+
+[node name="Level0" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+size = Vector3(1, 0.25293, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_iwtyf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
+light_energy = 0.398
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02279, -0.965338)
+light_color = Color(0.85668, 0.277169, 0.17826, 1)
+
+[node name="Node3D" parent="." instance=ExtResource("1_epnma")]
+transform = Transform3D(1, 0, 0, 0, 2.94146, 0, 0, 0, 6.22514, 5, 1.28108, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("1_epnma")]
+transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -3.05859, 1.28108, -8.65953)
+
+[node name="Node3D3" parent="." instance=ExtResource("1_epnma")]
+transform = Transform3D(0.737395, 0, -4.20484, 0, 2.94146, 0, 0.675462, 0, 4.59039, -7.74845, 1.28108, 1.54538)
