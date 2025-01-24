@@ -4,9 +4,9 @@ extends RigidBody3D
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
-@export var scale_factor = 0.09
+@export var scale_factor = 0.1
 @onready var camera = $Camera3D
-@onready var body = $Body
+@onready var body = $bubble
 var JavaScript = JavaScriptBridge
 var target_scale = Vector3.ONE
 var previous_position = Vector3.ZERO
@@ -65,6 +65,11 @@ func _physics_process(delta):
 		var accel = get_accelerometer()
 		movement = Vector3(accel.x, 0, -accel.y) * sensitivity
 		
+		# Only apply movement if tilt is significant
+		var tilt_threshold = 0.5 # Adjust this value to require more tilt
+		if abs(accel.x) < tilt_threshold and abs(accel.y) < tilt_threshold:
+			movement = Vector3.ZERO
+			
 		if abs(movement.x) < deadzone:
 			movement.x = 0
 		if abs(movement.z) < deadzone:
