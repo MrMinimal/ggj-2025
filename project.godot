@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJ2025 Bubble"
-run/main_scene="uid://bgw4fx6410cso"
+run/main_scene="uid://dtqkloecayqtp"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://wa714midw73w"]
+[gd_scene load_steps=8 format=3 uid="uid://wa714midw73w"]
 
+[ext_resource type="Script" uid="uid://c5koweqruqqn1" path="res://scenes/credits/backtomainmenufromendscreen.gd" id="1_17l06"]
 [ext_resource type="Texture2D" uid="uid://bmstlyxmyctgr" path="res://assets/credits.png" id="1_icb2l"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="2_t15ab"]
 [ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="3_lwbe5"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+script = ExtResource("1_17l06")
 
 [node name="Mainmenubackground" type="TextureRect" parent="."]
 layout_mode = 2
@@ -91,8 +93,7 @@ fit_content = true
 scroll_active = false
 
 [node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 texture_normal = ExtResource("5_wprml")
 stretch_mode = 5
@@ -115,3 +116,5 @@ mouse_filter = 0
 layout_mode = 2
 texture = ExtResource("7_6gsh7")
 stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
