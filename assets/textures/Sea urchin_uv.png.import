@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgrvwtpdhtn5y"
-path="res://.godot/imported/Sea urchin_uv.png-fe60764e5fe22c0febb35483da477f9b.ctex"
+path="res://.godot/imported/Sea urchin_uv.png-c27296ddcafa7a4f8db60257633162e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sea urchin_uv.png"
-dest_files=["res://.godot/imported/Sea urchin_uv.png-fe60764e5fe22c0febb35483da477f9b.ctex"]
+source_file="res://assets/textures/Sea urchin_uv.png"
+dest_files=["res://.godot/imported/Sea urchin_uv.png-c27296ddcafa7a4f8db60257633162e5.ctex"]
 
 [params]
 
