@@ -88,8 +88,8 @@ func _physics_process(delta):
 	
 	# Calculate scale based on X velocity
 	var x_speed = current_velocity.length()
-	var scale_multiplier_z = 1.0 + (x_speed * scale_factor)
-	var scale_multiplier_x = 1.0 - (x_speed * scale_factor)
+	var scale_multiplier_z = 2.0 + (x_speed * scale_factor)
+	var scale_multiplier_x = 2.0 - (x_speed * scale_factor)
 	target_scale = Vector3(scale_multiplier_x, 1.0, scale_multiplier_z)
 	
 	# Smoothly interpolate body scale
