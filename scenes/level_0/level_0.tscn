@@ -26,6 +26,10 @@ collision_mask = 21
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_iwtyf")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10369, 0)
+shape = SubResource("BoxShape3D_iwtyf")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
 light_energy = 0.398

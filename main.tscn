@@ -4,7 +4,6 @@
 
 [sub_resource type="Environment" id="Environment_7dm0k"]
 background_mode = 1
-background_color = Color(0.0359406, 0.176158, 0.22658, 1)
 
 [node name="Root" type="Node3D"]
 
