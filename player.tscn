@@ -9,16 +9,18 @@ radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrkg"]
 transparency = 1
+specular_mode = 1
 albedo_color = Color(0.19921, 0.428185, 1, 0.470588)
+metallic = 0.5
 metallic_specular = 1.0
 roughness = 0.0
 rim_tint = 1.0
-clearcoat_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
 transparency = 1
 blend_mode = 1
-shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("3_i3pqv")
 texture_repeat = false
 
