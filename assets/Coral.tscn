@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0lx78dgo5t6f"]
+
+[ext_resource type="Shader" uid="uid://ci8tl23jl60ll" path="res://src/sway.gdshader" id="1_2fjhy"]
+[ext_resource type="Texture2D" uid="uid://c1ql2fm2qcijv" path="res://assets/Coral.png" id="2_1a0tw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3l4hq"]
+render_priority = 0
+shader = ExtResource("1_2fjhy")
+shader_parameter/albedo_texture = ExtResource("2_1a0tw")
+shader_parameter/scale = Vector3(1, 1, 1)
+shader_parameter/wind_strength = 0.14
+shader_parameter/wind_speed = 1.4
+
+[sub_resource type="QuadMesh" id="QuadMesh_w3pb7"]
+material = SubResource("ShaderMaterial_3l4hq")
+
+[node name="Coral" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_w3pb7")

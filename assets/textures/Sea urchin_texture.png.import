@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0cp60qast0vn"
-path.s3tc="res://.godot/imported/Sea urchin_texture.png-1f6d5d1d39ce63e8b090fbc90a8162be.s3tc.ctex"
-path.etc2="res://.godot/imported/Sea urchin_texture.png-1f6d5d1d39ce63e8b090fbc90a8162be.etc2.ctex"
+uid="uid://cbm4ygf23l6gc"
+path.s3tc="res://.godot/imported/Sea urchin_texture.png-d88f0106494d94808092bcf704db7b59.s3tc.ctex"
+path.etc2="res://.godot/imported/Sea urchin_texture.png-d88f0106494d94808092bcf704db7b59.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Sea urchin_texture.png"
-dest_files=["res://.godot/imported/Sea urchin_texture.png-1f6d5d1d39ce63e8b090fbc90a8162be.s3tc.ctex", "res://.godot/imported/Sea urchin_texture.png-1f6d5d1d39ce63e8b090fbc90a8162be.etc2.ctex"]
+source_file="res://assets/textures/Sea urchin_texture.png"
+dest_files=["res://.godot/imported/Sea urchin_texture.png-d88f0106494d94808092bcf704db7b59.s3tc.ctex", "res://.godot/imported/Sea urchin_texture.png-d88f0106494d94808092bcf704db7b59.etc2.ctex"]
 
 [params]
 
