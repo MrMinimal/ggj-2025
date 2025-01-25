@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dx576in6i20e7" path="res://assets/plastic_bag.blend" id="1_3dmdg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dmdg"]
+radius = 0.604149
+height = 2.15942
 
 [sub_resource type="Animation" id="Animation_0j4f3"]
 length = 0.001
@@ -70,17 +72,19 @@ _data = {
 [node name="PlasticBag" type="Node3D"]
 script = ExtResource("1_2ax5c")
 
+[node name="plastic_bag" parent="." instance=ExtResource("1_3dmdg")]
+
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 3
 
-[node name="plastic_bag" parent="Area3D" instance=ExtResource("1_3dmdg")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.62, 0, 0, 0, -0.0372058, -1.61957, 0, 1.61957, -0.0372058, 0.122049, -0.143286, 0.545254)
+transform = Transform3D(1.62, 0, 0, 0, -0.0372058, -1.61957, 0, 1.61957, -0.0372058, 0.122049, 0.139745, 0.545254)
 shape = SubResource("CapsuleShape3D_3dmdg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_0j4f3")
 }
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
