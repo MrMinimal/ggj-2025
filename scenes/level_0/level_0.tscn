@@ -15,7 +15,7 @@ albedo_texture = ExtResource("1_la06y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwtyf"]
 
-[node name="Level0" type="Node3D"]
+[node name="Level" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
