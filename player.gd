@@ -114,7 +114,7 @@ func _physics_process(delta):
 	var target_global = current_velocity + self.position
 	var interpolated = lerp(self.prev_target_position, target_global, 0.1)
 	if not body.global_position == target_global:
-		body.look_at(interpolated)
+		body.look_at(interpolated, Vector3.UP)
 	self.prev_target_position = interpolated
 	
 	# Keep Y rotation at 0
