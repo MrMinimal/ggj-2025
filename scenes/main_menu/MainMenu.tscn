@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtqkloecayqtp"]
+[gd_scene load_steps=9 format=3 uid="uid://dtqkloecayqtp"]
 
+[ext_resource type="Script" uid="uid://c6eei5d7pwrdn" path="res://scenes/main_menu/goto-scene-1-start-game.gd" id="1_arvcj"]
 [ext_resource type="Texture2D" uid="uid://20shqjb1e6kb" path="res://assets/main_menu/mainmenubackground.png" id="1_oitky"]
 [ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="2_wckin"]
@@ -15,12 +16,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+script = ExtResource("1_arvcj")
 
 [node name="Mainmenubackground" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("1_oitky")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mainmenubackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.427
+anchor_top = 0.38
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.904
+offset_top = -160.149
+offset_right = 220.0
+offset_bottom = 150.857
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="Mainmenubackground/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_wckin")
+expand_mode = 3
+stretch_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_wckin")
@@ -35,31 +57,28 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_wckin")
-stretch_mode = 3
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
 alignment = 1
 
 [node name="Continue" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("2")
-texture_hover = ExtResource("3")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("3")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 texture_normal = ExtResource("4")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 visible = false
@@ -72,3 +91,5 @@ mouse_filter = 0
 layout_mode = 2
 texture = ExtResource("6")
 stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
