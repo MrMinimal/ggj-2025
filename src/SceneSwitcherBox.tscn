@@ -24,6 +24,8 @@ roughness = 0.19
 
 [sub_resource type="SphereMesh" id="SphereMesh_cdlmu"]
 material = SubResource("StandardMaterial3D_no7nr")
+radius = 0.3
+height = 0.6
 radial_segments = 8
 rings = 8
 
