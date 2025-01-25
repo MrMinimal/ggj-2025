@@ -44,12 +44,6 @@ directional_shadow_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_jr17i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
-player_size = null
-speed = null
-deadzone = null
-sensitivity = null
-tilt_amount = null
-scale_factor = null
 bubble_pop_scene = null
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("4_fxajv")]
