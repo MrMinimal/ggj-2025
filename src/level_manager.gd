@@ -2,6 +2,7 @@ extends Node
 class_name LevelManager
 
 @export var current_level_index: int = 0
+@export var transition_scene: PackedScene 
 var current_level: Node = null
 
 func _ready() -> void:
@@ -21,6 +22,9 @@ func load_level(index: int) -> void:
 		current_level = level_scene.instantiate()
 		add_child(current_level)
 		current_level_index = index
+		
+		var transition = self.transition_scene.instantiate()
+		add_child(transition)
 	else:
 		push_error("Failed to load level: " + level_path)
 

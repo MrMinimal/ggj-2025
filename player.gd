@@ -1,10 +1,12 @@
 extends RigidBody3D
+class_name Player
 
-@export var speed = 5.0
+@export var player_size = 3.0
+@export var speed = 20.0
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
-@export var scale_factor = 0.04
+@export var scale_factor = 0.02
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
@@ -12,6 +14,8 @@ var target_scale = Vector3.ONE
 var previous_position = Vector3.ZERO
 var current_velocity = Vector3.ZERO
 var prev_target_position = Vector3.ZERO
+var initial_scale = Vector3.ZERO
+var health_factor = 1.0 # wafrom 0.0 to 1.0
 
 func _ready():
 	lock_rotation = true
@@ -79,7 +83,7 @@ func _physics_process(delta):
 	if movement.length() > 1:
 		movement = movement.normalized()
 	
-	# Apply movement
+	# Apply movementwdaw
 	position += movement * speed * delta
 	
 	# Calculate velocity
@@ -88,9 +92,9 @@ func _physics_process(delta):
 	
 	# Calculate scale based on X velocity
 	var x_speed = current_velocity.length()
-	var scale_multiplier_z = 2.0 + (x_speed * scale_factor)
-	var scale_multiplier_x = 2.0 - (x_speed * scale_factor)
-	target_scale = Vector3(scale_multiplier_x, 1.0, scale_multiplier_z)
+	var scale_multiplier_z = self.player_size * self.health_factor + (x_speed * scale_factor)
+	var scale_multiplier_x = self.player_size * self.health_factor - (x_speed * scale_factor)
+	target_scale = Vector3(scale_multiplier_x, self.player_size * self.health_factor, scale_multiplier_z)
 	
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
@@ -109,3 +113,13 @@ func _physics_process(delta):
 	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
 	target_rotation.z = -movement.x * tilt_amount  # Tilt left/right slightly
 	camera.rotation_degrees = camera.rotation_degrees.lerp(target_rotation, delta * 5.0)
+ # Replace with function body.
+
+
+func take_damage(damage):
+	self.health_factor -= damage
+		
+	if self.health_factor <= 0:
+		var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
+		level_manager.load_level(0)
+	

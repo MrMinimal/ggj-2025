@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcat8p4nr7nwy"]
+[gd_scene load_steps=5 format=3 uid="uid://bcat8p4nr7nwy"]
 
 [ext_resource type="VideoStream" uid="uid://bdali3ikq4le1" path="res://assets/transitions/bubble_transition.ogv" id="1_8p7yn"]
+[ext_resource type="Script" uid="uid://bk1ij6recqvtd" path="res://scenes/transitions/bubble_transition.gd" id="1_fynsx"]
 [ext_resource type="Shader" uid="uid://da17sq0cte8uu" path="res://scenes/transitions/bubble_transition.gdshader" id="1_gdy8q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fynsx"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fynsx")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 material = SubResource("ShaderMaterial_fynsx")
@@ -27,3 +29,9 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_8p7yn")
 autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
