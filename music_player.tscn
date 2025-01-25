@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://t54rs03i3cy"]
-
-[ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="1_fvyft"]
-
-[node name="MusicPlayer" type="Node3D"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_fvyft")
-autoplay = true

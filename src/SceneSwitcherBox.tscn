@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc08mxenmkupd"]
+[gd_scene load_steps=7 format=3 uid="uid://cc08mxenmkupd"]
 
 [ext_resource type="Script" path="res://src/scene_switcher_box.gd" id="1_s0m1e"]
 [ext_resource type="PackedScene" uid="uid://xu6rwxfu5x51" path="res://assets/geysir.glb" id="2_no7nr"]
@@ -15,9 +15,19 @@ gravity = Vector3(0, 0, 0)
 linear_accel_min = 1.77
 linear_accel_max = 32.36
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no7nr"]
+transparency = 1
+specular_mode = 1
+albedo_color = Color(0.333, 0.651, 1, 0.9)
+metallic = 0.79
+roughness = 0.19
+
 [sub_resource type="SphereMesh" id="SphereMesh_cdlmu"]
-radius = 0.1
-height = 0.1
+material = SubResource("StandardMaterial3D_no7nr")
+radius = 0.3
+height = 0.6
+radial_segments = 8
+rings = 8
 
 [node name="SceneSwitcherBox" type="Node3D"]
 script = ExtResource("1_s0m1e")
