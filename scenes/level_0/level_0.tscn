@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="4_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://bdnys1hbi2b32" path="res://assets/Coral 2.tscn" id="5_rw20u"]
 [ext_resource type="PackedScene" uid="uid://ttug58tidniu" path="res://assets/Coral.tscn" id="6_iqr5q"]
-[ext_resource type="PackedScene" uid="uid://e48nhci3prdm" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
+[ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_la06y")
@@ -329,5 +329,4 @@ transform = Transform3D(0.774843, 0, 0.0895429, 0, 0.78, 0, -0.0895429, 0, 0.774
 transform = Transform3D(0.774843, 0, 0.0895429, 0, 0.78, 0, -0.0895429, 0, 0.774843, -6.64558, 0.885872, 12.0063)
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("8_57aex")]
-transform = Transform3D(7.82221, 0, -1.74661, 0, 3.025, 0, 1.07693, 0, 12.6863, -11.5753, 0.831491, 29.6504)
-metadata/_edit_lock_ = true
+transform = Transform3D(2.86795, 0, -0.394847, 0, 2.895, 0, 0.394847, 0, 2.86795, -11.5753, -0.462309, 29.6504)
