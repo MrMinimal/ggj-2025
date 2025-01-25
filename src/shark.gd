@@ -6,8 +6,8 @@ var retract_pos = -4.5
 var state = "out" #other state = "in"
 var target = retract_pos
 var lerp_val=0.2 #0.2 for jumping out, 0.1 for retracting
-@export var timer_in = 120
-@export var timer_out = 160
+@export var timer_out = 120
+@export var timer_in = 160
 
 func _ready():
 	ini_pos = $SharkBody.position.x
@@ -19,13 +19,13 @@ func _physics_process(delta):
 		if state == "out":
 			target = retract_pos
 			lerp_val=0.05
-			timer = timer_out
+			timer = timer_in
 			state = "in"
 			
 		elif state == "in":
 			target = ini_pos
 			lerp_val=0.2
-			timer = timer_in
+			timer = timer_out
 			state = "out"
 			
 		
