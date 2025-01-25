@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtqkloecayqtp"]
+[gd_scene load_steps=9 format=3 uid="uid://dtqkloecayqtp"]
 
+[ext_resource type="Script" uid="uid://c6eei5d7pwrdn" path="res://scenes/main_menu/goto-scene-1-start-game.gd" id="1_arvcj"]
 [ext_resource type="Texture2D" uid="uid://20shqjb1e6kb" path="res://assets/main_menu/mainmenubackground.png" id="1_oitky"]
 [ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="2_wckin"]
@@ -15,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+script = ExtResource("1_arvcj")
 
 [node name="Mainmenubackground" type="TextureRect" parent="."]
 layout_mode = 2
@@ -89,3 +91,5 @@ mouse_filter = 0
 layout_mode = 2
 texture = ExtResource("6")
 stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
