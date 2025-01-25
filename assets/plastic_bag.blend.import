@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dx576in6i20e7"
-path="res://.godot/imported/plastic_bag.blend-d506128a29dbdb68bfff8bf4dd64e41f.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/plastic_bag.blend"
-dest_files=["res://.godot/imported/plastic_bag.blend-d506128a29dbdb68bfff8bf4dd64e41f.scn"]
 
 [params]
 
