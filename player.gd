@@ -4,13 +4,14 @@ extends RigidBody3D
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
-@export var scale_factor = 0.1
+@export var scale_factor = 0.04
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
 var target_scale = Vector3.ONE
 var previous_position = Vector3.ZERO
 var current_velocity = Vector3.ZERO
+var prev_target_position = Vector3.ZERO
 
 func _ready():
 	lock_rotation = true
@@ -94,9 +95,11 @@ func _physics_process(delta):
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
 	
-	# Make body face movement direction
-	if movement != Vector3.ZERO:
-			body.rotation.y = lerp_angle(body.rotation.y, atan2(movement.x, -movement.z), delta * 10.0)
+	var target_global = current_velocity + self.position
+	var interpolated = lerp(self.prev_target_position, target_global, 0.1)
+	if not body.global_position == target_global:
+		body.look_at(interpolated)
+	self.prev_target_position = interpolated
 	
 	# Keep Y rotation at 0
 	rotation.y = 0

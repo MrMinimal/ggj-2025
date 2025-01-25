@@ -1,19 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgw4fx6410cso"]
+[gd_scene load_steps=3 format=3 uid="uid://bgw4fx6410cso"]
 
 [ext_resource type="Script" uid="uid://c4vwaxbs6a8cd" path="res://src/level_manager.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_0xm2m"]
 
 [sub_resource type="Environment" id="Environment_7dm0k"]
 background_mode = 1
 background_color = Color(0.0359406, 0.176158, 0.22658, 1)
 
-[node name="Node2D" type="Node3D"]
+[node name="Root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7dm0k")
 
 [node name="LevelManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_ig7tw")
-
-[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33204, 0)

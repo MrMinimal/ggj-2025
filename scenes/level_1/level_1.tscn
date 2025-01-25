@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://kb7w7jbfi3i4"]
+
+[ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/Untergrund.png" id="1_igcjm"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
+[ext_resource type="PackedScene" uid="uid://sm6166v0i4m7" path="res://assets/rock1.glb" id="3_nubdk"]
+[ext_resource type="PackedScene" uid="uid://c4sj7tvwcfmyj" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opn7a"]
+albedo_texture = ExtResource("1_igcjm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e74gk"]
+
+[node name="Level" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
+flip_faces = true
+size = Vector3(1, 0.25293, 1)
+material = SubResource("StandardMaterial3D_opn7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_e74gk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
+light_energy = 0.398
+directional_shadow_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("2_jr17i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.8502, 0.144678, 34.6538)
+
+[node name="rock1" parent="." instance=ExtResource("3_nubdk")]
+transform = Transform3D(3.41514, 0, 0, 0, 1, 0, 0, 0, 7.61049, -23.48, 1.42938, 20.6647)
+
+[node name="SceneSwitcherBox" parent="." instance=ExtResource("4_fxajv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4391, -0.924154, 28.7708)
