@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv5ih4pnqwbfr"]
+
+[ext_resource type="Shader" uid="uid://78uya7k4m7q" path="res://effects/wobble.gdshader" id="1_b7sti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s7dxi"]
+shader = ExtResource("1_b7sti")
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
+shader_parameter/wave_speed = 0.2
+shader_parameter/wave_amplitude = 0.001
+shader_parameter/wave_frequency = 50.0
+
+[node name="WobbleEffect" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_s7dxi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 1, 1)

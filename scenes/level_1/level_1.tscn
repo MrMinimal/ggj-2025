@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=9 format=3 uid="uid://kb7w7jbfi3i4"]
 
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
-[ext_resource type="PackedScene" uid="uid://tl5hs3jvhhym" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
+[ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
+[ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
+[ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="5_nubdk"]
+[ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_fxajv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_janvk"]
 albedo_texture = ExtResource("1_janvk")
@@ -38,4 +41,303 @@ directional_shadow_mode = 0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("4_fxajv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4391, -0.924154, 28.7708)
+transform = Transform3D(1.745, 0, 0, 0, 1.745, 0, 0, 0, 1.745, -30.2872, -0.924154, 33.2038)
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="wooden_boards" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(2.465, 0, 0, 0, 1.648, -1.83312, 0, 1.83312, 1.648, -10.912, -0.204127, 27.1768)
+
+[node name="wooden_boards2" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.282768, 2.43921, 0.215639, -1.2705, 0.0394277, -2.11199, -2.09335, -0.353417, 1.25268, -0.317896, -0.204127, 26.1201)
+
+[node name="wooden_boards3" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.11777, 2.29065, -0.902927, -0.636867, 0.901536, 2.20405, 2.37839, 0.127981, 0.634893, -2.29989, -0.204127, 20.0184)
+
+[node name="wooden_boards12" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.76528, 2.23798, -0.694282, -0.636867, 0.901536, 2.20405, 2.25499, -0.50489, 0.858101, -7.76599, -0.204127, -4.32455)
+
+[node name="wooden_boards52" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.76528, 2.23798, -0.694282, -0.636867, 0.901536, 2.20405, 2.25499, -0.50489, 0.858101, -35.2374, -0.265696, -36.3068)
+
+[node name="wooden_boards53" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-1.26205, 1.32666, -1.65028, -1.99193, -0.0923323, 1.4491, 0.718093, 2.07549, 1.11933, -31.7231, -1.93682, -36.1245)
+
+[node name="wooden_boards9" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.650031, 2.12905, -1.05869, -0.636867, 0.901536, 2.20405, 2.29087, 0.854745, 0.312331, -17.3243, -0.204127, 41.6809)
+
+[node name="wooden_boards7" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.11777, 2.29065, -0.902927, -0.636867, 0.901536, 2.20405, 2.37839, 0.127981, 0.634893, 24.2266, -0.204127, 1.14854)
+
+[node name="wooden_boards55" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.31494, -0.335364, -0.777696, -0.702093, 2.0258, 1.21631, 0.473652, 1.36377, -1.998, 0.488441, -0.599296, -35.7475)
+
+[node name="wooden_boards28" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(1.67044, 0.958176, -1.53875, -0.380643, 2.23124, 0.976169, 1.77227, -0.423904, 1.65999, 45.8822, -0.204127, -42.5078)
+
+[node name="wooden_boards27" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.42358, 0.426729, -0.142756, 0.449341, 2.25366, -0.891816, -0.0238704, -0.902855, -2.29358, 46.0999, -0.979312, 7.43827)
+
+[node name="wooden_boards35" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.38239, 0.243947, -0.5839, 0.449341, 2.25366, -0.891816, 0.445581, -0.968367, -2.2226, 31.8578, -0.979312, -6.4126)
+
+[node name="wooden_boards39" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.41763, 0.480898, -0.00287139, 0.449341, 2.25366, -0.891816, -0.17136, -0.875203, -2.29802, 43.8008, -0.979312, -22.0002)
+
+[node name="wooden_boards50" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.41763, 0.480898, -0.00287139, 0.449341, 2.25366, -0.891816, -0.17136, -0.875203, -2.29802, -2.87377, -0.979312, -21.8114)
+
+[node name="wooden_boards45" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.32353, 0.658614, 0.493638, 0.449341, 2.25366, -0.891817, -0.689597, -0.750648, -2.24437, 31.6993, -0.1379, -31.2913)
+
+[node name="wooden_boards40" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.825109, -0.710598, -2.21144, 0.449341, 2.25366, -0.891816, 2.27893, -0.701638, -0.624833, 48.6946, -0.979312, -36.1186)
+
+[node name="wooden_boards41" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.131717, -0.882967, -2.29766, 0.449341, 2.25366, -0.891816, 2.42012, -0.466491, 0.0405306, 31.4058, -0.979312, -14.551)
+
+[node name="wooden_boards21" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.16587, -0.972396, -1.74255, -1.98502, 0.7866, 2.0283, -0.204286, 2.66622, -1.23392, 29.9658, -0.204128, 22.4692)
+
+[node name="wooden_boards48" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-2.16587, -0.972396, -1.74255, -1.98502, 0.7866, 2.0283, -0.204286, 2.66622, -1.23392, 43.2797, -0.204128, 37.9122)
+
+[node name="wooden_boards4" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-3.05329, -0.749794, -1.28111, -1.3474, 2.62937, 1.67241, 0.622837, 2.01253, -2.6623, -19.8556, -1.40886, -7.67024)
+
+[node name="wooden_boards51" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-3.07988, -0.50394, -1.33656, -1.40786, 0.534095, 3.04281, -0.241397, 3.31464, -0.693499, 11.836, -1.40886, -48.9158)
+
+[node name="wooden_boards58" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-3.07988, -0.50394, -1.33656, -1.40786, 0.534095, 3.04281, -0.241397, 3.31464, -0.693499, -23.4638, -1.40886, -50.2958)
+
+[node name="wooden_boards26" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.782516, -2.35554, -2.31628, -3.2917, -0.354209, -0.751835, 0.27998, 2.41909, -2.36551, -22.6484, -1.95621, -2.88622)
+
+[node name="wooden_boards46" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(2.72684, 2.11691, 1.14181, -2.46059, 2.49462, 0.570541, -0.403515, -0.906413, 4.23691, -40.3448, -1.95621, -14.0647)
+
+[node name="wooden_boards30" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-3.36421, -0.455986, -0.0150103, -0.404964, 3.03598, -1.46453, 0.210125, -1.44945, -3.06283, -38.0046, -1.95621, -4.58625)
+
+[node name="wooden_boards5" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-1.63376, -0.449676, -1.7902, -1.59919, 1.5387, 1.07294, 0.921754, 1.87254, -1.31156, -20.2717, -0.204127, 11.5689)
+
+[node name="wooden_boards19" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-1.63376, -0.449676, -1.7902, -1.59919, 1.5387, 1.07294, 0.921754, 1.87254, -1.31156, -2.458, -0.204129, 5.91836)
+
+[node name="rock2" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(1.84139, 0.65946, 1.33839, -0.0402725, 2.14714, -1.00254, -1.4915, 0.756188, 1.67944, -17.2404, 0.82304, 31.4639)
+
+[node name="rock4" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.05798, 0.457975, -0.784306, -0.416028, 3.15508, 0.22025, 0.807341, -0.108848, 3.08423, -20.8792, -0.458867, 24.8982)
+
+[node name="rock24" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.05798, 0.457975, -0.784306, -0.416028, 3.15508, 0.22025, 0.807341, -0.108848, 3.08423, -28.0219, -0.458867, 9.70268)
+
+[node name="rock15" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(0.532854, -1.33708, -2.84682, -0.173765, 2.87046, -1.3807, 3.14038, 0.385703, 0.406646, -6.93431, -0.458867, 5.40028)
+
+[node name="rock6" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(1.5901, 0.400684, -2.73626, -0.416028, 3.15508, 0.22025, 2.73397, 0.247066, 1.62495, 16.3405, -0.458867, 30.0246)
+
+[node name="rock19" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(-0.403647, -2.32888, -2.14231, -0.486215, 2.17967, -2.27788, 3.12678, 0.0382956, -0.630768, 45.9308, -1.70689, 14.4562)
+
+[node name="rock20" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(0.69777, -0.713326, -3.02991, -0.952965, 2.90706, -0.903864, 2.96329, 1.10285, 0.422785, 45.4908, -1.70689, 2.49513)
+
+[node name="rock7" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.02555, 0.332291, 0.95486, -0.416028, 3.15508, 0.22025, -0.921465, -0.333424, 3.03576, 1.42739, -0.458752, 41.0973)
+
+[node name="rock8" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.21434, 0.589655, -2.37528, 0.259634, 3.8167, 1.29883, 2.43356, -1.18604, 2.99878, -36.0148, 1.09116, 39.5408)
+
+[node name="rock21" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.83167, 1.22194, -0.383151, -1.27541, 3.75006, -0.794997, 0.115199, 0.87496, 3.94243, 34.4809, 1.09116, -49.6414)
+
+[node name="rock33" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(-0.690524, -1.25094, -3.77888, -2.23218, 3.29722, -0.683599, 3.29578, 1.97106, -1.25473, 48.416, -2.15179, -28.5261)
+
+[node name="rock28" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(4.01979, 0.13328, 0.380976, 0.0802421, 3.47337, -2.06177, -0.39556, 2.05902, 3.45334, -9.8656, 1.09116, -49.6414)
+
+[node name="rock22" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(2.74716, -0.683979, -2.88216, -0.431115, 3.79666, -1.31192, 2.93067, 1.19965, 2.5087, 48.5888, 1.09116, -45.2699)
+
+[node name="rock32" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(1.27504, 0.343217, -3.81812, 0.132368, 4.01743, 0.405337, 3.83123, -0.253024, 1.25667, 45.3039, -2.37229, -14.3508)
+
+[node name="rock40" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.07446, -0.451866, 0.15096, 0.452418, 2.14889, -2.20146, 0.214991, 1.93984, 2.47386, -5.71889, -2.37228, -35.3063)
+
+[node name="rock38" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(1.19803, 2.38226, -3.03499, -0.470254, 3.2444, 2.361, 3.82951, -0.346865, 1.23939, 4.51827, -2.37229, -18.1019)
+
+[node name="rock16" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(2.80677, -1.30838, 2.59457, 0.0393043, 3.62406, 1.78501, -2.90553, -1.21488, 2.53052, -9.31504, -1.44777, 21.0857)
+
+[node name="rock10" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(-0.646573, 1.26002, 3.78363, -0.834622, 3.7054, -1.3766, -3.89961, -1.00197, -0.332714, -43.4812, -0.363707, 28.6934)
+
+[node name="rock9" parent="Enviroment" instance=ExtResource("5_nubdk")]
+transform = Transform3D(3.15677, 0.241059, 2.50964, -0.526882, 3.99577, 0.278937, -2.46552, -0.545253, 3.15365, -25.335, -1.16456, 39.8032)
+
+[node name="rock1" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.26792, -0.0811756, 2.15565, 0.339959, 3.10215, -0.240846, -2.13022, 0.408643, 2.25656, -5.58201, 2.19786, 26.3051)
+
+[node name="rock5" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.26792, -0.0811756, 2.15565, 0.339959, 3.10215, -0.240846, -2.13022, 0.408643, 2.25656, 6.33082, 0.799655, -10.0295)
+
+[node name="rock41" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.26792, -0.0811756, 2.15565, -0.670998, 2.94608, 0.816886, -2.05017, -1.05402, 2.11725, 27.7053, -0.329373, -32.906)
+
+[node name="rock34" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.66074, 1.3216, -0.985262, -0.829758, 2.69025, 1.36782, 1.42438, -0.901564, 2.63727, -3.18801, -0.272103, 0.982193)
+
+[node name="rock30" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(0.796781, -0.680205, 2.94947, -0.720498, 2.91966, 0.867969, -2.93989, -0.899893, 0.586659, 19.259, -0.0677762, -21.9166)
+
+[node name="rock23" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.26792, -0.0811756, 2.15565, 0.339959, 3.10215, -0.240846, -2.13022, 0.408643, 2.25656, 41.4507, 0.799655, -46.6471)
+
+[node name="rock17" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.95076, -0.398292, -0.965035, 0.65228, 2.96239, 0.771811, 0.815144, -0.928722, 2.87575, 19.8461, -2.1016, 0.71535)
+
+[node name="rock37" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.95076, -0.398292, -0.965035, 0.65228, 2.96239, 0.771811, 0.815144, -0.928722, 2.87575, 28.3674, -2.1016, -27.7593)
+
+[node name="rock31" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(1.06308, 0.3949, -2.91733, 0.611416, 3.00446, 0.629496, 2.87974, -0.783676, 0.943303, 32.9565, -2.1016, -0.689735)
+
+[node name="rock13" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.26792, -0.0811756, 2.15565, 0.339959, 3.10215, -0.240846, -2.13022, 0.408643, 2.25656, 20.381, -0.779404, 36.9241)
+
+[node name="rock12" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.30081, 1.53022, 1.47025, -0.915644, 2.67219, -1.34829, -1.91436, 0.561002, 2.41193, -10.6624, 0.560695, -0.0651526)
+
+[node name="rock18" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.99264, 0.793314, -0.460066, -0.915644, 2.67219, -1.34829, 0.0510434, 1.42371, 2.787, -17.0911, 0.560695, -0.844328)
+
+[node name="rock14" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(-0.0122147, -1.43248, -2.78294, -0.915744, 2.66282, -1.36663, 2.99302, 0.808871, -0.429492, 12.774, -2.6474, 31.4838)
+
+[node name="rock11" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.05554, 0.262467, 6.28205, 0.718475, 6.55614, -0.509009, -6.24634, 0.840481, 2.00874, -13.0213, -3.84516, -6.59304)
+
+[node name="rock36" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(-2.18663, 4.45533, 2.264, 3.05373, 3.14738, -3.24435, -3.95606, -0.0330967, -3.75573, -10.233, -3.76374, -23.1794)
+
+[node name="rock39" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(4.36566, -3.06853, 1.13234, 3.05373, 3.14738, -3.24435, 1.17167, 3.23035, 4.23663, -42.3739, -3.76374, -30.5066)
+
+[node name="rock29" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(5.87305, -0.409439, 3.01626, 0.718475, 6.55614, -0.509009, -2.95792, 0.779523, 5.86526, 26.6858, -5.31365, -19.1171)
+
+[node name="rock26" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(-3.49512, 3.11313, 4.67448, 2.09422, 5.83108, -2.31755, -5.2112, 0.255368, -4.0665, -41.0959, -3.84516, -23.4396)
+
+[node name="rock27" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(1.99785, 0.184007, 6.30341, 3.84667, 5.20398, -1.3711, -4.99699, 4.07958, 1.46469, -35.5711, -3.84516, -45.6019)
+
+[node name="rock3" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(3.12451, 0, 0.185247, 0, 3.13, 0, -0.185247, 0, 3.12451, -21.9715, 0.702232, 28.891)
+
+[node name="rock35" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(2.21972, -1.38766, -3.51164, 2.48575, 3.6033, 0.147376, 2.84223, -2.06762, 2.61363, -39.9682, -1.56043, 8.02659)
+
+[node name="rock25" parent="Enviroment" instance=ExtResource("6_fxajv")]
+transform = Transform3D(3.12451, 0, 0.185247, 0, 3.13, 0, -0.185247, 0, 3.12451, -35.5362, -1.57809, 12.1298)
+
+[node name="wooden_boards6" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-4.9523, 0, -0.251671, 0, 2.095, 0, 0.936105, 0, -1.33142, 5.7763, 1.21679, 2.76224)
+
+[node name="wooden_boards54" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-4.97263, 0.244438, 0.154152, -0.0336816, 1.40064, -1.00761, -0.820631, -1.53867, -0.892734, -12.4939, -1.22907, -35.1287)
+
+[node name="wooden_boards32" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-4.9523, 0, -0.251671, 0, 2.095, 0, 0.936105, 0, -1.33142, 24.6252, 1.21679, -24.2908)
+
+[node name="wooden_boards42" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-1.21988, 0, -1.31471, 0, 2.095, 0, 4.89014, 0, -0.327965, 44.5586, -0.451131, -31.9211)
+
+[node name="wooden_boards31" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(4.86195, 0.647789, 0.0784827, -1.56211, 2.027, 0.050499, -0.182635, -0.0924363, 1.65737, -30.528, 1.21679, -24.3)
+
+[node name="wooden_boards47" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(4.94558, -0.484624, -0.178411, 0.0180102, 0.935786, -1.4912, 1.28571, 1.85104, 0.707162, -19.8672, -0.631741, -23.2585)
+
+[node name="wooden_boards20" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(4.80369, 0.369175, 0.333352, -1.25847, 1.92161, 0.420547, -0.861655, -0.748425, 1.2442, 17.1008, -1.03406, 1.4586)
+
+[node name="wooden_boards8" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(1.84842, -1.89724, -0.390868, -0.18381, 0.449984, -1.79092, 4.6852, 0.766161, 0.0839447, 19.809, 0.380938, -15.9979)
+
+[node name="wooden_boards49" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(1.84842, -1.89724, -0.390868, -0.18381, 0.449984, -1.79092, 4.6852, 0.766161, 0.0839447, 3.0175, 0.380938, -17.9353)
+
+[node name="wooden_boards36" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(4.92674, -0.409038, -0.145877, -0.18381, 0.449984, -1.79092, 1.04645, 2.0048, 0.372215, 27.5059, 0.380938, -11.9377)
+
+[node name="wooden_boards10" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-5.01767, -0.193773, 0.0309141, -0.18381, 0.449984, -1.79092, 0.43673, -2.03691, -0.398583, -9.07595, 0.380938, 42.6403)
+
+[node name="wooden_boards16" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(2.66473, 1.74491, 0.300101, -0.18381, 0.449984, -1.79092, -4.27399, 1.06856, 0.264128, -40.4434, -0.423259, 18.39)
+
+[node name="wooden_boards29" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-1.95432, 1.87936, 0.388861, -0.18381, 0.449984, -1.79092, -4.64203, -0.80904, -0.0927975, -36.0791, -0.423259, 2.32791)
+
+[node name="wooden_boards11" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-5.02645, 0.113744, 0.0903115, -0.18381, 0.449984, -1.79092, -0.320342, -2.04294, -0.389446, 26.9043, -0.242493, 36.4149)
+
+[node name="wooden_boards24" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-4.55134, -0.890921, -0.111056, -1.04855, 1.16542, -1.47631, 1.89404, -1.49569, -1.08416, 36.4375, -0.242493, 37.0299)
+
+[node name="wooden_boards37" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.22989, -1.73894, -1.01995, -0.902104, 1.16104, -1.4917, 4.95328, 0.130744, -0.31901, 44.362, -0.242493, -7.15425)
+
+[node name="wooden_boards38" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.93929, -1.73968, -0.96352, -0.902104, 1.16104, -1.4917, 4.86883, -0.120499, -0.462265, 31.1825, -0.785139, -23.5884)
+
+[node name="wooden_boards13" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-4.4933, -0.0328884, -0.0413532, 0.0202412, 1.4995, -1.28145, 0.121783, -1.46268, -1.31278, 13.5329, -0.242493, 14.113)
+
+[node name="wooden_boards18" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(1.51431, -1.37979, -1.2347, 0.0202411, 1.4995, -1.28145, 4.2322, 0.486524, 0.447912, -2.69691, -0.242493, 14.1509)
+
+[node name="wooden_boards17" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(3.32048, -1.29005, 0.502976, 0.277906, 0.97805, 1.61879, -3.01698, -1.32974, 0.702686, 9.12975, -0.359464, 37.2555)
+
+[node name="wooden_boards14" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.265959, -1.7767, 0.966264, -1.24444, 1.03255, 1.51367, -4.31111, -0.407664, -0.377325, 12.527, -0.242493, 20.5851)
+
+[node name="wooden_boards15" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.312926, 1.96311, -0.627928, -1.00501, 0.669654, 1.68963, 4.37002, 0.29458, 0.343616, 15.6633, -0.242495, 21.0211)
+
+[node name="wooden_boards22" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.768533, -1.39723, -1.74568, 1.18532, 1.91495, -1.26321, 5.08544, -0.657494, 0.0306149, 31.4021, -0.152956, 17.5577)
+
+[node name="wooden_boards23" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(1.93846, 1.20433, 1.70428, 1.18532, 1.91495, -1.26321, -4.76389, 0.966514, 0.379179, 44.1801, -0.152956, 31.6383)
+
+[node name="wooden_boards33" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(-0.30336, 1.43763, 1.74431, -1.22932, 1.92013, -1.25009, -5.12387, -0.545796, 0.196651, 32.1957, -0.152956, 8.74365)
+
+[node name="wooden_boards43" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(5.2483, -0.0566314, -0.222842, -0.293613, 1.76439, -1.49689, 0.47585, 1.71328, 1.53417, 20.7937, -0.152952, -49.9122)
+
+[node name="wooden_boards56" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(5.2483, -0.0566314, -0.222842, 0.401, 2.05462, 1.17373, 0.389667, -1.35163, 1.79352, 20.7937, -0.152952, -34.7284)
+
+[node name="wooden_boards57" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(5.16025, -0.468408, -0.191134, 0.954232, 1.34769, 1.76023, -0.564422, -2.00397, 1.22845, 8.23795, -1.53286, -35.718)
+
+[node name="wooden_boards44" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(4.97835, 0.810338, -0.0918524, -1.61008, 2.23831, 0.605915, 0.693529, -0.620417, 2.06602, 1.62628, -0.251009, -48.8096)
+
+[node name="wooden_boards25" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(0.298488, -2.29805, -0.752336, 0.416302, 0.874129, -2.0021, 4.01042, 0.0803009, 0.263824, 44.8296, -1.22749, 21.0887)
+
+[node name="wooden_boards34" parent="Enviroment" instance=ExtResource("4_igcjm")]
+transform = Transform3D(3.87672, -0.698221, -0.0049205, 0.416302, 0.874129, -2.0021, 1.06939, 2.19089, 0.797238, 30.5188, -1.22749, 2.18781)
