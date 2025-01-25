@@ -174,8 +174,8 @@ transform = Transform3D(2.05383, 0, -3.57735, 0, 2.545, 0, 3.57735, 0, 2.05383, 
 
 [node name="Enemie" type="Node3D" parent="."]
 
-[node name="SeaUrchin" parent="." instance=ExtResource("4_rl6yr")]
+[node name="SeaUrchin" parent="Enemie" instance=ExtResource("4_rl6yr")]
 transform = Transform3D(0.190124, 0, 0.98176, 0, 1, 0, -0.98176, 0, 0.190124, -15.8275, 0.885876, -29.4095)
 
-[node name="SeaUrchin2" parent="." instance=ExtResource("4_rl6yr")]
+[node name="SeaUrchin2" parent="Enemie" instance=ExtResource("4_rl6yr")]
 transform = Transform3D(0.821687, 0, 0.569939, 0, 1, 0, -0.569939, 0, 0.821687, 38.4119, 0.885876, -40.0567)
