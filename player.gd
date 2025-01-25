@@ -17,6 +17,9 @@ var prev_target_position = Vector3.ZERO
 var initial_scale = Vector3.ZERO
 var health_factor = 1.0 # wafrom 0.0 to 1.0
 
+var plastic_bag_debuff: PlasticBag = null
+
+
 func _ready():
 	lock_rotation = true
 	previous_position = position
@@ -79,11 +82,20 @@ func _physics_process(delta):
 			movement.x = 0
 		if abs(movement.z) < deadzone:
 			movement.z = 0
+			
+	if plastic_bag_debuff != null:
+		var jerkig = detect_jerk(movement)
+		if jerkig:
+			remove_debuff_plastic_bag()
 	
 	if movement.length() > 1:
 		movement = movement.normalized()
 	
-	# Apply movementwdaw
+	if plastic_bag_debuff != null:
+		movement = movement /2
+		
+		
+	# Apply movement
 	position += movement * speed * delta
 	
 	# Calculate velocity
@@ -113,13 +125,44 @@ func _physics_process(delta):
 	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
 	target_rotation.z = -movement.x * tilt_amount  # Tilt left/right slightly
 	camera.rotation_degrees = camera.rotation_degrees.lerp(target_rotation, delta * 5.0)
- # Replace with function body.
-
 
 func take_damage(damage):
 	self.health_factor -= damage
-		
 	if self.health_factor <= 0.5:
 		var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
 		level_manager.load_level(0)
 	
+func remove_debuff_plastic_bag():
+	if not plastic_bag_debuff:
+		return
+	plastic_bag_debuff.queue_free()
+
+func apply_debuff_plastic_bag(plastic_bag: PlasticBag):
+	plastic_bag_debuff = plastic_bag
+	plastic_bag.reparent(self)
+
+
+var prev_accel := Vector3.ZERO
+var prev_time := 0.0
+var jerk_threshold := 600.0  # Adjust based on your needs
+
+func detect_jerk(current_accel: Vector3) -> bool:
+	var current_time = Time.get_ticks_msec() / 1000.0
+	var dt = current_time - prev_time
+	
+	if dt > 0:
+		# Calculate jerk as rate of change of acceleration
+		var jerk = (current_accel - prev_accel) / dt
+		var jerk_magnitude = jerk.length()
+		
+		if jerk_magnitude > jerk_threshold:
+			print_debug("Jerk detected! Magnitude: ", jerk_magnitude)
+			print_debug("Current acceleration: ", current_accel)
+			print_debug("Previous acceleration: ", prev_accel)
+			print_debug("Time delta: ", dt)
+			return true
+	
+	# Update previous values for next calculation
+	prev_accel = current_accel
+	prev_time = current_time
+	return false
