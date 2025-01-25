@@ -20,6 +20,7 @@ albedo_texture = ExtResource("3_i3pqv")
 texture_repeat = false
 
 [node name="Player" type="RigidBody3D" groups=["player"]]
+collision_mask = 14
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

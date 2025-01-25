@@ -42,6 +42,14 @@ move_right={
 
 sensors/enable_accelerometer=true
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="wall"
+3d_physics/layer_3="enemy"
+3d_physics/layer_4="goal"
+3d_physics/layer_5="pickups"
+
 [rendering]
 
 renderer/rendering_method="mobile"
