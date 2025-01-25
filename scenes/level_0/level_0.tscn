@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://djmtmce8pftpl"]
+[gd_scene load_steps=12 format=3 uid="uid://djmtmce8pftpl"]
 
 [ext_resource type="Texture2D" uid="uid://b6jbp672dwd7b" path="res://assets/Untergrund.png" id="1_la06y"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="4_rl6yr"]
-[ext_resource type="PackedScene" uid="uid://bdnys1hbi2b32" path="res://assets/Coral 2.tscn" id="5_rw20u"]
-[ext_resource type="PackedScene" uid="uid://ttug58tidniu" path="res://assets/Coral.tscn" id="6_iqr5q"]
+[ext_resource type="PackedScene" path="res://assets/Coral 2.tscn" id="5_rw20u"]
+[ext_resource type="PackedScene" path="res://assets/Coral.tscn" id="6_iqr5q"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
+[ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_la06y")
@@ -330,3 +331,8 @@ transform = Transform3D(0.774843, 0, 0.0895429, 0, 0.78, 0, -0.0895429, 0, 0.774
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("8_57aex")]
 transform = Transform3D(2.86795, 0, -0.394847, 0, 2.895, 0, 0.394847, 0, 2.86795, -11.5753, -0.462309, 29.6504)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="bubble_pickup" parent="." instance=ExtResource("9_u4m3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, -28)

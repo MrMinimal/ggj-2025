@@ -7,3 +7,5 @@ func _on_area_3d_body_entered(body):
 	
 	var player = body as Player
 	player.take_damage(-0.2)
+	
+	queue_free()
