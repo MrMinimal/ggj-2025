@@ -110,6 +110,7 @@ func _physics_process(delta):
 	
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
+	$CollisionShape3D.scale = body.scale
 	
 	var target_global = current_velocity + self.position
 	var interpolated = lerp(self.prev_target_position, target_global, 0.1)
