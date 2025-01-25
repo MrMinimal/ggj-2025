@@ -58,6 +58,8 @@ func get_accelerometer() -> Vector3:
 	return Vector3(x, y, z)
 
 func _physics_process(delta):
+	if self.isDead:
+		return
 	var movement = Vector3.ZERO
 	
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("ui_up"):
@@ -134,14 +136,10 @@ func take_damage(damage):
 	if self.health_factor <= 0.5 && !self.isDead:
 		self.isDead = true
 		$AudioDeath.play()
-		$bubble.visible=false
-		#var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
-		#level_manager.load_level(0)
-	
-
+		$bubble.visible = false
 
 func _on_audio_death_finished() -> void:
-	var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
+	var level_manager = get_node("/root/Root/LevelManager") as LevelManager
 	level_manager.load_level(0)
 	
 func remove_debuff_plastic_bag():
