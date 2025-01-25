@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/Untergrund.png" id="1_iwtyf"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
 [ext_resource type="PackedScene" uid="uid://sm6166v0i4m7" path="res://assets/rock1.glb" id="3_rl6yr"]
-[ext_resource type="PackedScene" uid="uid://c4sj7tvwcfmyj" path="res://src/SceneSwitcherBox.tscn" id="4_rl6yr"]
+[ext_resource type="PackedScene" path="res://src/SceneSwitcherBox.tscn" id="4_rl6yr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_iwtyf")
