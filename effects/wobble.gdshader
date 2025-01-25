@@ -1,15 +1,25 @@
-shader_type spatial;
-render_mode unshaded;
+shader_type canvas_item;
 
-uniform vec4 tint; // tint effect
-uniform float wave_speed = 3.0; // wave loop speed
-uniform float wave_freq = 1.0; // wave vertical freq
-uniform float wave_width = 0.1; // wave width
-uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
-void fragment(){
-	vec2 scale_UV = SCREEN_UV;
-	vec2 wave_uv_offset;
-	wave_uv_offset.x = cos((TIME*wave_speed)+UV.x+UV.y*wave_freq*2.0)*wave_width*0.01;
-	ALBEDO = texture(SCREEN_TEXTURE, SCREEN_UV+wave_uv_offset).rgb*tint.rgb;
+uniform float brightness = 1.0;
+uniform float contrast = 1.0;
+uniform float saturation = 1.0;
+
+uniform float wave_speed = 10.0; // Speed of the wave
+uniform float wave_amplitude = 0.05; // Amplitude of the wave
+uniform float wave_frequency = 10.0; // Frequency of the wave
+
+void fragment() {
+    vec2 uv = SCREEN_UV;
+    float wave = sin((uv.x + TIME * wave_speed) * wave_frequency) * wave_amplitude;
+    uv.y += wave;
+
+    vec3 c = textureLod(screen_texture, uv, 0.0).rgb;
+
+    c.rgb = mix(vec3(0.0), c.rgb, brightness);
+    c.rgb = mix(vec3(0.5), c.rgb, contrast);
+    c.rgb = mix(vec3(dot(vec3(1.0), c.rgb) * 0.33333), c.rgb, saturation);
+
+    COLOR.rgb = c;
 }

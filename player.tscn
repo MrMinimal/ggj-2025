@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh7uqlf3024g4"]
+[gd_scene load_steps=10 format=3 uid="uid://bh7uqlf3024g4"]
 
 [ext_resource type="Script" uid="uid://cbnksnpir40x1" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://d31f3emhes734" path="res://assets/bubble.glb" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://dp57geavkfakw" path="res://assets/sounds/ggj2025_effects_death.wav" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://ctalhvqsl3qfm" path="res://assets/sounds/ggj2025_effects_hit.wav" id="5_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://cv5ih4pnqwbfr" path="res://effects/wobble_effect.tscn" id="6_2hs0m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 radius = 1.0
@@ -52,6 +53,8 @@ stream = ExtResource("4_sweqy")
 
 [node name="AudioHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_2hs0m")
+
+[node name="WobbleEffect" parent="." instance=ExtResource("6_2hs0m")]
 
 [connection signal="finished" from="AudioDeath" to="." method="_on_audio_death_finished"]
 
