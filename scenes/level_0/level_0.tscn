@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://djmtmce8pftpl"]
 
-[ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/Untergrund.png" id="1_iwtyf"]
+[ext_resource type="Texture2D" uid="uid://bahf0ns1li3pr" path="res://assets/textures/Untergrund.png" id="1_iwtyf"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
@@ -175,7 +175,7 @@ transform = Transform3D(2.05383, 0, -3.57735, 0, 2.545, 0, 3.57735, 0, 2.05383, 
 [node name="Enemie" type="Node3D" parent="."]
 
 [node name="SeaUrchin" parent="Enemie" instance=ExtResource("4_rl6yr")]
-transform = Transform3D(0.190124, 0, 0.98176, 0, 1, 0, -0.98176, 0, 0.190124, -15.8275, 0.885876, -29.4095)
+transform = Transform3D(0.959348, 0.177994, 0.681226, -0.250057, 1.16242, 0.0484252, -0.658196, -0.182187, 0.974518, -12.6133, 0.885876, -28.4314)
 
 [node name="SeaUrchin2" parent="Enemie" instance=ExtResource("4_rl6yr")]
-transform = Transform3D(0.821687, 0, 0.569939, 0, 1, 0, -0.569939, 0, 0.821687, 38.4119, 0.885876, -40.0567)
+transform = Transform3D(1.14736, 0, 0.132592, 0, 1.155, 0, -0.132592, 0, 1.14736, 34.1219, 0.885872, -39.735)
