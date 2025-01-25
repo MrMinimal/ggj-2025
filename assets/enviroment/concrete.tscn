@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://2ve3r5e8tkvq" path="res://assets/concrete.glb" id="1_s7mjq"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_87lgd"]
-points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s7mjq"]
+points = PackedVector3Array(1, 1, 0.399922, 1, 1, -0.4, -1, 1, 0.399922, 1, -1, 0.399922, 1, -1, -0.4, -1, 1, -0.4, -1, -1, 0.399922, -1, -1, -0.4)
 
 [node name="concrete" instance=ExtResource("1_s7mjq")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_87lgd")
+shape = SubResource("ConvexPolygonShape3D_s7mjq")
