@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dh77hr6yjhfkx"
-valid=false
+path="res://.godot/imported/sea_urchin.blend-67bee2f16dec634b05d009702042e30e.scn"
 
 [deps]
 
 source_file="res://assets/sea_urchin.blend"
+dest_files=["res://.godot/imported/sea_urchin.blend-67bee2f16dec634b05d009702042e30e.scn"]
 
 [params]
 
