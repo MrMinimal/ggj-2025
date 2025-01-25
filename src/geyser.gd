@@ -5,9 +5,9 @@ extends Node3D
 var isPlayerInAra = false;
 var body
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		self.body = body
+func _on_area_3d_body_entered(body_entered: Node3D) -> void:
+	if body_entered.is_in_group("player"):
+		self.body = body_entered
 		isPlayerInAra = true
 
 func _physics_process(delta: float) -> void:
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	print(direction * push_force)
 	body.apply_central_force(direction * push_force)
 	
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
+func _on_area_3d_body_exited(body_exited: Node3D) -> void:
+	if body_exited.is_in_group("player"):
 		self.body = null
 		isPlayerInAra = false

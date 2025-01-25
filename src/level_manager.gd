@@ -21,13 +21,13 @@ func perform_level_load(scene: PackedScene, index: int) -> void:
 			player.apply_central_force(Vector3.UP * push_force)
 			
 			await get_tree().create_timer(2.0).timeout
-		if current_level:
-			# We cannot have two scenes called Level
-			# so we rename the old first
-			current_level.name = "LevelUnload" 
-			current_level.queue_free()
-			
-	
+	if current_level:
+		# We cannot have two scenes called Level
+		# so we rename the old first
+		current_level.name = "LevelUnload" 
+		current_level.queue_free()
+		
+
 	current_level = scene.instantiate()
 	add_child(current_level)
 	current_level.name = "Level" # Must always be level to not break paths
