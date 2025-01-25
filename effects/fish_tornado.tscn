@@ -9,3 +9,4 @@ fish_scene = ExtResource("2_c2xdo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8816, 0.471997, 0, -0.471997, 0.8816, 0, 1.13541, 2.12896)
+visible = false
