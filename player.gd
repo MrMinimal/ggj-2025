@@ -1,11 +1,11 @@
 extends RigidBody3D
 
 @export var player_size = 3.0
-@export var speed = 5.0
+@export var speed = 20.0
 @export var deadzone = 0.1 
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
-@export var scale_factor = 0.05
+@export var scale_factor = 0.02
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
@@ -14,6 +14,7 @@ var previous_position = Vector3.ZERO
 var current_velocity = Vector3.ZERO
 var prev_target_position = Vector3.ZERO
 var initial_scale = Vector3.ZERO
+var health_factor = 1.0 # from 0.0 to 1.0
 
 func _ready():
 	lock_rotation = true
@@ -90,9 +91,9 @@ func _physics_process(delta):
 	
 	# Calculate scale based on X velocity
 	var x_speed = current_velocity.length()
-	var scale_multiplier_z = self.player_size + (x_speed * scale_factor)
-	var scale_multiplier_x = self.player_size - (x_speed * scale_factor)
-	target_scale = Vector3(scale_multiplier_x, self.player_size, scale_multiplier_z)
+	var scale_multiplier_z = self.player_size * self.health_factor + (x_speed * scale_factor)
+	var scale_multiplier_x = self.player_size * self.health_factor - (x_speed * scale_factor)
+	target_scale = Vector3(scale_multiplier_x, self.player_size * self.health_factor, scale_multiplier_z)
 	
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
@@ -111,3 +112,6 @@ func _physics_process(delta):
 	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
 	target_rotation.z = -movement.x * tilt_amount  # Tilt left/right slightly
 	camera.rotation_degrees = camera.rotation_degrees.lerp(target_rotation, delta * 5.0)
+
+func take_damage(damage):
+	self.health_factor -= damage
