@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://wa714midw73w"]
+[gd_scene load_steps=7 format=3 uid="uid://wa714midw73w"]
 
 [ext_resource type="Texture2D" uid="uid://20shqjb1e6kb" path="res://assets/main_menu/mainmenubackground.png" id="1_17l06"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="2_t15ab"]
 [ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="3_lwbe5"]
-[ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="4_mxqwe"]
 [ext_resource type="Texture2D" uid="uid://634jq5kd27ck" path="res://assets/main_menu/label_new_game.png" id="5_wprml"]
 [ext_resource type="Texture2D" uid="uid://cun8ifvafol8q" path="res://assets/main_menu/label_options.png" id="6_o5atr"]
 [ext_resource type="Texture2D" uid="uid://c6de7p21oc0av" path="res://assets/main_menu/characters.png" id="7_6gsh7"]
@@ -56,23 +55,50 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(680, 26)
 layout_mode = 2
 alignment = 1
 
-[node name="Continue" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="You won?" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "[center] You won? [/center]"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-texture_normal = ExtResource("4_mxqwe")
-stretch_mode = 5
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 93
+text = "Bubble Odysea"
+fit_content = true
+scroll_active = false
+
+[node name="Credits" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 37
+bbcode_enabled = true
+text = "[center]Joey Gartain		KiraCodez [/center]
+[center]MrMinimal			Kelteseth [/center]
+[center]TobyMoby			CodaApple [/center]"
+fit_content = true
+scroll_active = false
 
 [node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("5_wprml")
 stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 texture_normal = ExtResource("6_o5atr")
