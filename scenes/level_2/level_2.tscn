@@ -1,13 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=4 format=3 uid="uid://bi233m04ifsph"]
 
-[ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
-[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
-[ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
+[ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_janvk"]
-albedo_texture = ExtResource("1_janvk")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_igcjm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cns38"]
 
 [node name="Level" type="Node3D"]
 
@@ -15,7 +11,6 @@ albedo_texture = ExtResource("1_janvk")
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
 flip_faces = true
 size = Vector3(1, 0.25293, 1)
-material = SubResource("StandardMaterial3D_janvk")
 metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
@@ -23,19 +18,19 @@ collision_layer = 2
 collision_mask = 21
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_igcjm")
+shape = SubResource("BoxShape3D_cns38")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10369, 0)
-shape = SubResource("BoxShape3D_igcjm")
+shape = SubResource("BoxShape3D_cns38")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
 light_energy = 0.398
 directional_shadow_mode = 0
 
-[node name="Player" parent="." instance=ExtResource("2_jr17i")]
+[node name="Player" parent="." instance=ExtResource("1_o6l5o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
 
-[node name="SceneSwitcherBox" parent="." instance=ExtResource("4_fxajv")]
+[node name="SceneSwitcherBox" parent="." instance=ExtResource("2_hmj2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4391, -0.924154, 28.7708)

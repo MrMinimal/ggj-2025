@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://wa714midw73w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54so1"]
+albedo_color = Color(0.54359, 0.330855, 0.478121, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a6hqo"]
+
+[sub_resource type="Sky" id="Sky_k1hh0"]
+sky_material = SubResource("ProceduralSkyMaterial_a6hqo")
+
+[sub_resource type="Environment" id="Environment_tyxre"]
+background_mode = 2
+sky = SubResource("Sky_k1hh0")
+
+[node name="Credits" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6196)
+material = SubResource("StandardMaterial3D_54so1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tyxre")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.17642)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.86878)
+text = "The End?"

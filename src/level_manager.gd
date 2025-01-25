@@ -15,7 +15,15 @@ func load_level(index: int) -> void:
 	
 	if current_level:
 		current_level.queue_free()
-	
+		
+	if index == 3:
+		var level_scene = load("res://scenes/credits/credits.tscn")
+		add_child(level_scene.instantiate())
+		current_level_index = index
+		var transition = self.transition_scene.instantiate()
+		add_child(transition)
+		return
+
 	var level_path = "res://scenes/level_%d/level_%d.tscn" % [index, index]
 	var level_scene = load(level_path)
 	if level_scene:

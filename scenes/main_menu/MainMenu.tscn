@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtqkloecayqtp"]
+[gd_scene load_steps=8 format=3 uid="uid://dtqkloecayqtp"]
 
 [ext_resource type="Texture2D" uid="uid://20shqjb1e6kb" path="res://assets/main_menu/mainmenubackground.png" id="1_oitky"]
 [ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://634jq5kd27ck" path="res://assets/main_menu/label_new_game.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cun8ifvafol8q" path="res://assets/main_menu/label_options.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://c6de7p21oc0av" path="res://assets/main_menu/characters.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="7_wckin"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -20,6 +21,10 @@ layout_mode = 2
 texture = ExtResource("1_oitky")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wckin")
+autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -40,19 +45,20 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Continue" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="Continue" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2")
+texture_normal = ExtResource("2")
+texture_hover = ExtResource("3")
 stretch_mode = 3
 
-[node name="NewGame" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3")
+texture_normal = ExtResource("3")
 stretch_mode = 3
 
-[node name="Options" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4")
+texture_normal = ExtResource("4")
 stretch_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
