@@ -92,4 +92,6 @@ layout_mode = 2
 texture = ExtResource("6")
 stretch_mode = 3
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
