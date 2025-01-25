@@ -1,0 +1,138 @@
+[gd_resource type="SpriteFrames" load_steps=33 format=3 uid="uid://ypmd2j4cc31y"]
+
+[ext_resource type="Texture2D" uid="uid://ckvgdvf7q8wkv" path="res://assets/textures/caustics/caustic_001.png" id="1_qd07d"]
+[ext_resource type="Texture2D" uid="uid://dkxm5b3cduns0" path="res://assets/textures/caustics/caustic_002.png" id="2_u5jck"]
+[ext_resource type="Texture2D" uid="uid://k4fllyfmlfbl" path="res://assets/textures/caustics/caustic_003.png" id="3_bea5x"]
+[ext_resource type="Texture2D" uid="uid://c0uybduhvnx4q" path="res://assets/textures/caustics/caustic_004.png" id="4_4djae"]
+[ext_resource type="Texture2D" uid="uid://cmrtd40kgmvdk" path="res://assets/textures/caustics/caustic_005.png" id="5_7grpa"]
+[ext_resource type="Texture2D" uid="uid://cpe2x51n24okg" path="res://assets/textures/caustics/caustic_006.png" id="6_wda6d"]
+[ext_resource type="Texture2D" uid="uid://cw2jtnkyviyq0" path="res://assets/textures/caustics/caustic_007.png" id="7_tpiao"]
+[ext_resource type="Texture2D" uid="uid://bm0ms4l7jn7lq" path="res://assets/textures/caustics/caustic_008.png" id="8_bwpa7"]
+[ext_resource type="Texture2D" uid="uid://dffiin5hw86xn" path="res://assets/textures/caustics/caustic_009.png" id="9_x2ria"]
+[ext_resource type="Texture2D" uid="uid://bd1n8tae4jen7" path="res://assets/textures/caustics/caustic_010.png" id="10_vk3e4"]
+[ext_resource type="Texture2D" uid="uid://dkyq40vwaosnj" path="res://assets/textures/caustics/caustic_011.png" id="11_gjxfx"]
+[ext_resource type="Texture2D" uid="uid://c8jq7wt5fess7" path="res://assets/textures/caustics/caustic_012.png" id="12_5ushp"]
+[ext_resource type="Texture2D" uid="uid://cpeovt16tprce" path="res://assets/textures/caustics/caustic_013.png" id="13_6l8n0"]
+[ext_resource type="Texture2D" uid="uid://sxt1t72lsvxu" path="res://assets/textures/caustics/caustic_014.png" id="14_oup3q"]
+[ext_resource type="Texture2D" uid="uid://b0bkkxkehrp2u" path="res://assets/textures/caustics/caustic_015.png" id="15_idryx"]
+[ext_resource type="Texture2D" uid="uid://7livs8bmp8a2" path="res://assets/textures/caustics/caustic_016.png" id="16_5e1ep"]
+[ext_resource type="Texture2D" uid="uid://c1fcr284l1qim" path="res://assets/textures/caustics/caustic_017.png" id="17_khj8t"]
+[ext_resource type="Texture2D" uid="uid://2iaoe4in2tw4" path="res://assets/textures/caustics/caustic_018.png" id="18_sgof3"]
+[ext_resource type="Texture2D" uid="uid://k2axh0lhpdcf" path="res://assets/textures/caustics/caustic_019.png" id="19_bcuc5"]
+[ext_resource type="Texture2D" uid="uid://baoqq077miub4" path="res://assets/textures/caustics/caustic_020.png" id="20_53kep"]
+[ext_resource type="Texture2D" uid="uid://dn42xcuubnkp4" path="res://assets/textures/caustics/caustic_021.png" id="21_gwqip"]
+[ext_resource type="Texture2D" uid="uid://ddhyyxuorvcpf" path="res://assets/textures/caustics/caustic_022.png" id="22_sb1co"]
+[ext_resource type="Texture2D" uid="uid://cp2rf2sa38uon" path="res://assets/textures/caustics/caustic_023.png" id="23_ocfna"]
+[ext_resource type="Texture2D" uid="uid://bym3fo007lckk" path="res://assets/textures/caustics/caustic_024.png" id="24_mu3ip"]
+[ext_resource type="Texture2D" uid="uid://bl01d3ompenr5" path="res://assets/textures/caustics/caustic_025.png" id="25_cldbf"]
+[ext_resource type="Texture2D" uid="uid://b5ysbe8vnaiej" path="res://assets/textures/caustics/caustic_026.png" id="26_it12f"]
+[ext_resource type="Texture2D" uid="uid://stvcrfejndu8" path="res://assets/textures/caustics/caustic_027.png" id="27_4kfcs"]
+[ext_resource type="Texture2D" uid="uid://cis2kemojcrkn" path="res://assets/textures/caustics/caustic_028.png" id="28_v73t1"]
+[ext_resource type="Texture2D" uid="uid://bvb4av22c3ifb" path="res://assets/textures/caustics/caustic_029.png" id="29_0qkp5"]
+[ext_resource type="Texture2D" uid="uid://cson0cc6awyk2" path="res://assets/textures/caustics/caustic_030.png" id="30_5la2i"]
+[ext_resource type="Texture2D" uid="uid://leu6wk33ajdl" path="res://assets/textures/caustics/caustic_031.png" id="31_av55h"]
+[ext_resource type="Texture2D" uid="uid://osdcoc2asugv" path="res://assets/textures/caustics/caustic_032.png" id="32_h16pg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qd07d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u5jck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bea5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4djae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7grpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wda6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tpiao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bwpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x2ria")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vk3e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gjxfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5ushp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6l8n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oup3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_idryx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5e1ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_khj8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sgof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bcuc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_53kep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gwqip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sb1co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ocfna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mu3ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cldbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_it12f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4kfcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_v73t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0qkp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5la2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_av55h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_h16pg")
+}],
+"loop": true,
+"name": &"causics",
+"speed": 23.0
+}]
