@@ -7,6 +7,7 @@ class_name Player
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
 @export var scale_factor = 0.02
+@export var bubble_pop_scene: PackedScene
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
@@ -138,6 +139,10 @@ func take_damage(damage):
 		self.isDead = true
 		$AudioDeath.play()
 		$bubble.visible = false
+		var instance: Node3D = bubble_pop_scene.instantiate()
+		instance.position = self.position
+		self.get_parent().add_child(instance)
+		
 
 func _on_audio_death_finished() -> void:
 	var level_manager = get_node("/root/Root/LevelManager") as LevelManager
