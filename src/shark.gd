@@ -30,3 +30,11 @@ func _physics_process(delta):
 			
 		
 	$SharkBody.position.x=lerp($SharkBody.position.x,target,lerp_val)
+
+
+func _on_area_3d_body_entered(body: Node3D):
+	if not body.is_in_group("player"):
+		return
+	
+	var player = body as Player
+	player.take_damage(0.2)

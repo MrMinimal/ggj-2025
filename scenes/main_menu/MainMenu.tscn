@@ -66,6 +66,8 @@ alignment = 1
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("2")
+texture_pressed = ExtResource("3")
+texture_hover = ExtResource("3")
 stretch_mode = 5
 
 [node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
@@ -78,6 +80,8 @@ stretch_mode = 5
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 texture_normal = ExtResource("4")
+texture_pressed = ExtResource("3")
+texture_hover = ExtResource("3")
 stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]

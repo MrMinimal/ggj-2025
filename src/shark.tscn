@@ -13,11 +13,14 @@ script = ExtResource("1_bu6up")
 [node name="SharkBody" parent="." instance=ExtResource("1_dues7")]
 
 [node name="Area3D" type="Area3D" parent="SharkBody"]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SharkBody/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63452, 0, 0)
 shape = SubResource("BoxShape3D_bu6up")
 
 [node name="shark_hole" parent="." instance=ExtResource("2_y1u06")]
+
+[connection signal="body_entered" from="SharkBody/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="SharkBody"]
