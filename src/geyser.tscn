@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c06gvcclwy355"]
+[gd_scene load_steps=6 format=3 uid="uid://v6y8neowesqq"]
 
-[ext_resource type="Script" uid="uid://eih0riprltgc" path="res://src/geyser.gd" id="1_u1it6"]
+[ext_resource type="Script" path="res://src/geyser.gd" id="1_u1it6"]
+[ext_resource type="PackedScene" uid="uid://xu6rwxfu5x51" path="res://assets/geysir.glb" id="2_1spoe"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jukhd"]
 emission_shape = 3
@@ -32,11 +33,8 @@ draw_pass_1 = SubResource("SphereMesh_u1it6")
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(0.656052, 0, 0, 0, 0.656052, 0, 0, 0, 0.656052, 0, 0.292008, 0)
-size = Vector3(1, 1.8902, 1)
+[node name="geysir" parent="Node3D" instance=ExtResource("2_1spoe")]
+transform = Transform3D(-2.98023e-08, -4.37114e-08, 1, 4.37114e-08, 1, 4.37114e-08, -1, 4.37114e-08, -2.98023e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 
