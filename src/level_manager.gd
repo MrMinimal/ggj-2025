@@ -12,15 +12,15 @@ func perform_level_load(scene: PackedScene, index: int) -> void:
 	# Perfom ascension 
 	if(index != 0):
 		var player = get_node("/root/Root/LevelManager/Level/Player") as Player
-		assert(player)
-		var topCollisionShape3D = get_node("/root/Root/LevelManager/Level/CSGBox3D/StaticBody3D/CollisionShape3D2") as CollisionShape3D
-		assert(topCollisionShape3D)
-		await topCollisionShape3D.call_deferred("set_disabled", true)
-		
-		var push_force = 5000
-		player.apply_central_force(Vector3.UP * push_force)
-		
-		await get_tree().create_timer(2.0).timeout
+		if  player: # Happens when we start from the editor with changed current level index of greater 0
+			var topCollisionShape3D = get_node("/root/Root/LevelManager/Level/CSGBox3D/StaticBody3D/CollisionShape3D2") as CollisionShape3D
+			assert(topCollisionShape3D)
+			await topCollisionShape3D.call_deferred("set_disabled", true)
+			
+			var push_force = 5000
+			player.apply_central_force(Vector3.UP * push_force)
+			
+			await get_tree().create_timer(2.0).timeout
 		if current_level:
 			# We cannot have two scenes called Level
 			# so we rename the old first
