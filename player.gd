@@ -16,7 +16,7 @@ var current_velocity = Vector3.ZERO
 var prev_target_position = Vector3.ZERO
 var initial_scale = Vector3.ZERO
 var health_factor = 1.0 # wafrom 0.0 to 1.0
-
+var isDead: bool = false # Do not trigger dead state stuff multiple times
 var plastic_bag_debuff: PlasticBag = null
 
 
@@ -131,7 +131,8 @@ func take_damage(damage):
 	if damage>0 && self.health_factor>0.5:
 		$AudioHit.play()
 		
-	if self.health_factor <= 0.5:
+	if self.health_factor <= 0.5 && !self.isDead:
+		self.isDead = true
 		$AudioDeath.play()
 		$bubble.visible=false
 		#var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
@@ -142,6 +143,7 @@ func take_damage(damage):
 func _on_audio_death_finished() -> void:
 	var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
 	level_manager.load_level(0)
+	
 func remove_debuff_plastic_bag():
 	if not plastic_bag_debuff:
 		return
