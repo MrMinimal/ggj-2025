@@ -118,7 +118,7 @@ func _physics_process(delta):
 
 func take_damage(damage):
 	self.health_factor -= damage
-	
+		
 	if self.health_factor <= 0:
 		var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
 		level_manager.load_level(0)
