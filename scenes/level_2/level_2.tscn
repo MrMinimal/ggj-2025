@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi233m04ifsph"]
+[gd_scene load_steps=6 format=3 uid="uid://bi233m04ifsph"]
 
+[ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqa4n"]
+albedo_texture = ExtResource("1_koqjd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cns38"]
 
@@ -11,6 +15,7 @@
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
 flip_faces = true
 size = Vector3(1, 0.25293, 1)
+material = SubResource("StandardMaterial3D_vqa4n")
 metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
@@ -30,7 +35,7 @@ light_energy = 0.398
 directional_shadow_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("1_o6l5o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.5253, 0.663866, 22.4255)
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("2_hmj2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4391, -0.924154, 28.7708)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7652, -0.92415, -3.26622)
