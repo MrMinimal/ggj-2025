@@ -33,7 +33,7 @@ collision_mask = 21
 shape = SubResource("BoxShape3D_iwtyf")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10369, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1471, 0)
 shape = SubResource("BoxShape3D_iwtyf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
