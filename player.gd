@@ -58,6 +58,8 @@ func get_accelerometer() -> Vector3:
 	return Vector3(x, y, z)
 
 func _physics_process(delta):
+	if self.isDead:
+		return
 	var movement = Vector3.ZERO
 	
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("ui_up"):
@@ -110,11 +112,12 @@ func _physics_process(delta):
 	
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
+	$CollisionShape3D.scale = body.scale
 	
 	var target_global = current_velocity + self.position
 	var interpolated = lerp(self.prev_target_position, target_global, 0.1)
 	if not body.global_position == target_global:
-		body.look_at(interpolated)
+		body.look_at(interpolated, Vector3.UP)
 	self.prev_target_position = interpolated
 	
 	# Keep Y rotation at 0
@@ -134,14 +137,10 @@ func take_damage(damage):
 	if self.health_factor <= 0.5 && !self.isDead:
 		self.isDead = true
 		$AudioDeath.play()
-		$bubble.visible=false
-		#var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
-		#level_manager.load_level(0)
-	
-
+		$bubble.visible = false
 
 func _on_audio_death_finished() -> void:
-	var level_manager: LevelManager = get_node("/root/Root/LevelManager") as LevelManager
+	var level_manager = get_node("/root/Root/LevelManager") as LevelManager
 	level_manager.load_level(0)
 	
 func remove_debuff_plastic_bag():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bk148vhigvdex"]
 
 [ext_resource type="Texture2D" uid="uid://cmo1mv0y5atk1" path="res://boids/sprites/boid.png" id="1"]
-[ext_resource type="PackedScene" path="res://boids/scenes/Trail.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://yf304d4q52dd" path="res://boids/scenes/Trail.tscn" id="2"]
 [ext_resource type="Script" uid="uid://ckknkxhc8aaqh" path="res://boids/scripts/Boid.gd" id="3"]
 
 [sub_resource type="Gradient" id="Gradient_371aj"]

@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi233m04ifsph"]
+[gd_scene load_steps=10 format=3 uid="uid://bi233m04ifsph"]
 
+[ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]
+[ext_resource type="PackedScene" uid="uid://p16xs28wany7" path="res://assets/enviroment/city_name.tscn" id="4_vqa4n"]
+[ext_resource type="PackedScene" uid="uid://b5up2o8bpicb2" path="res://assets/enviroment/concrete.tscn" id="5_nqpmc"]
+[ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_n42qb"]
+[ext_resource type="PackedScene" uid="uid://davxynxtoljhh" path="res://assets/enviroment/concrete_damaged.tscn" id="7_h8027"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqa4n"]
+albedo_texture = ExtResource("1_koqjd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cns38"]
 
@@ -11,6 +19,7 @@
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
 flip_faces = true
 size = Vector3(1, 0.25293, 1)
+material = SubResource("StandardMaterial3D_vqa4n")
 metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
@@ -30,7 +39,30 @@ light_energy = 0.398
 directional_shadow_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("1_o6l5o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.5253, 0.663866, 22.4255)
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("2_hmj2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4391, -0.924154, 28.7708)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7652, -0.92415, -3.26622)
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="city_name" parent="Enviroment" instance=ExtResource("4_vqa4n")]
+transform = Transform3D(-1.09325, 0, 1.28876, 0, 1.69, 0, -1.28876, 0, -1.09325, 25.9763, -0.708872, 21.3039)
+
+[node name="concrete" parent="Enviroment" instance=ExtResource("5_nqpmc")]
+transform = Transform3D(4.4, 0, 0, 0, 1.885, 0, 0, 0, 1.13, -14.2122, 0.734501, 4.42989)
+
+[node name="concrete2" parent="Enviroment" instance=ExtResource("5_nqpmc")]
+transform = Transform3D(2.80562, -0.357682, -0.295986, 0.53465, 1.85067, -0.0675934, 0.796145, 0.0176619, 1.08845, -7.16855, 0.535765, 4.6509)
+
+[node name="concrete3" parent="Enviroment" instance=ExtResource("5_nqpmc")]
+transform = Transform3D(0.609329, -0.18299, -1.10043, 0.53465, 1.85067, -0.0675934, 2.85203, -0.307836, 0.247774, 0.69152, 0.535765, 9.90199)
+
+[node name="rock1" parent="Enviroment" instance=ExtResource("6_n42qb")]
+transform = Transform3D(2.24017, -1.4844, -0.671649, 0.960048, 2.12523, -1.49485, 1.31638, 0.976141, 2.2332, 3.10298, -0.385799, 15.6953)
+
+[node name="concrete_damaged" parent="." instance=ExtResource("7_h8027")]
+transform = Transform3D(-1.72988, 0, -0.245565, 0, 1.795, 0, 0.479119, 0, -0.886622, -2.84225, 1.42281, 4.98805)
+
+[node name="concrete_damaged2" parent="." instance=ExtResource("7_h8027")]
+transform = Transform3D(0.789752, 0.715936, -0.740209, -1.00163, 1.47802, 0.0948014, 1.26295, 0.724507, 0.538055, -0.261936, 1.16734, 5.66516)

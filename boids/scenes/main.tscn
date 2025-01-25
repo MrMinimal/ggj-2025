@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cpjwf4rnmpgu" path="res://boids/scripts/Predator.gd" id="4"]
 [ext_resource type="Script" uid="uid://djhrf16xf7q4k" path="res://boids/scripts/Cursor.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://ck5os1dgt7y2p" path="res://boids/sprites/cursor.png" id="6"]
-[ext_resource type="PackedScene" path="res://boids/scenes/Trail.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://yf304d4q52dd" path="res://boids/scenes/Trail.tscn" id="7"]
 
 [sub_resource type="Gradient" id="1"]
 offsets = PackedFloat32Array(0, 0.821192, 1)

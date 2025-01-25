@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxnwf4h3mjbus"
-path.s3tc="res://.godot/imported/Untergrund3.png-1eaeae4e288c0f1ed55aeaeb4e9fac5a.s3tc.ctex"
-path.etc2="res://.godot/imported/Untergrund3.png-1eaeae4e288c0f1ed55aeaeb4e9fac5a.etc2.ctex"
+uid="uid://dy0o03mowucxn"
+path.s3tc="res://.godot/imported/city_name_texture.png-43d75e99f67c9ad9a66e776cebe92b37.s3tc.ctex"
+path.etc2="res://.godot/imported/city_name_texture.png-43d75e99f67c9ad9a66e776cebe92b37.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Untergrund3.png"
-dest_files=["res://.godot/imported/Untergrund3.png-1eaeae4e288c0f1ed55aeaeb4e9fac5a.s3tc.ctex", "res://.godot/imported/Untergrund3.png-1eaeae4e288c0f1ed55aeaeb4e9fac5a.etc2.ctex"]
+source_file="res://assets/textures/city_name_texture.png"
+dest_files=["res://.godot/imported/city_name_texture.png-43d75e99f67c9ad9a66e776cebe92b37.s3tc.ctex", "res://.godot/imported/city_name_texture.png-43d75e99f67c9ad9a66e776cebe92b37.etc2.ctex"]
 
 [params]
 

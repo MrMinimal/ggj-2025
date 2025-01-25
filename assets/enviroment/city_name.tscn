@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://p16xs28wany7"]
+
+[ext_resource type="PackedScene" uid="uid://bhknx85ttf5gh" path="res://assets/city_name.blend" id="1_y0utn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y4gmy"]
+points = PackedVector3Array(-3.81607, -0.228601, 0.0925464, -1.91561, 0.140697, -0.910398, -1.91561, 0.193492, -0.910398, -0.595602, 0.140697, 0.88464, -3.28754, 0.721444, 0.0925464, -3.9745, -0.650963, -0.0654155, -0.595602, 0.140697, -0.910398, -1.91561, 0.193492, 0.88464, -0.648522, -0.0174205, -0.0654155, -3.28754, 0.721444, -0.0654155, -3.81607, -0.650963, 0.0925464, -0.595602, 0.193492, -0.910398, -0.595602, 0.193492, 0.88464, -3.02394, 0.721444, -0.0654155, -3.4463, 0.563058, -0.0654155, -3.81607, -0.650963, -0.0654155, -0.648522, -0.0174205, 0.0925464, -3.9745, -0.650963, 0.0925464, -3.9745, -0.545373, -0.0654155, -1.91561, 0.140697, 0.88464, -3.39371, 0.615854, 0.0925464, -3.02394, 0.721444, 0.0925464, -3.9745, -0.545373, 0.0925464, -3.7099, 0.0352404, -0.0654155)
+
+[node name="city_name" instance=ExtResource("1_y0utn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_y4gmy")
