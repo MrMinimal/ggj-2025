@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://djmtmce8pftpl"]
+[gd_scene load_steps=13 format=3 uid="uid://djmtmce8pftpl"]
 
 [ext_resource type="Texture2D" uid="uid://b6jbp672dwd7b" path="res://assets/Untergrund.png" id="1_la06y"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://assets/Coral.tscn" id="6_iqr5q"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
 [ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
+[ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="10_hv3s4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_la06y")
@@ -334,5 +335,9 @@ transform = Transform3D(2.86795, 0, -0.394847, 0, 2.895, 0, 0.394847, 0, 2.86795
 
 [node name="Pickups" type="Node3D" parent="."]
 
-[node name="bubble_pickup" parent="." instance=ExtResource("9_u4m3y")]
+[node name="bubble_pickup" parent="Pickups" instance=ExtResource("9_u4m3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1, -28)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hv3s4")
+autoplay = true
