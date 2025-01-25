@@ -23,6 +23,7 @@ height = 0.1
 script = ExtResource("1_s0m1e")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
