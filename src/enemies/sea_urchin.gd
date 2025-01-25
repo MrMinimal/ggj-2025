@@ -4,6 +4,8 @@ func _ready():
 
 
 func _on_area_3d_body_entered(body):
-	if body.is_in_group("player"):
-		pass
-	pass # Replace with function body.
+	if not body.is_in_group("player"):
+		return
+	
+	var player = body as Player
+	player.take_damage(0.2)
