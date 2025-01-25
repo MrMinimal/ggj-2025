@@ -12,8 +12,7 @@ script = ExtResource("1_4flbx")
 shape = SubResource("SphereShape3D_i3pqv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.3065, 0)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
 current = true
 size = 11.0
 
