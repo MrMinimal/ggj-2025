@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 
-[node name="Player" type="RigidBody3D"]
+[node name="Player" type="RigidBody3D" groups=["player"]]
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -15,7 +15,7 @@ shape = SubResource("SphereShape3D_i3pqv")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.3065, 0)
 projection = 1
 current = true
-size = 9.0
+size = 11.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81388, 0)
