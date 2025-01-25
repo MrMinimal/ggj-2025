@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi233m04ifsph"]
+[gd_scene load_steps=16 format=3 uid="uid://bi233m04ifsph"]
 
 [ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="10_wp567"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="11_t8f2k"]
 [ext_resource type="PackedScene" path="res://src/shark.tscn" id="12_t8f2k"]
+[ext_resource type="PackedScene" uid="uid://c6uwuc3anrqfl" path="res://assets/enviroment/tire.tscn" id="13_2n2mb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqa4n"]
 albedo_texture = ExtResource("1_koqjd")
@@ -75,6 +76,12 @@ transform = Transform3D(4.97673, 0, 0.166932, 0, 2.15, 0, -0.649987, 0, 1.27815,
 [node name="concrete7" parent="Enviroment" instance=ExtResource("5_nqpmc")]
 transform = Transform3D(4.99426, -0.119037, -0.106042, 0.359547, 2.09626, 0.271093, 0.344135, -0.462614, 1.2557, 25.6744, 0.940138, 5.35753)
 
+[node name="concrete11" parent="Enviroment" instance=ExtResource("5_nqpmc")]
+transform = Transform3D(1.31172, 0.398048, -1.2211, 0.359547, 2.09626, 0.271093, 4.8312, -0.264082, 0.311366, 41.3011, 0.940134, 11.5569)
+
+[node name="concrete12" parent="Enviroment" instance=ExtResource("5_nqpmc")]
+transform = Transform3D(-0.538727, -0.384014, -1.2607, 0.163554, 2.11253, -0.235904, 4.98732, -0.110759, -0.128444, 40.9988, 0.940132, 18.9099)
+
 [node name="concrete9" parent="Enviroment" instance=ExtResource("5_nqpmc")]
 transform = Transform3D(1.89315, 0.362734, -1.17381, 0.359547, 2.09626, 0.271093, 4.63434, -0.310813, 0.458474, 29.9815, 0.940138, 18.9053)
 
@@ -135,6 +142,9 @@ transform = Transform3D(-0.552011, -2.14491, 0.370783, -2.22916, 0.644635, 0.107
 [node name="concrete_damaged8" parent="." instance=ExtResource("7_h8027")]
 transform = Transform3D(-1.03932, -1.45973, -0.763169, -1.76436, 1.50255, -0.123729, 1.11165, 1.02003, -0.909889, 18.8179, 1.2348, 15.8419)
 
+[node name="concrete_damaged9" parent="." instance=ExtResource("7_h8027")]
+transform = Transform3D(-1.31835, -1.69376, -0.464617, -1.76436, 1.50255, -0.123729, 0.760198, 0.549944, -1.09291, 32.9864, 1.2348, 5.44069)
+
 [node name="concrete_damaged5" parent="." instance=ExtResource("7_h8027")]
 transform = Transform3D(2.23193, -0.514722, 0.218897, -0.525177, -2.27003, 0.00446476, 0.414241, -0.104627, -1.17375, 36.3567, 1.10175, 6.01714)
 
@@ -156,5 +166,14 @@ transform = Transform3D(0.692395, -0.721519, 1.14692e-08, 0.608739, 0.584168, -0
 [node name="rock2" parent="." instance=ExtResource("11_t8f2k")]
 transform = Transform3D(2.10299, -0.333441, -0.391751, -5.63788e-08, 1.64866, -1.40327, 0.514443, 1.36307, 1.60144, -15.3099, 1.04429, 5.09318)
 
+[node name="rock3" parent="." instance=ExtResource("11_t8f2k")]
+transform = Transform3D(2.99017, 0.260404, -0.376396, 0.0441248, 2.31208, 1.95012, 0.455562, -1.93316, 2.28167, -19.2895, -1.47277, 39.9213)
+
 [node name="Shark" parent="." instance=ExtResource("12_t8f2k")]
 transform = Transform3D(-0.00872494, -1.87925, -0.146857, 1.88497, -0.00835636, -0.00505651, 0.00439006, -0.146879, 1.87926, -26.4728, -1.71588, 31.1315)
+
+[node name="tire" parent="." instance=ExtResource("13_2n2mb")]
+transform = Transform3D(0.841643, 0.277241, 0.463438, 0, 0.858163, -0.513377, -0.540035, 0.43208, 0.722267, 24.6557, 0.0137539, 15.6608)
+
+[node name="tire2" parent="." instance=ExtResource("13_2n2mb")]
+transform = Transform3D(0.416059, 0.466833, 0.780361, -1.60943e-08, 0.858163, -0.513376, -0.909338, 0.213595, 0.357046, 5.79614, 0.0137539, 20.2879)
