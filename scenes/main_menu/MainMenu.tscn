@@ -22,6 +22,26 @@ texture = ExtResource("1_oitky")
 expand_mode = 5
 stretch_mode = 4
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Mainmenubackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.427
+anchor_top = 0.38
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.904
+offset_top = -160.149
+offset_right = 220.0
+offset_bottom = 150.857
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="Mainmenubackground/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_wckin")
+expand_mode = 3
+stretch_mode = 3
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_wckin")
 autoplay = true
@@ -35,31 +55,28 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_wckin")
-stretch_mode = 3
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
 alignment = 1
 
 [node name="Continue" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("2")
-texture_hover = ExtResource("3")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("3")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 texture_normal = ExtResource("4")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 visible = false
