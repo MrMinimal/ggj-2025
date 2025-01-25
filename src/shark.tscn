@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c33kv6u6krg71"]
+
+[ext_resource type="Script" uid="uid://de7uujmfepdop" path="res://src/shark.gd" id="1_bu6up"]
+[ext_resource type="PackedScene" uid="uid://b3lknby6a7mux" path="res://assets/shark.glb" id="1_dues7"]
+[ext_resource type="PackedScene" uid="uid://buxrmnbioyxai" path="res://assets/shark_hole.glb" id="2_y1u06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bu6up"]
+size = Vector3(4, 2, 2)
+
+[node name="Shark" type="Node3D"]
+script = ExtResource("1_bu6up")
+
+[node name="SharkBody" parent="." instance=ExtResource("1_dues7")]
+
+[node name="Area3D" type="Area3D" parent="SharkBody"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SharkBody/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63452, 0, 0)
+shape = SubResource("BoxShape3D_bu6up")
+
+[node name="shark_hole" parent="." instance=ExtResource("2_y1u06")]
+
+[editable path="SharkBody"]
