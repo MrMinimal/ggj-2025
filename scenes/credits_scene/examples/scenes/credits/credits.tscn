@@ -1,42 +1,112 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1g50h2avck3w"]
+[gd_scene load_steps=6 format=3 uid="uid://c1g50h2avck3w"]
 
-[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_credits_scene/base/scenes/credits/credits.tscn" id="1_n45le"]
-[ext_resource type="Script" path="res://addons/maaacks_credits_scene/examples/scenes/credits/credits.gd" id="2_q7msw"]
+[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://scenes/credits_scene/base/scenes/credits/credits.tscn" id="1_n45le"]
+[ext_resource type="Script" uid="uid://cqspv1vga7n1n" path="res://scenes/credits_scene/examples/scenes/credits/credits.gd" id="2_q7msw"]
+[ext_resource type="Texture2D" uid="uid://bmstlyxmyctgr" path="res://assets/credits.png" id="3_16jwl"]
+[ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="4_2vihh"]
+[ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="5_26kea"]
 
 [node name="Credits" instance=ExtResource("1_n45le")]
+clip_contents = true
 script = ExtResource("2_q7msw")
 attribution_file_path = "res://addons/maaacks_credits_scene/examples/ATTRIBUTION.md"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("4_2vihh")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -334.0
+offset_top = -356.0
+offset_right = 306.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_16jwl")
+
+[node name="HeaderSpace" parent="ScrollContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 648)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HeaderSpace" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -188.0
+offset_right = 198.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_26kea")
+
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
-text = "[center][font_size=48]Collaborators[/font_size]
+custom_minimum_size = Vector2(1152, 0)
+theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/bold_font_size = 34
+text = "[center] \"You made it. 
+The bubble reached the surface.
 
-[font_size=32]Role[/font_size]
-Person 1  
-Person 2  
-[url=]Person w/ Link[/url]  
+But as you rise, 
+look around - what do you see?
+
+The ocean is quiet now, 
+suffocated by what we 
+left behind.
+
+The surface, 
+once a promise of hope, 
+is barren and lifeless.
+
+You won. 
+But at what cost?
+
+The world above is already lost.
+
+This journey was not just about the bubble
+
+- it was about us.
+
+A reminder of what happens when we let 
+beauty slip away.
+
+Will you rise again? 
+
+Or will you let the next bubble be more 
+than just a fleeting chance?\"
 
 
-[font_size=48]Sourced / Unaffiliated[/font_size]
-[font_size=32]Asset Type[/font_size]
-[font_size=24]Use Case[/font_size]
-Author: [url=]Name[/url]  
-Source: [url=]Domain : webpage.html[/url]  
-License: [url=]License[/url]
 
 
-[font_size=48]Tools[/font_size]
-[font_size=24]Godot[/font_size]
-Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
-Source: [url=https://godotengine.org/]godotengine.org[/url]  
-License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
 
-[font_size=24]Git[/font_size]
-Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
-Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
-License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 
-[font_size=24]Godot Credits Scene[/font_size]
-Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski[/url]  
-Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
-License: [url=LICENSE.txt]MIT License[/url]  
-[/center]"
+
+[b] Design [/b]
+Bubble Bitches - Bubble Odysea
+
+[b] Level Design and Sculpt [/b]
+Joey Gartain
+KiraCodez
+Toby Moby
+
+[b] Programming [/b]
+MrMinimal
+Kelteseth
+CodaApple
+
+[b] Audio Design [/b]
+TobyMoby
+
+[b] Game Engine [/b]
+Godot Engine
+
+This Game was made at Global Game Jam 2025![/center]"
+
+[node name="FooterSpace" parent="ScrollContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 648)
