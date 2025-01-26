@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=23 format=3 uid="uid://kb7w7jbfi3i4"]
 
-[ext_resource type="PackedScene" path="res://effects/unterwater_environment.tscn" id="1_1uvjm"]
+[ext_resource type="PackedScene" uid="uid://d6fm2ah22u5" path="res://effects/unterwater_environment.tscn" id="1_1uvjm"]
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="3_3fps6"]
@@ -42,6 +42,9 @@ shader_parameter/luma_gradient = SubResource("GradientTexture2D_1uvjm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_janvk"]
 albedo_texture = ExtResource("1_janvk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5bgo"]
+size = Vector3(1, 45.7271, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_igcjm"]
 
 [node name="Level" type="Node3D"]
@@ -64,7 +67,8 @@ collision_layer = 2
 collision_mask = 21
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_igcjm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.3635, 0)
+shape = SubResource("BoxShape3D_c5bgo")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29349, 0)
@@ -392,6 +396,33 @@ transform = Transform3D(0.298488, -2.29805, -0.752336, 0.416302, 0.874129, -2.00
 [node name="wooden_boards34" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(3.87672, -0.698221, -0.0049205, 0.416302, 0.874129, -2.0021, 1.06939, 2.19089, 0.797238, 30.5188, -1.22749, 2.18781)
 
+[node name="FishTornado" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5358, 5.29577, 22.4906)
+
+[node name="FishTornado2" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17415, 5.29577, 32.4879)
+
+[node name="FishTornado3" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6603, 5.29577, 12.06)
+
+[node name="FishTornado4" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 5.29577, 15.2249)
+
+[node name="FishTornado5" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 3.52301, -16.7189)
+
+[node name="FishTornado6" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74834, 3.52301, -21.3461)
+
+[node name="FishTornado7" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
+
+[node name="FishTornado8" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
+
+[node name="FishTornado9" parent="Enviroment" instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53096, 3.52301, -39.6754)
+
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="SeaUrchin" parent="Enemies" instance=ExtResource("7_e74gk")]
@@ -462,30 +493,3 @@ transform = Transform3D(0.244519, 0.168474, 0.987234, 0.0229948, 1.01502, -0.178
 
 [node name="Shark" parent="Enemies" instance=ExtResource("11_0lhw3")]
 transform = Transform3D(1.37608, 0, -0.946211, 0, 1.67, 0, 0.946211, 0, 1.37608, -32.2737, 2.51295, -18.6715)
-
-[node name="FishTornado" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5358, 5.29577, 22.4906)
-
-[node name="FishTornado2" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17415, 5.29577, 32.4879)
-
-[node name="FishTornado3" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6603, 5.29577, 12.06)
-
-[node name="FishTornado4" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 5.29577, 15.2249)
-
-[node name="FishTornado5" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 3.52301, -16.7189)
-
-[node name="FishTornado6" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74834, 3.52301, -21.3461)
-
-[node name="FishTornado7" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
-
-[node name="FishTornado8" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
-
-[node name="FishTornado9" parent="." instance=ExtResource("16_c5bgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53096, 3.52301, -39.6754)
