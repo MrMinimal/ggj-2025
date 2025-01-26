@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="4_rl6yr"]
-[ext_resource type="PackedScene" uid="uid://baaxcbnw31yak" path="res://assets/Coral 2.tscn" id="5_rw20u"]
-[ext_resource type="PackedScene" uid="uid://bn6lcckqbpsxa" path="res://assets/Coral.tscn" id="6_iqr5q"]
+[ext_resource type="PackedScene" uid="uid://dnmjx4gqouaux" path="res://assets/Coral 2.tscn" id="5_rw20u"]
+[ext_resource type="PackedScene" uid="uid://cmtfk5mqqv1v4" path="res://assets/Coral.tscn" id="6_iqr5q"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
-[ext_resource type="PackedScene" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
+[ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
 [ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="10_hv3s4"]
 [ext_resource type="PackedScene" uid="uid://cgvrufeqv88no" path="res://effects/fish_tornado.tscn" id="11_ob15n"]
 [ext_resource type="PackedScene" uid="uid://d6fm2ah22u5" path="res://effects/unterwater_environment.tscn" id="12_qiy75"]
@@ -46,7 +46,7 @@ size = Vector3(1, 37.7058, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwtyf"]
 
-[node name="Level" type="Node3D"]
+[node name="Level2" type="Node3D"]
 
 [node name="Caustics" parent="." instance=ExtResource("1_pidt8")]
 transform = Transform3D(113.309, 0, 0, 0, 113.309, 0, 0, 0, 113.309, 0, 0, 0)
