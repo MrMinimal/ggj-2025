@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b387dslrismdv"]
+
+[ext_resource type="PackedScene" uid="uid://dbrtgbg4imsbv" path="res://assets/light_ray.glb" id="1_ye7ow"]
+
+[node name="light_ray" instance=ExtResource("1_ye7ow")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -9.17733e-08, 1, 0, -1, -9.17733e-08, 1.10713, 4.4729, 0)
+light_color = Color(0.459772, 0.894751, 0.765273, 1)
+light_energy = 3.196
+light_indirect_energy = 3.824
+light_volumetric_fog_energy = 4.608
+light_size = 0.039
+light_specular = 0.029
+spot_range = 5.886
+spot_attenuation = -1.16
+spot_angle = 41.47
+spot_angle_attenuation = 1.68179
