@@ -1,99 +1,124 @@
-[gd_scene load_steps=9 format=3 uid="uid://wa714midw73w"]
+[gd_scene load_steps=8 format=3 uid="uid://wa714midw73w"]
 
-[ext_resource type="Script" uid="uid://c5koweqruqqn1" path="res://scenes/credits/backtomainmenufromendscreen.gd" id="1_17l06"]
+[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://scenes/credits_scene/base/scenes/credits/credits.tscn" id="1_17l06"]
 [ext_resource type="Texture2D" uid="uid://bmstlyxmyctgr" path="res://assets/credits.png" id="1_icb2l"]
+[ext_resource type="Script" uid="uid://cqspv1vga7n1n" path="res://scenes/credits_scene/examples/scenes/credits/credits.gd" id="2_lwbe5"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="2_t15ab"]
 [ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="3_lwbe5"]
 [ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="5_t15ab"]
 [ext_resource type="Texture2D" uid="uid://634jq5kd27ck" path="res://assets/main_menu/label_new_game.png" id="5_wprml"]
-[ext_resource type="Texture2D" uid="uid://cun8ifvafol8q" path="res://assets/main_menu/label_options.png" id="6_o5atr"]
-[ext_resource type="Texture2D" uid="uid://c6de7p21oc0av" path="res://assets/main_menu/characters.png" id="7_6gsh7"]
 
-[node name="Credits" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
-script = ExtResource("1_17l06")
+[node name="Credits" instance=ExtResource("1_17l06")]
+clip_contents = true
+script = ExtResource("2_lwbe5")
+attribution_file_path = "res://addons/maaacks_credits_scene/examples/ATTRIBUTION.md"
 
-[node name="Mainmenubackground" type="TextureRect" parent="."]
-layout_mode = 2
-texture = ExtResource("1_icb2l")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Mainmenubackground"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.427
-anchor_top = 0.38
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.904
-offset_top = -160.149
-offset_right = 220.0
-offset_bottom = 150.857
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Logo" type="TextureRect" parent="Mainmenubackground/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_t15ab")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 stream = ExtResource("3_lwbe5")
 autoplay = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-mouse_filter = 0
-alignment = 1
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -334.0
+offset_top = -356.0
+offset_right = 306.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_icb2l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
+[node name="HeaderSpace" parent="ScrollContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 648)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(680, 26)
-layout_mode = 2
-alignment = 1
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HeaderSpace" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -188.0
+offset_right = 198.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t15ab")
 
-[node name="You won?" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 1
-theme_override_font_sizes/normal_font_size = 52
-bbcode_enabled = true
-text = "[center] You won? [/center]"
-fit_content = true
-scroll_active = false
-vertical_alignment = 1
+[node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(1152, 0)
+theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/bold_font_size = 34
+text = "[center] \"You made it. 
+The bubble reached the surface.
 
-[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 1
-theme_override_font_sizes/normal_font_size = 93
-text = "Bubble Odysea"
-fit_content = true
-scroll_active = false
+But as you rise, 
+look around - what do you see?
 
-[node name="Credits" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 1
-theme_override_font_sizes/normal_font_size = 37
-bbcode_enabled = true
-text = "[center]Joey Gartain		KiraCodez [/center]
-[center]MrMinimal			Kelteseth [/center]
-[center]TobyMoby		   CodaApple [/center]"
-fit_content = true
-scroll_active = false
+The ocean is quiet now, 
+suffocated by what we 
+left behind.
 
-[node name="NewGame" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+The surface, 
+once a promise of hope, 
+is barren and lifeless.
+
+You won. 
+But at what cost?
+
+The world above is already lost.
+
+This journey was not just about the bubble
+
+- it was about us.
+
+A reminder of what happens when we let 
+beauty slip away.
+
+Will you rise again? 
+
+Or will you let the next bubble be more 
+than just a fleeting chance?\"
+
+
+
+
+
+
+
+[b] Design [/b]
+Bubble Bitches - Bubble Odysea
+
+[b] Level Design and Sculpt [/b]
+Joey Gartain
+KiraCodez
+Toby Moby
+
+[b] Programming [/b]
+MrMinimal
+Kelteseth
+CodaApple
+
+[b] Audio Design [/b]
+TobyMoby
+
+[b] Game Engine [/b]
+Godot Engine
+
+This Game was made at Global Game Jam 2025![/center]"
+
+[node name="FooterSpace" parent="ScrollContainer/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 648)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/FooterSpace" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NewGame" type="TextureButton" parent="ScrollContainer/VBoxContainer" index="3"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 texture_normal = ExtResource("5_t15ab")
@@ -101,23 +126,4 @@ texture_pressed = ExtResource("5_wprml")
 texture_hover = ExtResource("5_wprml")
 stretch_mode = 5
 
-[node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 75)
-layout_mode = 2
-texture_normal = ExtResource("6_o5atr")
-stretch_mode = 5
-
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 0
-
-[node name="Characters" type="TextureRect" parent="HBoxContainer/CenterContainer"]
-layout_mode = 2
-texture = ExtResource("7_6gsh7")
-stretch_mode = 3
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

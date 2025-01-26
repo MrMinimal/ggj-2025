@@ -41,7 +41,7 @@ func load_level(index: int) -> void:
 		push_error("Invalid level index: " + str(index))
 		return
 	
-	if index == 3:
+	if index == 4:
 		var scene = load("res://scenes/credits/credits.tscn")
 		await perform_level_load(scene, index)
 		return
