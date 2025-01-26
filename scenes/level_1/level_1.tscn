@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=22 format=3 uid="uid://kb7w7jbfi3i4"]
 
 [ext_resource type="PackedScene" path="res://effects/unterwater_environment.tscn" id="1_1uvjm"]
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://src/bubble_pickup.tscn" id="9_0lhw3"]
 [ext_resource type="PackedScene" uid="uid://656ygpyavf2k" path="res://src/enemies/nails_01.tscn" id="10_bmd0r"]
 [ext_resource type="PackedScene" path="res://src/shark.tscn" id="11_0lhw3"]
+[ext_resource type="PackedScene" uid="uid://cgvrufeqv88no" path="res://effects/fish_tornado.tscn" id="16_c5bgo"]
 
 [sub_resource type="Gradient" id="Gradient_teeqy"]
 
@@ -461,3 +462,30 @@ transform = Transform3D(0.244519, 0.168474, 0.987234, 0.0229948, 1.01502, -0.178
 
 [node name="Shark" parent="Enemies" instance=ExtResource("11_0lhw3")]
 transform = Transform3D(1.37608, 0, -0.946211, 0, 1.67, 0, 0.946211, 0, 1.37608, -32.2737, 2.51295, -18.6715)
+
+[node name="FishTornado" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5358, 5.29577, 22.4906)
+
+[node name="FishTornado2" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17415, 5.29577, 32.4879)
+
+[node name="FishTornado3" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6603, 5.29577, 12.06)
+
+[node name="FishTornado4" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 5.29577, 15.2249)
+
+[node name="FishTornado5" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8369, 3.52301, -16.7189)
+
+[node name="FishTornado6" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74834, 3.52301, -21.3461)
+
+[node name="FishTornado7" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
+
+[node name="FishTornado8" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.531, 3.52301, -20.6754)
+
+[node name="FishTornado9" parent="." instance=ExtResource("16_c5bgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53096, 3.52301, -39.6754)
