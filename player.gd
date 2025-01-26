@@ -169,7 +169,7 @@ func take_damage(damage):
 
 func _on_audio_death_finished() -> void:
 	var level_manager = get_node("/root/Root/LevelManager") as LevelManager
-	level_manager.load_level(0)
+	level_manager.restart_level()
 	
 func remove_debuff_plastic_bag():
 	if not plastic_bag_debuff:
