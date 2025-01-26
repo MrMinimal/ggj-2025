@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://j7mkmwv6pkm0"]
+[gd_scene load_steps=4 format=3 uid="uid://d6fm2ah22u5"]
 
 [sub_resource type="Gradient" id="Gradient_665yd"]
 interpolation_color_space = 2
@@ -8,9 +8,12 @@ colors = PackedColorArray(0.0464312, 0.12496, 0.138812, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_665yd")
 
 [sub_resource type="Environment" id="Environment_3fps6"]
+background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.0802645, 0.285132, 0.229238, 1)
 tonemap_mode = 4
+fog_depth_begin = 0.0
+fog_depth_end = 1433.3
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture1D_0ds26")
 
