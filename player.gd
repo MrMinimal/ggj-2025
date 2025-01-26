@@ -199,7 +199,7 @@ func remove_debuff_plastic_bag():
 
 func apply_debuff_plastic_bag(plastic_bag: PlasticBag):
 	plastic_bag_debuff = plastic_bag
-	plastic_bag.reparent(self)
+	plastic_bag.call_deferred("reparent",self)
 
 
 var prev_accel := Vector3.ZERO
