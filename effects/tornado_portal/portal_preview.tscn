@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://clqfhoslbs2f"]
+[gd_scene load_steps=30 format=3 uid="uid://clqfhoslbs2f"]
 
 [ext_resource type="Script" uid="uid://4a54m4m4fldb" path="res://effects/tornado_portal/portal_preview.gd" id="1_uniox"]
-[ext_resource type="Texture2D" uid="uid://bchpd5atsmxif" path="res://effects/tornado_portal/checkerboard.svg" id="2_yf5rq"]
 [ext_resource type="Material" uid="uid://5dlygf08frjc" path="res://effects/tornado_portal/materials/portal_effect_mat.tres" id="4_8vccs"]
 [ext_resource type="Material" uid="uid://dcvf6avwqqxhu" path="res://effects/tornado_portal/materials/portal_light_mat.tres" id="5_oiel3"]
 [ext_resource type="Material" uid="uid://dq7edc1qpr6ct" path="res://effects/tornado_portal/materials/pull_deform_mat.tres" id="6_og3s2"]
@@ -42,8 +41,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t058v"]
 render_priority = -128
 shader = SubResource("Shader_7gwc1")
-shader_parameter/checkerboard_sampler = ExtResource("2_yf5rq")
-shader_parameter/albedo_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/albedo_color = Color(0.043627, 0.224815, 0.266476, 1)
 shader_parameter/uv_scale = 20.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_aq72j"]
