@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wa714midw73w"]
+[gd_scene load_steps=9 format=3 uid="uid://wa714midw73w"]
 
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://scenes/credits_scene/base/scenes/credits/credits.tscn" id="1_17l06"]
 [ext_resource type="Texture2D" uid="uid://bmstlyxmyctgr" path="res://assets/credits.png" id="1_icb2l"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="3_lwbe5"]
 [ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="5_t15ab"]
 [ext_resource type="Texture2D" uid="uid://634jq5kd27ck" path="res://assets/main_menu/label_new_game.png" id="5_wprml"]
+[ext_resource type="Texture2D" uid="uid://bsv8qtx6hpvfd" path="res://assets/textures/bubble_face_a100_sad.png" id="6_t15ab"]
 
 [node name="Credits" instance=ExtResource("1_17l06")]
 clip_contents = true
@@ -117,13 +118,17 @@ custom_minimum_size = Vector2(0, 648)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("6_t15ab")
 
-[node name="NewGame" type="TextureButton" parent="ScrollContainer/VBoxContainer" index="3"]
+[node name="NewGame" type="TextureButton" parent="ScrollContainer/VBoxContainer/FooterSpace" index="1"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+offset_top = 652.0
+offset_right = 1152.0
+offset_bottom = 702.0
 texture_normal = ExtResource("5_t15ab")
 texture_pressed = ExtResource("5_wprml")
 texture_hover = ExtResource("5_wprml")
 stretch_mode = 5
 
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FooterSpace/NewGame" to="." method="_on_new_game_pressed"]
