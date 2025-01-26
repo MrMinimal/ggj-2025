@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh7uqlf3024g4"]
+[gd_scene load_steps=14 format=3 uid="uid://bh7uqlf3024g4"]
 
 [ext_resource type="Script" uid="uid://cbnksnpir40x1" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://c4ku4c32enhwu" path="res://effects/bubble_pop_effect.tscn" id="2_1jxqw"]
@@ -29,6 +29,13 @@ specular_mode = 1
 albedo_texture = ExtResource("3_i3pqv")
 texture_repeat = false
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw050"]
+transparency = 1
+albedo_texture = ExtResource("3_i3pqv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b26j0"]
+material = SubResource("StandardMaterial3D_dw050")
+
 [node name="Player" type="RigidBody3D" groups=["player"]]
 collision_mask = 30
 script = ExtResource("1_4flbx")
@@ -49,7 +56,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
 
 [node name="Sphere_001" parent="bubble" index="1"]
 transform = Transform3D(0, -0.498816, -0.866708, 1, 0, 8.9407e-08, 2.98023e-08, -0.866708, 0.498815, 0.00474753, 0.0782536, 0)
+visible = false
 surface_material_override/0 = SubResource("StandardMaterial3D_hqtel")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bubble"]
+transform = Transform3D(1, 0, 0, 0, -0.0167544, 0.99986, 0, -0.99986, -0.0167544, 0.06, 0.936, 0)
+mesh = SubResource("QuadMesh_b26j0")
 
 [node name="AudioDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_sweqy")
