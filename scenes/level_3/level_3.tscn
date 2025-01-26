@@ -1,7 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbgdo01xvh1iu"]
+[gd_scene load_steps=10 format=3 uid="uid://cbgdo01xvh1iu"]
 
 [ext_resource type="Script" uid="uid://dyf6epl033mi6" path="res://scenes/level_3/outro.gd" id="1_kihvg"]
 [ext_resource type="PackedScene" uid="uid://cmqqlw36ja2r4" path="res://src/enemies/plastic_bag.tscn" id="2_qaghj"]
+[ext_resource type="Texture2D" uid="uid://cgo5ctyw6knvn" path="res://assets/endingbackground.png" id="3_w115q"]
+
+[sub_resource type="Animation" id="Animation_w115q"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.27742, -4.99476)
 
 [sub_resource type="Animation" id="Animation_qaghj"]
 resource_name = "end"
@@ -28,23 +39,25 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_w115q"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CSGBox3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.27742, -4.99476)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nj04"]
 _data = {
 &"RESET": SubResource("Animation_w115q"),
 &"end": SubResource("Animation_qaghj")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6nj04"]
+sky_top_color = Color(0.515983, 0.672475, 1, 1)
+sky_horizon_color = Color(0.904907, 0.942034, 1, 1)
+sky_curve = 0.270375
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.905882, 0.941176, 1, 1)
+
+[sub_resource type="Sky" id="Sky_us02b"]
+sky_material = SubResource("ProceduralSkyMaterial_6nj04")
+
 [sub_resource type="Environment" id="Environment_mitf5"]
+background_mode = 2
+sky = SubResource("Sky_us02b")
 
 [node name="Level" type="Node3D"]
 
@@ -69,3 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3778, 0.362119, -17.9759)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mitf5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974867, 0, -11.7607)
+texture = ExtResource("3_w115q")
