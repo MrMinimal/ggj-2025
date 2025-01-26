@@ -38,3 +38,6 @@ func _on_area_3d_body_entered(body: Node3D):
 	
 	var player = body as Player
 	player.take_damage(0.2)
+	
+	var instance = preload("res://effects/water_hand/scripts/water_splash.tscn").instantiate()
+	self.add_child(instance)
