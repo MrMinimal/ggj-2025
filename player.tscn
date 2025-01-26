@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh7uqlf3024g4"]
+[gd_scene load_steps=12 format=3 uid="uid://bh7uqlf3024g4"]
 
 [ext_resource type="Script" uid="uid://cbnksnpir40x1" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://c4ku4c32enhwu" path="res://effects/bubble_pop_effect.tscn" id="2_1jxqw"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dp57geavkfakw" path="res://assets/sounds/ggj2025_effects_death.wav" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://ctalhvqsl3qfm" path="res://assets/sounds/ggj2025_effects_hit.wav" id="5_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://cv5ih4pnqwbfr" path="res://effects/wobble_effect.tscn" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://wyjoycmn3aqa" path="res://src/hud.tscn" id="8_dw050"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 radius = 1.0
@@ -57,6 +58,8 @@ stream = ExtResource("4_sweqy")
 stream = ExtResource("5_2hs0m")
 
 [node name="WobbleEffect" parent="." instance=ExtResource("6_2hs0m")]
+
+[node name="HUD" parent="." instance=ExtResource("8_dw050")]
 
 [connection signal="finished" from="AudioDeath" to="." method="_on_audio_death_finished"]
 
