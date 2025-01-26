@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cc08mxenmkupd"]
 
-[ext_resource type="Script" path="res://src/scene_switcher_box.gd" id="1_s0m1e"]
+[ext_resource type="Script" uid="uid://bmsvh7np5fegv" path="res://src/scene_switcher_box.gd" id="1_s0m1e"]
 [ext_resource type="PackedScene" uid="uid://xu6rwxfu5x51" path="res://assets/geysir.glb" id="2_no7nr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5awhy"]
