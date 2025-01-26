@@ -5,13 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="4_rl6yr"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://assets/Coral 2.tscn" id="5_rw20u"]
 [ext_resource type="PackedScene" path="res://assets/Coral.tscn" id="6_iqr5q"]
-=======
-[ext_resource type="PackedScene" uid="uid://dyc47xak6yamx" path="res://assets/Coral 2.tscn" id="5_rw20u"]
-[ext_resource type="PackedScene" uid="uid://bn6lcckqbpsxa" path="res://assets/Coral.tscn" id="6_iqr5q"]
->>>>>>> ac8e7f96298d6b1faf84129367e71a7cf6901179
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
 [ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
 [ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="10_hv3s4"]
