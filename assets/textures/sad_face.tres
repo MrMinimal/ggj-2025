@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://t0075n0upsjp"]
+
+[ext_resource type="Texture2D" uid="uid://bsv8qtx6hpvfd" path="res://assets/textures/bubble_face_a100_sad.png" id="1_tb75j"]
+
+[resource]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.17
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_tb75j")

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ktlvk623nn13"]
+
+[ext_resource type="Texture2D" uid="uid://bipoungeq5db3" path="res://assets/textures/bubble_face_a100_happy.png" id="1_gyyec"]
+
+[resource]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.17
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_gyyec")

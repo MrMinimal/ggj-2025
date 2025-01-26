@@ -11,6 +11,8 @@ class_name Player
 @export var bubble_pop_scene: PackedScene
 @onready var camera = $Camera3D
 @onready var body = $bubble
+@onready var face_sad = $bubble/FaceSad
+@onready var face_happy = $bubble/FaceHappy
 var JavaScript = JavaScriptBridge
 var level_manager: LevelManager
 var target_scale = Vector3.ONE
@@ -121,9 +123,6 @@ func _physics_process(delta):
 	
 	# Apply movement
 	position += movement * speed * delta
-	## Keep Y 
-	#if position.y > 1.5:
-		#position.y = 1
 	
 	# Calculate velocity
 	current_velocity = (position - previous_position) / delta
@@ -149,8 +148,6 @@ func _physics_process(delta):
 	# Keep Y rotation at 0
 	rotation.y = 0
 	
-		
-	
 	# Tilt camera slightly based on movement while maintaining top-down view
 	var target_rotation = Vector3(-90.0, 0, 0)  # Base top-down rotation
 	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
@@ -167,11 +164,14 @@ func _physics_process(delta):
 				$bubble.visible=false
 			else:
 				$bubble.visible=true
-		
-			
+	else:
+		face_sad.visible = false
+		face_happy.visible = true
 
 func take_damage(damage):
 	if damage>0: #if it's damage, not healing
+		face_sad.visible = true
+		face_happy.visible = false
 		if iframes_timer<=0: #if no iframes
 			self.health_factor -= damage #deal damage
 			if self.health_factor>0.5: #if damaged, but still alive
