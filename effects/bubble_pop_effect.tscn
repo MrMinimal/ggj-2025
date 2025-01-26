@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ku4c32enhwu"]
+[gd_scene load_steps=6 format=3 uid="uid://c4ku4c32enhwu"]
 
 [ext_resource type="Script" uid="uid://dcogoiir0c3dm" path="res://effects/bubble_pop_effect.gd" id="1_wbsxf"]
+[ext_resource type="Shader" uid="uid://bre4q8db4dsl2" path="res://effects/bubble-color/star_shader.gdshader" id="2_ydgmi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1hld"]
+render_priority = 0
+shader = ExtResource("2_ydgmi")
+shader_parameter/albedo = Color(0.0963915, 0.517224, 0.560854, 1)
+shader_parameter/specular = 0.65
+shader_parameter/roughness = 0.4
+shader_parameter/metallic = 0.65
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/glitter_glow_intensity = 1.0
+shader_parameter/shimmer_glow_intensity = 1.0
+shader_parameter/fresnel_power = 2.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_wws5m"]
+material = SubResource("ShaderMaterial_h1hld")
 
 [sub_resource type="Curve" id="Curve_wws5m"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -7,10 +7,12 @@ class_name Player
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
 @export var scale_factor = 0.02
+@export var accel_curve: Curve 
 @export var bubble_pop_scene: PackedScene
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
+var level_manager: LevelManager
 var target_scale = Vector3.ONE
 var previous_position = Vector3.ZERO
 var current_velocity = Vector3.ZERO
@@ -26,6 +28,7 @@ var blink_timer = 2 #used to time the blinking, higher value, slower blink
 
 
 func _ready():
+	level_manager = get_node("/root/Root/LevelManager") as LevelManager
 	lock_rotation = true
 	previous_position = position
 	
@@ -65,6 +68,11 @@ func get_accelerometer() -> Vector3:
 func _physics_process(delta):
 	if self.isDead:
 		return
+		
+	if position.y < - 10:
+		self.isDead = true
+		level_manager.restart_level()	
+	
 	var movement = Vector3.ZERO
 	
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("ui_up"):
@@ -78,32 +86,44 @@ func _physics_process(delta):
 		
 	if movement == Vector3.ZERO:
 		var accel = get_accelerometer()
-		movement = Vector3(accel.x, 0, -accel.y) * sensitivity
 		
-		# Only apply movement if tilt is significant
-		var tilt_threshold = 0.5 # Adjust this value to require more tilt
-		if abs(accel.x) < tilt_threshold and abs(accel.y) < tilt_threshold:
-			movement = Vector3.ZERO
+		# First normalize the raw accelerometer input if it's too large
+		var normalized_accel = Vector2(accel.x, accel.y)
+		if normalized_accel.length() > 1:
+			normalized_accel = normalized_accel.normalized()
 			
+		# Calculate base movement before curve application
+		movement = Vector3(normalized_accel.x, 0, -normalized_accel.y)
+		
+		# Apply deadzone
 		if abs(movement.x) < deadzone:
 			movement.x = 0
 		if abs(movement.z) < deadzone:
 			movement.z = 0
 			
+		# Calculate magnitude for curve
+		var tilt_magnitude = movement.length()
+		
+		# Apply the acceleration curve
+		if accel_curve and tilt_magnitude > 0:
+			var curve_multiplier = accel_curve.sample(tilt_magnitude)
+			movement *= curve_multiplier * sensitivity
+		else:
+			movement *= sensitivity
+			
 	if plastic_bag_debuff != null:
-		var jerkig = detect_jerk(movement)
-		if jerkig:
+		var jerking = detect_jerk(movement)
+		if jerking:
 			remove_debuff_plastic_bag()
 	
-	if movement.length() > 1:
-		movement = movement.normalized()
-	
 	if plastic_bag_debuff != null:
-		movement = movement /2
-		
-		
+		movement = movement / 2
+	
 	# Apply movement
 	position += movement * speed * delta
+	## Keep Y 
+	#if position.y > 1.5:
+		#position.y = 1
 	
 	# Calculate velocity
 	current_velocity = (position - previous_position) / delta
@@ -128,6 +148,8 @@ func _physics_process(delta):
 	
 	# Keep Y rotation at 0
 	rotation.y = 0
+	
+		
 	
 	# Tilt camera slightly based on movement while maintaining top-down view
 	var target_rotation = Vector3(-90.0, 0, 0)  # Base top-down rotation
@@ -168,7 +190,6 @@ func take_damage(damage):
 		
 
 func _on_audio_death_finished() -> void:
-	var level_manager = get_node("/root/Root/LevelManager") as LevelManager
 	level_manager.restart_level()
 	
 func remove_debuff_plastic_bag():
