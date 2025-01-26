@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://clqfhoslbs2f"]
+[gd_scene load_steps=30 format=3 uid="uid://clqfhoslbs2f"]
 
 [ext_resource type="Script" uid="uid://4a54m4m4fldb" path="res://effects/tornado_portal/portal_preview.gd" id="1_uniox"]
-[ext_resource type="Texture2D" uid="uid://bchpd5atsmxif" path="res://effects/tornado_portal/checkerboard.svg" id="2_yf5rq"]
 [ext_resource type="Material" uid="uid://5dlygf08frjc" path="res://effects/tornado_portal/materials/portal_effect_mat.tres" id="4_8vccs"]
 [ext_resource type="Material" uid="uid://dcvf6avwqqxhu" path="res://effects/tornado_portal/materials/portal_light_mat.tres" id="5_oiel3"]
 [ext_resource type="Material" uid="uid://dq7edc1qpr6ct" path="res://effects/tornado_portal/materials/pull_deform_mat.tres" id="6_og3s2"]
@@ -42,8 +41,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t058v"]
 render_priority = -128
 shader = SubResource("Shader_7gwc1")
-shader_parameter/checkerboard_sampler = ExtResource("2_yf5rq")
-shader_parameter/albedo_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/albedo_color = Color(0.043627, 0.224815, 0.266476, 1)
 shader_parameter/uv_scale = 20.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_aq72j"]
@@ -112,8 +110,8 @@ curve = SubResource("Curve_yd6ma")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdv0b"]
 render_priority = 0
 shader = ExtResource("9_qn7hw")
-shader_parameter/color = Color(0.619608, 0.4, 1, 1)
-shader_parameter/intensity = 8.0
+shader_parameter/color = Color(1, 0.858667, 0.47, 1)
+shader_parameter/intensity = 20.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_g34lk"]
 size = Vector2(0.1, 0.1)
@@ -263,10 +261,10 @@ tracks/0/path = NodePath("Target:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 2.8, 3.2),
-"transitions": PackedFloat32Array(-2, -2, -2, 1),
+"times": PackedFloat32Array(0.0666666, 1.06667, 3.43333, 3.93333),
+"transitions": PackedFloat32Array(1, -2, -2, -2),
 "update": 0,
-"values": [0.5, 0.5, 1.0, -4.0]
+"values": [-4.0, 1.0, 0.5, 0.5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -287,10 +285,10 @@ tracks/2/path = NodePath("TrailsParticles:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -323,10 +321,10 @@ tracks/5/path = NodePath("Target:rotation_degrees:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.3),
-"transitions": PackedFloat32Array(4, 1),
+"times": PackedFloat32Array(0.0666667, 2.83333),
+"transitions": PackedFloat32Array(1, 4),
 "update": 0,
-"values": [0.0, 488.0]
+"values": [488.0, 0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -335,10 +333,10 @@ tracks/6/path = NodePath("SmallParticles:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -383,10 +381,10 @@ tracks/10/path = NodePath("Target:rotation_degrees:x")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 3.3),
-"transitions": PackedFloat32Array(2, 1),
+"times": PackedFloat32Array(0.0666666, 2.73333),
+"transitions": PackedFloat32Array(1, 2),
 "update": 0,
-"values": [0.0, -180.0]
+"values": [-180.0, 0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -395,10 +393,10 @@ tracks/11/path = NodePath("Target:material_override:shader_parameter/pull_intens
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(1.5, 3),
-"transitions": PackedFloat32Array(2, 1),
+"times": PackedFloat32Array(0.1, 1.26667),
+"transitions": PackedFloat32Array(1, 2),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_smxoj"]
