@@ -112,8 +112,8 @@ curve = SubResource("Curve_yd6ma")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdv0b"]
 render_priority = 0
 shader = ExtResource("9_qn7hw")
-shader_parameter/color = Color(0.619608, 0.4, 1, 1)
-shader_parameter/intensity = 8.0
+shader_parameter/color = Color(1, 0.858667, 0.47, 1)
+shader_parameter/intensity = 20.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_g34lk"]
 size = Vector2(0.1, 0.1)

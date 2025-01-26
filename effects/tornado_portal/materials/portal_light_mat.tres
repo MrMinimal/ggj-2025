@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://bikvqh3sbuvh1" path="res://effects/tornado_portal/materials/portal_light.gdshader" id="1_kchml"]
 
 [sub_resource type="Gradient" id="Gradient_s4p8s"]
-offsets = PackedFloat32Array(0, 0.2)
-colors = PackedColorArray(0.488667, 0.41, 1, 1, 0.3625, 0.25, 1, 1)
+offsets = PackedFloat32Array(0, 0.390071)
+colors = PackedColorArray(1, 0.41, 0.41, 1, 1, 0.568627, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_8b1a0"]
 gradient = SubResource("Gradient_s4p8s")
