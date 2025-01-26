@@ -791,4 +791,4 @@ parameters/Transition/transition_request = ""
 parameters/Transition/current_index = 0
 
 [node name="SplashSpawnLocation" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37518, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58933, 0, 0)
