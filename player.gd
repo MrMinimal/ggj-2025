@@ -3,11 +3,10 @@ class_name Player
 
 @export var player_size = 3.0
 @export var speed = 20.0
-@export var deadzone = 0.1 
-@export var sensitivity = 2.0
+@export var deadzone = 0.1
+@export var sensitivity = 4.0
 @export var tilt_amount = 5.0
 @export var scale_factor = 0.02
-@export var accel_curve: Curve 
 @export var bubble_pop_scene: PackedScene
 @onready var camera = $Camera3D
 @onready var body = $bubble
@@ -63,7 +62,7 @@ func get_accelerometer() -> Vector3:
 	if !OS.has_feature('web'):
 		return Input.get_accelerometer()
 	var x = JavaScript.eval('acceleration.x')
-	var y = JavaScript.eval('acceleration.y') 
+	var y = JavaScript.eval('acceleration.y')
 	var z = JavaScript.eval('acceleration.z')
 	return Vector3(x, y, z)
 
@@ -73,7 +72,7 @@ func _physics_process(delta):
 		
 	if position.y < - 10:
 		self.isDead = true
-		level_manager.restart_level()	
+		level_manager.restart_level()
 	
 	var movement = Vector3.ZERO
 	
@@ -88,39 +87,30 @@ func _physics_process(delta):
 		
 	if movement == Vector3.ZERO:
 		var accel = get_accelerometer()
+		movement = Vector3(accel.x, 0, -accel.y) * sensitivity
 		
-		# First normalize the raw accelerometer input if it's too large
-		var normalized_accel = Vector2(accel.x, accel.y)
-		if normalized_accel.length() > 1:
-			normalized_accel = normalized_accel.normalized()
+		# Only apply movement if tilt is significant
+		var tilt_threshold = 0.5 # Adjust this value to require more tilt
+		if abs(accel.x) < tilt_threshold and abs(accel.y) < tilt_threshold:
+			movement = Vector3.ZERO
 			
-		# Calculate base movement before curve application
-		movement = Vector3(normalized_accel.x, 0, -normalized_accel.y)
-		
-		# Apply deadzone
 		if abs(movement.x) < deadzone:
 			movement.x = 0
 		if abs(movement.z) < deadzone:
 			movement.z = 0
 			
-		# Calculate magnitude for curve
-		var tilt_magnitude = movement.length()
-		
-		# Apply the acceleration curve
-		if accel_curve and tilt_magnitude > 0:
-			var curve_multiplier = accel_curve.sample(tilt_magnitude)
-			movement *= curve_multiplier * sensitivity
-		else:
-			movement *= sensitivity
-			
 	if plastic_bag_debuff != null:
-		var jerking = detect_jerk(movement)
-		if jerking:
+		var jerkig = detect_jerk(movement)
+		if jerkig:
 			remove_debuff_plastic_bag()
 	
-	if plastic_bag_debuff != null:
-		movement = movement / 2
+	if movement.length() > 1:
+		movement = movement.normalized()
 	
+	if plastic_bag_debuff != null:
+		movement = movement /2
+		
+		
 	# Apply movement
 	position += movement * speed * delta
 	
@@ -224,5 +214,26 @@ func detect_jerk(current_accel: Vector3) -> bool:
 	
 	# Update previous values for next calculation
 	prev_accel = current_accel
+	prev_time = current_time
+	return false
+
+# Add new function for keyboard jerk detection
+func detect_keyboard_jerk(current_movement: Vector3) -> bool:
+	if current_movement == Vector3.ZERO:
+		return false
+		
+	var current_time = Time.get_ticks_msec() / 1000.0
+	var dt = current_time - prev_time
+	
+	if dt > 0:
+		# Scale keyboard movement to match accelerometer range
+		var scaled_movement = current_movement * sensitivity * 10.0
+		var jerk = (scaled_movement - prev_accel) / dt
+		var jerk_magnitude = jerk.length()
+		
+		if jerk_magnitude > jerk_threshold:
+			return true
+	
+	prev_accel = current_movement * sensitivity * 10.0
 	prev_time = current_time
 	return false
