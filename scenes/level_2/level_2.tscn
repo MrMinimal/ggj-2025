@@ -1,30 +1,55 @@
-[gd_scene load_steps=28 format=3 uid="uid://bi233m04ifsph"]
+[gd_scene load_steps=34 format=3 uid="uid://bi233m04ifsph"]
 
-[ext_resource type="PackedScene" path="res://effects/unterwater_environment.tscn" id="1_b5rwd"]
+[ext_resource type="PackedScene" uid="uid://j7mkmwv6pkm0" path="res://effects/unterwater_environment.tscn" id="1_b5rwd"]
 [ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
+[ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_l8axn"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
+[ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="2_dcruu"]
 [ext_resource type="PackedScene" uid="uid://djokndfv0jnr6" path="res://assets/enviroment/bench.tscn" id="2_h8027"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]
-[ext_resource type="PackedScene" uid="uid://bi2ji7w0w1qh6" path="res://assets/enviroment/street_lamp.tscn" id="3_6wgyd"]
+[ext_resource type="PackedScene" path="res://assets/enviroment/street_lamp.tscn" id="3_6wgyd"]
+[ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="3_q36jm"]
 [ext_resource type="PackedScene" uid="uid://p16xs28wany7" path="res://assets/enviroment/city_name.tscn" id="4_vqa4n"]
 [ext_resource type="PackedScene" uid="uid://b5up2o8bpicb2" path="res://assets/enviroment/concrete.tscn" id="5_nqpmc"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_n42qb"]
 [ext_resource type="PackedScene" uid="uid://davxynxtoljhh" path="res://assets/enviroment/concrete_damaged.tscn" id="7_h8027"]
 [ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="10_wp567"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="11_t8f2k"]
-[ext_resource type="PackedScene" path="res://src/shark.tscn" id="12_t8f2k"]
+[ext_resource type="PackedScene" uid="uid://c33kv6u6krg71" path="res://src/shark.tscn" id="12_t8f2k"]
 [ext_resource type="PackedScene" uid="uid://c6uwuc3anrqfl" path="res://assets/enviroment/tire.tscn" id="13_2n2mb"]
 [ext_resource type="PackedScene" uid="uid://cotis87efch71" path="res://assets/enviroment/guardrail.tscn" id="14_ix3qq"]
 [ext_resource type="PackedScene" uid="uid://dejv5n6sml7ts" path="res://assets/enviroment/guardrail_damaged.tscn" id="15_pyq07"]
 [ext_resource type="PackedScene" uid="uid://dn488aungvqk4" path="res://assets/enviroment/city_name_end.tscn" id="16_pyq07"]
 [ext_resource type="PackedScene" uid="uid://b387dslrismdv" path="res://assets/enviroment/light_ray.tscn" id="17_qptn5"]
-[ext_resource type="PackedScene" uid="uid://bn6lcckqbpsxa" path="res://assets/Coral.tscn" id="17_yud23"]
+[ext_resource type="PackedScene" uid="uid://cgsfa4w12oxyt" path="res://assets/Coral.tscn" id="17_yud23"]
 [ext_resource type="PackedScene" uid="uid://baaxcbnw31yak" path="res://assets/Coral 2.tscn" id="18_xqsx8"]
 [ext_resource type="PackedScene" uid="uid://656ygpyavf2k" path="res://src/enemies/nails_01.tscn" id="19_jwcwl"]
 [ext_resource type="PackedScene" uid="uid://v6y8neowesqq" path="res://src/geyser.tscn" id="20_b5rwd"]
 [ext_resource type="PackedScene" uid="uid://cmqqlw36ja2r4" path="res://src/enemies/plastic_bag.tscn" id="21_jwcwl"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="22_wwx8s"]
-[ext_resource type="PackedScene" path="res://src/bubble_pickup.tscn" id="23_xqsx8"]
+[ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="23_xqsx8"]
+
+[sub_resource type="Gradient" id="Gradient_fhjmq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5nmnn"]
+gradient = SubResource("Gradient_fhjmq")
+width = 512
+fill_from = Vector2(0.0726496, 0)
+fill_to = Vector2(0.782051, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vx7aq"]
+render_priority = 0
+shader = ExtResource("2_dcruu")
+shader_parameter/caustics_noise = ExtResource("3_q36jm")
+shader_parameter/caustics_scale = 0.575
+shader_parameter/caustics_speed = 0.035
+shader_parameter/caustics_strength = 1.0
+shader_parameter/caustics_power = 4.142
+shader_parameter/caustics_fade_radius = 1.49
+shader_parameter/caustics_fade_strength = 0.212
+shader_parameter/caustics_luminance_mask_strength = 0.906
+shader_parameter/chroma_split = 0.002
+shader_parameter/luma_gradient = SubResource("GradientTexture2D_5nmnn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqa4n"]
 albedo_texture = ExtResource("1_koqjd")
@@ -32,6 +57,12 @@ albedo_texture = ExtResource("1_koqjd")
 [sub_resource type="BoxShape3D" id="BoxShape3D_cns38"]
 
 [node name="Level" type="Node3D"]
+
+[node name="Caustics" parent="." instance=ExtResource("1_l8axn")]
+transform = Transform3D(113.309, 0, 0, 0, 113.309, 0, 0, 0, 113.309, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_vx7aq")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_b5rwd")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
@@ -756,5 +787,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9426, 0.998909, -27.464)
 
 [node name="bubble_pickup2" parent="." instance=ExtResource("23_xqsx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6401, 0.998911, -42.0644)
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_b5rwd")]

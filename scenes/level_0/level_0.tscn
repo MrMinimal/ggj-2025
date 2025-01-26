@@ -1,16 +1,42 @@
-[gd_scene load_steps=14 format=3 uid="uid://djmtmce8pftpl"]
+[gd_scene load_steps=21 format=3 uid="uid://djmtmce8pftpl"]
 
 [ext_resource type="Texture2D" uid="uid://b6jbp672dwd7b" path="res://assets/Untergrund.png" id="1_la06y"]
+[ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_pidt8"]
+[ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="2_ep52r"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
+[ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="3_h4f02"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="4_rl6yr"]
-[ext_resource type="PackedScene" path="res://assets/Coral 2.tscn" id="5_rw20u"]
-[ext_resource type="PackedScene" path="res://assets/Coral.tscn" id="6_iqr5q"]
+[ext_resource type="PackedScene" uid="uid://baaxcbnw31yak" path="res://assets/Coral 2.tscn" id="5_rw20u"]
+[ext_resource type="PackedScene" uid="uid://cgsfa4w12oxyt" path="res://assets/Coral.tscn" id="6_iqr5q"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="8_57aex"]
 [ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="9_u4m3y"]
 [ext_resource type="AudioStream" uid="uid://dorf0tgsk7hud" path="res://assets/sounds/ggj2025_track1.wav" id="10_hv3s4"]
 [ext_resource type="PackedScene" uid="uid://cgvrufeqv88no" path="res://effects/fish_tornado.tscn" id="11_ob15n"]
+[ext_resource type="PackedScene" uid="uid://j7mkmwv6pkm0" path="res://effects/unterwater_environment.tscn" id="12_qiy75"]
+
+[sub_resource type="Gradient" id="Gradient_1o5q3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nwva5"]
+gradient = SubResource("Gradient_1o5q3")
+width = 512
+fill_from = Vector2(0.0726496, 0)
+fill_to = Vector2(0.782051, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arg3f"]
+render_priority = 0
+shader = ExtResource("2_ep52r")
+shader_parameter/caustics_noise = ExtResource("3_h4f02")
+shader_parameter/caustics_scale = 0.575
+shader_parameter/caustics_speed = 0.035
+shader_parameter/caustics_strength = 1.0
+shader_parameter/caustics_power = 4.142
+shader_parameter/caustics_fade_radius = 1.49
+shader_parameter/caustics_fade_strength = 0.212
+shader_parameter/caustics_luminance_mask_strength = 0.906
+shader_parameter/chroma_split = 0.002
+shader_parameter/luma_gradient = SubResource("GradientTexture2D_nwva5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_la06y")
@@ -18,6 +44,12 @@ albedo_texture = ExtResource("1_la06y")
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwtyf"]
 
 [node name="Level" type="Node3D"]
+
+[node name="Caustics" parent="." instance=ExtResource("1_pidt8")]
+transform = Transform3D(113.309, 0, 0, 0, 113.309, 0, 0, 0, 113.309, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_arg3f")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("12_qiy75")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
@@ -49,7 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 1, 35)
 
 [node name="rocks" type="Node3D" parent="Enviroment"]
 transform = Transform3D(2.90365, 0, -1.40337, 0, 3.225, 0, 1.40337, 0, 2.90365, 14.1054, -1.79992, -38.1134)
-metadata/_edit_lock_ = true
 
 [node name="rock2" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.512739, 0, -1.06088, 0, 1.17829, 0, 1.06088, 0, 0.512739, -0.151425, 0.253519, 11.1545)
@@ -80,7 +111,7 @@ transform = Transform3D(-1.60844, 0, -0.787098, 0, 1.41705, 0, 0.787098, 0, -1.6
 metadata/_edit_lock_ = true
 
 [node name="rock45" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
-transform = Transform3D(-1.17204, 0, -1.35385, 0, 1.41705, 0, 1.35385, 0, -1.17204, 14.3694, -0.369426, 9.35116)
+transform = Transform3D(-1.36364, 0, -1.16063, 0, 1.41705, 0, 1.16063, 0, -1.36364, 14.3694, 0.721843, 9.35116)
 metadata/_edit_lock_ = true
 
 [node name="rock35" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]

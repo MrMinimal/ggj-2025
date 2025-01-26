@@ -1,9 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=21 format=3 uid="uid://kb7w7jbfi3i4"]
 
+[ext_resource type="PackedScene" uid="uid://j7mkmwv6pkm0" path="res://effects/unterwater_environment.tscn" id="1_1uvjm"]
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
+[ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="3_3fps6"]
+[ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="4_1uvjm"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
-[ext_resource type="PackedScene" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
+[ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
+[ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="5_c5bgo"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="5_nubdk"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_fxajv"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="7_e74gk"]
@@ -12,12 +16,40 @@
 [ext_resource type="PackedScene" uid="uid://656ygpyavf2k" path="res://src/enemies/nails_01.tscn" id="10_bmd0r"]
 [ext_resource type="PackedScene" uid="uid://c33kv6u6krg71" path="res://src/shark.tscn" id="11_0lhw3"]
 
+[sub_resource type="Gradient" id="Gradient_teeqy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1uvjm"]
+gradient = SubResource("Gradient_teeqy")
+width = 512
+fill_from = Vector2(0.0726496, 0)
+fill_to = Vector2(0.782051, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_la62n"]
+render_priority = 0
+shader = ExtResource("4_1uvjm")
+shader_parameter/caustics_noise = ExtResource("5_c5bgo")
+shader_parameter/caustics_scale = 0.575
+shader_parameter/caustics_speed = 0.035
+shader_parameter/caustics_strength = 1.0
+shader_parameter/caustics_power = 4.142
+shader_parameter/caustics_fade_radius = 1.49
+shader_parameter/caustics_fade_strength = 0.212
+shader_parameter/caustics_luminance_mask_strength = 0.906
+shader_parameter/chroma_split = 0.002
+shader_parameter/luma_gradient = SubResource("GradientTexture2D_1uvjm")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_janvk"]
 albedo_texture = ExtResource("1_janvk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_igcjm"]
 
 [node name="Level" type="Node3D"]
+
+[node name="Caustics" parent="." instance=ExtResource("3_3fps6")]
+transform = Transform3D(113.309, 0, 0, 0, 113.309, 0, 0, 0, 113.309, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_la62n")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_1uvjm")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
@@ -34,7 +66,7 @@ collision_mask = 21
 shape = SubResource("BoxShape3D_igcjm")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29349, 0)
 shape = SubResource("BoxShape3D_igcjm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -43,7 +75,7 @@ light_energy = 0.398
 directional_shadow_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_jr17i")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.47402, 0.663866, 34.6538)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.44996, 0.663866, 34.6512)
 
 [node name="SceneSwitcherBox" parent="." instance=ExtResource("4_fxajv")]
 transform = Transform3D(2.895, 0, 0, 0, 2.895, 0, 0, 0, 2.895, -30.2872, -0.139199, 33.2038)
@@ -52,9 +84,6 @@ transform = Transform3D(2.895, 0, 0, 0, 2.895, 0, 0, 0, 2.895, -30.2872, -0.1391
 
 [node name="wooden_boards" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(2.465, 0, 0, 0, 1.648, -1.83312, 0, 1.83312, 1.648, -10.912, -0.204127, 27.1768)
-
-[node name="wooden_boards2" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(-0.282768, 2.43921, 0.215639, -1.2705, 0.0394277, -2.11199, -2.09335, -0.353417, 1.25268, -0.317896, -0.204127, 26.1201)
 
 [node name="wooden_boards3" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(0.11777, 2.29065, -0.902927, -0.636867, 0.901536, 2.20405, 2.37839, 0.127981, 0.634893, -2.29989, -0.204127, 20.0184)
@@ -102,7 +131,7 @@ transform = Transform3D(-0.825109, -0.710598, -2.21144, 0.449341, 2.25366, -0.89
 transform = Transform3D(-0.131717, -0.882967, -2.29766, 0.449341, 2.25366, -0.891816, 2.42012, -0.466491, 0.0405306, 31.4058, -0.979312, -14.551)
 
 [node name="wooden_boards21" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(-2.16587, -0.972396, -1.74255, -1.98502, 0.7866, 2.0283, -0.204286, 2.66622, -1.23392, 29.9658, -0.204128, 22.4692)
+transform = Transform3D(-0.59642, 1.18916, -1.78627, -2.09773, 0.0675036, 0.745354, 0.452095, 1.882, 1.10194, 29.9658, -0.204128, 22.4692)
 
 [node name="wooden_boards48" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(-2.16587, -0.972396, -1.74255, -1.98502, 0.7866, 2.0283, -0.204286, 2.66622, -1.23392, 43.2797, -0.204128, 37.9122)
@@ -111,7 +140,7 @@ transform = Transform3D(-2.16587, -0.972396, -1.74255, -1.98502, 0.7866, 2.0283,
 transform = Transform3D(-3.05329, -0.749794, -1.28111, -1.3474, 2.62937, 1.67241, 0.622837, 2.01253, -2.6623, -19.8556, -1.40886, -7.67024)
 
 [node name="wooden_boards51" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(-3.07988, -0.50394, -1.33656, -1.40786, 0.534095, 3.04281, -0.241397, 3.31464, -0.693499, 11.836, -1.40886, -48.9158)
+transform = Transform3D(-3.07988, -0.50394, -1.33656, -1.40786, 0.534095, 3.04281, -0.241397, 3.31464, -0.693499, 11.836, -1.40886, -51.2972)
 
 [node name="wooden_boards58" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(-3.07988, -0.50394, -1.33656, -1.40786, 0.534095, 3.04281, -0.241397, 3.31464, -0.693499, -23.4638, -1.40886, -50.2958)
@@ -150,7 +179,7 @@ transform = Transform3D(1.5901, 0.400684, -2.73626, -0.416028, 3.15508, 0.22025,
 transform = Transform3D(-0.403647, -2.32888, -2.14231, -0.486215, 2.17967, -2.27788, 3.12678, 0.0382956, -0.630768, 45.9308, -1.70689, 14.4562)
 
 [node name="rock20" parent="Enviroment" instance=ExtResource("5_nubdk")]
-transform = Transform3D(0.69777, -0.713326, -3.02991, -0.952965, 2.90706, -0.903864, 2.96329, 1.10285, 0.422785, 45.4908, -1.70689, 2.49513)
+transform = Transform3D(0.0845336, -0.92151, -3.05283, -0.953176, 2.90699, -0.90388, 3.04309, 0.936141, -0.198313, 47.3016, -1.70689, 2.49513)
 
 [node name="rock45" parent="Enviroment" instance=ExtResource("5_nubdk")]
 transform = Transform3D(-0.932674, -0.209885, -1.70631, -0.539461, 1.40604, 0.153365, 1.21644, 0.46262, -1.24025, -33.9112, 7.84134, -17.3425)
@@ -315,7 +344,7 @@ transform = Transform3D(-5.02645, 0.113744, 0.0903115, -0.18381, 0.449984, -1.79
 transform = Transform3D(-4.55134, -0.890921, -0.111056, -1.04855, 1.16542, -1.47631, 1.89404, -1.49569, -1.08416, 36.4375, -0.242493, 37.0299)
 
 [node name="wooden_boards37" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(-0.22989, -1.73894, -1.01995, -0.902104, 1.16104, -1.4917, 4.95328, 0.130744, -0.31901, 44.362, -0.242493, -7.15425)
+transform = Transform3D(1.24545, -1.62247, -1.06867, -0.902104, 1.16104, -1.4917, 4.79965, 0.639229, -0.00306129, 46.1982, -0.242493, -7.15425)
 
 [node name="wooden_boards38" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(-0.93929, -1.73968, -0.96352, -0.902104, 1.16104, -1.4917, 4.86883, -0.120499, -0.462265, 31.1825, -0.785139, -23.5884)
@@ -348,13 +377,13 @@ transform = Transform3D(-0.30336, 1.43763, 1.74431, -1.22932, 1.92013, -1.25009,
 transform = Transform3D(5.2483, -0.0566314, -0.222842, -0.293613, 1.76439, -1.49689, 0.47585, 1.71328, 1.53417, 20.7937, -0.152952, -49.9122)
 
 [node name="wooden_boards56" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(5.2483, -0.0566314, -0.222842, 0.401, 2.05462, 1.17373, 0.389667, -1.35163, 1.79352, 20.7937, -0.152952, -34.7284)
+transform = Transform3D(5.05947, -0.0717952, -0.132459, 0.386572, 2.60477, 0.697674, 0.375647, -1.71355, 1.06608, 20.7937, -1.03557, -34.4103)
 
 [node name="wooden_boards57" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(5.16025, -0.468408, -0.191134, 0.954232, 1.34769, 1.76023, -0.564422, -2.00397, 1.22845, 8.23795, -1.53286, -35.718)
 
 [node name="wooden_boards44" parent="Enviroment" instance=ExtResource("4_igcjm")]
-transform = Transform3D(4.97835, 0.810338, -0.0918524, -1.61008, 2.23831, 0.605915, 0.693529, -0.620417, 2.06602, 1.62628, -0.251009, -48.8096)
+transform = Transform3D(5.11538, 0.576357, 0.163864, -1.29784, 2.30847, 0.523164, -0.0764096, -0.624804, 2.0841, 1.62628, -0.251009, -50.3862)
 
 [node name="wooden_boards25" parent="Enviroment" instance=ExtResource("4_igcjm")]
 transform = Transform3D(0.298488, -2.29805, -0.752336, 0.416302, 0.874129, -2.0021, 4.01042, 0.0803009, 0.263824, 44.8296, -1.22749, 21.0887)
@@ -410,19 +439,22 @@ transform = Transform3D(1.36, 0, 0, 0, 1.36, 0, 0, 0, 1.36, 21.9617, 1.13646, -2
 transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 43.1903, 0.182294, -38.6121)
 
 [node name="SeaUrchin12" parent="Enemies" instance=ExtResource("10_bmd0r")]
-transform = Transform3D(0.33983, 0, 0.432453, 0, 0.55, 0, -0.432453, 0, 0.33983, 34.9918, 0.220943, -3.22042)
+transform = Transform3D(0.475762, 0, 0.605434, 0, 0.77, 0, -0.605434, 0, 0.475762, 35.7961, 0.220943, -3.60126)
 
 [node name="SeaUrchin8" parent="Enemies" instance=ExtResource("10_bmd0r")]
-transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 21.76, 0.182294, 32.3147)
+transform = Transform3D(0.895, 0, 0, 0, 0.895, 0, 0, 0, 0.895, 23.2423, 0.182294, 32.032)
 
 [node name="SeaUrchin9" parent="Enemies" instance=ExtResource("10_bmd0r")]
-transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 10.2169, 0.182294, 28.2473)
+transform = Transform3D(0.955, 0, 0, 0, 0.955, 0, 0, 0, 0.955, -0.0416745, 0.346599, 25.9114)
 
 [node name="SeaUrchin10" parent="Enemies" instance=ExtResource("10_bmd0r")]
 transform = Transform3D(0.16273, 0.108363, 0.514078, -0.0327027, 0.539219, -0.103311, -0.524356, 0, 0.165983, -39.1236, 0.182294, 23.6779)
 
 [node name="SeaUrchin11" parent="Enemies" instance=ExtResource("10_bmd0r")]
-transform = Transform3D(0.16273, 0.108363, 0.514078, -0.0327027, 0.539219, -0.103311, -0.524356, 0, 0.165983, 4.11636, 0.145488, -38.7786)
+transform = Transform3D(0.244519, 0.168474, 0.987234, 0.0229948, 1.01502, -0.178912, -1.00124, 0.0644553, 0.236988, 6.93228, 1.20206, -47.2689)
+
+[node name="SeaUrchin13" parent="Enemies" instance=ExtResource("10_bmd0r")]
+transform = Transform3D(0.244519, 0.168474, 0.987234, 0.0229948, 1.01502, -0.178912, -1.00124, 0.0644553, 0.236988, -16.167, 1.20206, -26.4896)
 
 [node name="Shark" parent="Enemies" instance=ExtResource("11_0lhw3")]
 transform = Transform3D(1.37608, 0, -0.946211, 0, 1.67, 0, 0.946211, 0, 1.37608, -32.2737, 2.51295, -18.6715)
