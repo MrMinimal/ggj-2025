@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="2_jr17i"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
-[ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
+[ext_resource type="PackedScene" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="5_nubdk"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_fxajv"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="7_e74gk"]

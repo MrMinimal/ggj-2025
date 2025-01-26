@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=5 format=3 uid="uid://cmtfk5mqqv1v4"]
+=======
 [gd_scene load_steps=5 format=3 uid="uid://bn6lcckqbpsxa"]
+>>>>>>> ac8e7f96298d6b1faf84129367e71a7cf6901179
 
 [ext_resource type="Shader" path="res://src/sway.gdshader" id="1_2fjhy"]
 [ext_resource type="Texture2D" uid="uid://c1ql2fm2qcijv" path="res://assets/Coral.png" id="2_1a0tw"]
