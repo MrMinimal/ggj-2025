@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ku4c32enhwu"]
+
+[ext_resource type="Script" uid="uid://dcogoiir0c3dm" path="res://effects/bubble_pop_effect.gd" id="1_wbsxf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wws5m"]
+
+[sub_resource type="Curve" id="Curve_wws5m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="BubblePopEffect" type="Node3D"]
+script = ExtResource("1_wbsxf")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+seed = 2984348920
+mesh = SubResource("SphereMesh_wws5m")
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+scale_amount_curve = SubResource("Curve_wws5m")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

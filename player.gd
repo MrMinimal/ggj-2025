@@ -7,6 +7,7 @@ class_name Player
 @export var sensitivity = 2.0
 @export var tilt_amount = 5.0
 @export var scale_factor = 0.02
+@export var bubble_pop_scene: PackedScene
 @onready var camera = $Camera3D
 @onready var body = $bubble
 var JavaScript = JavaScriptBridge
@@ -18,6 +19,10 @@ var initial_scale = Vector3.ZERO
 var health_factor = 1.0 # wafrom 0.0 to 1.0
 var isDead: bool = false # Do not trigger dead state stuff multiple times
 var plastic_bag_debuff: PlasticBag = null
+
+var iframes_timer = 0 #counts down the duration of iframes
+var iframes_duration = 180 #duration of the iframes
+var blink_timer = 2 #used to time the blinking, higher value, slower blink
 
 
 func _ready():
@@ -110,6 +115,7 @@ func _physics_process(delta):
 	var scale_multiplier_x = self.player_size * self.health_factor - (x_speed * scale_factor)
 	target_scale = Vector3(scale_multiplier_x, self.player_size * self.health_factor, scale_multiplier_z)
 	
+	
 	# Smoothly interpolate body scale
 	body.scale = body.scale.lerp(target_scale, delta * 10.0)
 	$CollisionShape3D.scale = body.scale
@@ -128,16 +134,38 @@ func _physics_process(delta):
 	target_rotation.x += movement.z * tilt_amount  # Tilt forward/backward slightly
 	target_rotation.z = -movement.x * tilt_amount  # Tilt left/right slightly
 	camera.rotation_degrees = camera.rotation_degrees.lerp(target_rotation, delta * 5.0)
+	
+	#damage blinking
+	if iframes_timer>0:
+		iframes_timer-=1
+		blink_timer-=1
+		if blink_timer<=0:
+			blink_timer=2
+			if $bubble.visible==true:
+				$bubble.visible=false
+			else:
+				$bubble.visible=true
+		
+			
 
 func take_damage(damage):
-	self.health_factor -= damage
-	if damage>0 && self.health_factor>0.5:
-		$AudioHit.play()
+	if damage>0: #if it's damage, not healing
+		if iframes_timer<=0: #if no iframes
+			self.health_factor -= damage #deal damage
+			if self.health_factor>0.5: #if damaged, but still alive
+				iframes_timer = iframes_duration #set iframes
+				$AudioHit.play() #play hit audio
+	else: #if healing
+		self.health_factor -= damage #apply health
 		
 	if self.health_factor <= 0.5 && !self.isDead:
 		self.isDead = true
 		$AudioDeath.play()
 		$bubble.visible = false
+		var instance: Node3D = bubble_pop_scene.instantiate()
+		instance.position = self.position
+		self.get_parent().add_child(instance)
+		
 
 func _on_audio_death_finished() -> void:
 	var level_manager = get_node("/root/Root/LevelManager") as LevelManager

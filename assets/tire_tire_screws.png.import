@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w7pomuay3eis"
-path.s3tc="res://.godot/imported/Fish.png-bc853e138b044790536dd1284bfa9d5d.s3tc.ctex"
-path.etc2="res://.godot/imported/Fish.png-bc853e138b044790536dd1284bfa9d5d.etc2.ctex"
+uid="uid://c4jocmdb2pie1"
+path.s3tc="res://.godot/imported/tire_tire_screws.png-e111e2e2047894cd4ada81b46536b051.s3tc.ctex"
+path.etc2="res://.godot/imported/tire_tire_screws.png-e111e2e2047894cd4ada81b46536b051.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "83dded53c80c534ce3e3dc74162e1bde"
+}
 
 [deps]
 
-source_file="res://assets/textures/Fish.png"
-dest_files=["res://.godot/imported/Fish.png-bc853e138b044790536dd1284bfa9d5d.s3tc.ctex", "res://.godot/imported/Fish.png-bc853e138b044790536dd1284bfa9d5d.etc2.ctex"]
+source_file="res://assets/tire_tire_screws.png"
+dest_files=["res://.godot/imported/tire_tire_screws.png-e111e2e2047894cd4ada81b46536b051.s3tc.ctex", "res://.godot/imported/tire_tire_screws.png-e111e2e2047894cd4ada81b46536b051.etc2.ctex"]
 
 [params]
 

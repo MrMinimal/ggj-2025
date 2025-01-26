@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgvrufeqv88no"]
+
+[ext_resource type="Script" uid="uid://bh24wn8ttlhf3" path="res://effects/fish_tornado.gd" id="1_kyph2"]
+[ext_resource type="PackedScene" uid="uid://clyakpgmoamvy" path="res://effects/fish.tscn" id="2_c2xdo"]
+
+[node name="FishTornado" type="Node3D"]
+script = ExtResource("1_kyph2")
+fish_scene = ExtResource("2_c2xdo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8816, 0.471997, 0, -0.471997, 0.8816, 0, 1.13541, 2.12896)
+visible = false

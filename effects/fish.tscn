@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://clyakpgmoamvy"]
+
+[ext_resource type="Texture2D" uid="uid://w7pomuay3eis" path="res://assets/textures/Fish.png" id="1_4ac2m"]
+[ext_resource type="Script" uid="uid://cxme486vrgt7q" path="res://effects/fish.gd" id="1_8vqul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vqul"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_4ac2m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dmo21"]
+material = SubResource("StandardMaterial3D_8vqul")
+
+[node name="Fish" type="Node3D"]
+script = ExtResource("1_8vqul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_dmo21")
