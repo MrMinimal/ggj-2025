@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbgdo01xvh1iu"]
+
+[ext_resource type="Script" uid="uid://dyf6epl033mi6" path="res://scenes/level_3/outro.gd" id="1_kihvg"]
+[ext_resource type="PackedScene" uid="uid://cmqqlw36ja2r4" path="res://src/enemies/plastic_bag.tscn" id="2_qaghj"]
+
+[sub_resource type="Animation" id="Animation_qaghj"]
+resource_name = "end"
+length = 10.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.27742, -4.99476, 2.8, 1, 0, 1.82374, -4.99476)
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(9.06667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"load_credits"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_w115q"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.27742, -4.99476)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nj04"]
+_data = {
+&"RESET": SubResource("Animation_w115q"),
+&"end": SubResource("Animation_qaghj")
+}
+
+[sub_resource type="Environment" id="Environment_mitf5"]
+
+[node name="Level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
+light_energy = 0.398
+directional_shadow_mode = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27742, -4.99476)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6nj04")
+}
+script = ExtResource("1_kihvg")
+
+[node name="PlasticBag2" parent="AnimationPlayer" instance=ExtResource("2_qaghj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3778, 0.362119, -17.9759)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mitf5")

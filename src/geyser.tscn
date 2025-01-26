@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://v6y8neowesqq"]
 
-[ext_resource type="Script" path="res://src/geyser.gd" id="1_u1it6"]
+[ext_resource type="Script" uid="uid://eih0riprltgc" path="res://src/geyser.gd" id="1_u1it6"]
 [ext_resource type="PackedScene" uid="uid://xu6rwxfu5x51" path="res://assets/geysir.glb" id="2_1spoe"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jukhd"]

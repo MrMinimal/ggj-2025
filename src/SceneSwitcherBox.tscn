@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc08mxenmkupd"]
+[gd_scene load_steps=8 format=3 uid="uid://cc08mxenmkupd"]
 
-[ext_resource type="Script" path="res://src/scene_switcher_box.gd" id="1_s0m1e"]
+[ext_resource type="Script" uid="uid://bmsvh7np5fegv" path="res://src/scene_switcher_box.gd" id="1_s0m1e"]
 [ext_resource type="PackedScene" uid="uid://xu6rwxfu5x51" path="res://assets/geysir.glb" id="2_no7nr"]
+[ext_resource type="AudioStream" uid="uid://bwd0bp6ycsfgm" path="res://assets/sounds/ggj2025_effects_win.wav" id="3_dsnoo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5awhy"]
 
@@ -50,5 +51,8 @@ amount = 16
 lifetime = 0.14
 process_material = SubResource("ParticleProcessMaterial_dsnoo")
 draw_pass_1 = SubResource("SphereMesh_cdlmu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dsnoo")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

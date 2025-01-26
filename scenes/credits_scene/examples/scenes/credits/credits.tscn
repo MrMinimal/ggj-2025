@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1g50h2avck3w"]
+[gd_scene load_steps=8 format=3 uid="uid://c1g50h2avck3w"]
 
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://scenes/credits_scene/base/scenes/credits/credits.tscn" id="1_n45le"]
 [ext_resource type="Script" uid="uid://cqspv1vga7n1n" path="res://scenes/credits_scene/examples/scenes/credits/credits.gd" id="2_q7msw"]
 [ext_resource type="Texture2D" uid="uid://bmstlyxmyctgr" path="res://assets/credits.png" id="3_16jwl"]
 [ext_resource type="AudioStream" uid="uid://btxw6wwmqwll" path="res://assets/sounds/ggj2025_track3.wav" id="4_2vihh"]
 [ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="5_26kea"]
+[ext_resource type="Texture2D" uid="uid://2s2cbgg44gpp" path="res://assets/main_menu/label_continue.png" id="6_5edch"]
+[ext_resource type="Texture2D" uid="uid://634jq5kd27ck" path="res://assets/main_menu/label_new_game.png" id="7_ca06n"]
 
 [node name="Credits" instance=ExtResource("1_n45le")]
 clip_contents = true
@@ -110,3 +112,18 @@ This Game was made at Global Game Jam 2025![/center]"
 
 [node name="FooterSpace" parent="ScrollContainer/VBoxContainer" index="2"]
 custom_minimum_size = Vector2(0, 648)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/FooterSpace" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NewGame" type="TextureButton" parent="ScrollContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("6_5edch")
+texture_pressed = ExtResource("7_ca06n")
+texture_hover = ExtResource("7_ca06n")
+stretch_mode = 5
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

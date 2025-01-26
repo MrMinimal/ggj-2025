@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var push_force: float = 30.0
+@export var push_force: float = 60.0
 @export var field_radius: float = 5.0
 var isPlayerInAra = false;
 var body
