@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://kb7w7jbfi3i4"]
+[gd_scene load_steps=24 format=3 uid="uid://kb7w7jbfi3i4"]
 
 [ext_resource type="PackedScene" uid="uid://d6fm2ah22u5" path="res://effects/unterwater_environment.tscn" id="1_1uvjm"]
 [ext_resource type="Texture2D" uid="uid://b7j1fysuvxsjn" path="res://assets/Untergrund2.png" id="1_janvk"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="3_3fps6"]
 [ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="4_1uvjm"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="4_fxajv"]
-[ext_resource type="PackedScene" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
+[ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="4_igcjm"]
 [ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="5_c5bgo"]
+[ext_resource type="AudioStream" uid="uid://ddku2d6hrg4fd" path="res://assets/sounds/ggj2025_track2.wav" id="5_la62n"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="5_nubdk"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="6_fxajv"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="7_e74gk"]
@@ -54,6 +55,10 @@ transform = Transform3D(113.309, 0, 0, 0, 113.309, 0, 0, 0, 113.309, 0, 0, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_la62n")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("1_1uvjm")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_la62n")
+autoplay = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
