@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbgdo01xvh1iu"]
+[gd_scene load_steps=20 format=3 uid="uid://cbgdo01xvh1iu"]
 
 [ext_resource type="Script" uid="uid://dyf6epl033mi6" path="res://scenes/level_3/outro.gd" id="1_kihvg"]
-[ext_resource type="PackedScene" uid="uid://cmqqlw36ja2r4" path="res://src/enemies/plastic_bag.tscn" id="2_qaghj"]
+[ext_resource type="Script" uid="uid://bsovy64ygwoq8" path="res://scenes/level_3/sprite_animation.gd" id="2_4efon"]
 [ext_resource type="Texture2D" uid="uid://cgo5ctyw6knvn" path="res://assets/endingbackground.png" id="3_w115q"]
+[ext_resource type="Texture2D" uid="uid://diyg42naajm38" path="res://assets/wave0.png" id="4_4kbyy"]
+[ext_resource type="Texture2D" uid="uid://ckw0fkk0ah1nu" path="res://assets/skyscraper.png" id="5_4efon"]
+[ext_resource type="Texture2D" uid="uid://dglwsy3hvqufs" path="res://assets/wave1.png" id="6_d180w"]
+[ext_resource type="Texture2D" uid="uid://by8py1y0w5v8x" path="res://assets/fernsehturm.png" id="7_k8pbp"]
+[ext_resource type="Texture2D" uid="uid://beikkv5m305ge" path="res://assets/wave2.png" id="8_agvhb"]
+[ext_resource type="Texture2D" uid="uid://dfhjsn1hsubpi" path="res://assets/bubble_win_screen.png" id="9_4kbyy"]
+[ext_resource type="Texture2D" uid="uid://py4agigy6u3r" path="res://assets/wave3.png" id="9_qg7lc"]
 
 [sub_resource type="Animation" id="Animation_w115q"]
 length = 0.001
@@ -16,7 +23,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.27742, -4.99476)
 
 [sub_resource type="Animation" id="Animation_qaghj"]
 resource_name = "end"
-length = 10.0
+length = 6.0
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,7 +38,7 @@ tracks/1/path = NodePath("AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(9.06667),
+"times": PackedFloat32Array(6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -59,6 +66,163 @@ sky_material = SubResource("ProceduralSkyMaterial_6nj04")
 background_mode = 2
 sky = SubResource("Sky_us02b")
 
+[sub_resource type="Animation" id="Animation_4efon"]
+resource_name = "background"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wave0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.23647, -11.6648), Vector3(1.01491, -3.23647, -11.6648), Vector3(0, -3.23647, -11.6648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wave1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.03, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -4.07616, -11.0335), Vector3(-2.0887, -4.07616, -11.0335), Vector3(0, -4.07616, -11.0335)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fernsehturm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.99, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.174533), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wave2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.02, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -5.92312, -10.5458), Vector3(2.55657, -5.92312, -10.5458), Vector3(0, -5.92312, -10.5458)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wave3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.02, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -6.94172, -9.17606), Vector3(-4.33412, -6.94172, -9.17606), Vector3(0, -6.94172, -9.17606)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.666667, 4.23333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-7.86052, -11.6283, -8.72939), Vector3(-2.08592, -2.22809, -8.72939), Vector3(-1.07674, -1.0373, -8.72939), Vector3(5.63031, 10.8976, -8.72939)]
+}
+
+[sub_resource type="Animation" id="Animation_d180w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wave0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.23647, -11.6648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wave1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -4.07616, -11.0335)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fernsehturm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wave2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -5.92312, -10.5458)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wave3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -6.94172, -9.17606)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.86052, -11.6283, -8.72939)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8pbp"]
+_data = {
+&"RESET": SubResource("Animation_d180w"),
+&"background": SubResource("Animation_4efon")
+}
+
 [node name="Level" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -68,6 +232,7 @@ directional_shadow_mode = 0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27742, -4.99476)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
@@ -77,12 +242,50 @@ libraries = {
 }
 script = ExtResource("1_kihvg")
 
-[node name="PlasticBag2" parent="AnimationPlayer" instance=ExtResource("2_qaghj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3778, 0.362119, -17.9759)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mitf5")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="SpriteAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k8pbp")
+}
+script = ExtResource("2_4efon")
+
+[node name="Background" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974867, 0, -11.7607)
+alpha_cut = 1
 texture = ExtResource("3_w115q")
+
+[node name="Wave0" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.23647, -11.6648)
+alpha_cut = 1
+texture = ExtResource("4_4kbyy")
+
+[node name="Skyscraper" type="Sprite3D" parent="."]
+transform = Transform3D(0.821207, 0, 0, 0, 0.821207, 0, 0, 0, 1, 0, -3.80936, -11.5017)
+alpha_cut = 1
+texture = ExtResource("5_4efon")
+
+[node name="Wave1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.07616, -11.0335)
+alpha_cut = 1
+texture = ExtResource("6_d180w")
+
+[node name="Fernsehturm" type="Sprite3D" parent="."]
+transform = Transform3D(0.937857, 0, 0, 0, 0.937857, 0, 0, 0, 1, -7.13987, -1.94062, -10.1505)
+alpha_cut = 1
+texture = ExtResource("7_k8pbp")
+
+[node name="Wave2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.92312, -10.5458)
+alpha_cut = 1
+texture = ExtResource("8_agvhb")
+
+[node name="Wave3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.94172, -9.17606)
+alpha_cut = 1
+texture = ExtResource("9_qg7lc")
+
+[node name="Bubble" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86052, -11.6283, -8.72939)
+texture = ExtResource("9_4kbyy")

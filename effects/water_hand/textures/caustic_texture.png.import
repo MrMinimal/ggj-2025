@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://py4agigy6u3r"
-path.s3tc="res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.s3tc.ctex"
-path.etc2="res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.etc2.ctex"
+uid="uid://bax1k2etu2b3"
+path="res://.godot/imported/caustic_texture.png-290e4189ec7d506f68915bc6cf1f3982.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wave3.png"
-dest_files=["res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.s3tc.ctex", "res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.etc2.ctex"]
+source_file="res://effects/water_hand/textures/caustic_texture.png"
+dest_files=["res://.godot/imported/caustic_texture.png-290e4189ec7d506f68915bc6cf1f3982.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

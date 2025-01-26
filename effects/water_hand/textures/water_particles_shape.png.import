@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://py4agigy6u3r"
-path.s3tc="res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.s3tc.ctex"
-path.etc2="res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.etc2.ctex"
+uid="uid://dgetus6yvt1hi"
+path.s3tc="res://.godot/imported/water_particles_shape.png-3608c01253270dab704f8ac14435a212.s3tc.ctex"
+path.etc2="res://.godot/imported/water_particles_shape.png-3608c01253270dab704f8ac14435a212.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/wave3.png"
-dest_files=["res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.s3tc.ctex", "res://.godot/imported/wave3.png-c3b1a16b9ebfc3ccf65c2db8289622f8.etc2.ctex"]
+source_file="res://effects/water_hand/textures/water_particles_shape.png"
+dest_files=["res://.godot/imported/water_particles_shape.png-3608c01253270dab704f8ac14435a212.s3tc.ctex", "res://.godot/imported/water_particles_shape.png-3608c01253270dab704f8ac14435a212.etc2.ctex"]
 
 [params]
 
