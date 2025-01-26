@@ -1,13 +1,13 @@
-[gd_scene load_steps=34 format=3 uid="uid://bi233m04ifsph"]
+[gd_scene load_steps=35 format=3 uid="uid://bi233m04ifsph"]
 
-[ext_resource type="PackedScene" uid="uid://j7mkmwv6pkm0" path="res://effects/unterwater_environment.tscn" id="1_b5rwd"]
+[ext_resource type="PackedScene" path="res://effects/unterwater_environment.tscn" id="1_b5rwd"]
 [ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_l8axn"]
 [ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="1_o6l5o"]
 [ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="2_dcruu"]
 [ext_resource type="PackedScene" uid="uid://djokndfv0jnr6" path="res://assets/enviroment/bench.tscn" id="2_h8027"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]
-[ext_resource type="PackedScene" path="res://assets/enviroment/street_lamp.tscn" id="3_6wgyd"]
+[ext_resource type="PackedScene" uid="uid://bi2ji7w0w1qh6" path="res://assets/enviroment/street_lamp.tscn" id="3_6wgyd"]
 [ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="3_q36jm"]
 [ext_resource type="PackedScene" uid="uid://p16xs28wany7" path="res://assets/enviroment/city_name.tscn" id="4_vqa4n"]
 [ext_resource type="PackedScene" uid="uid://b5up2o8bpicb2" path="res://assets/enviroment/concrete.tscn" id="5_nqpmc"]
@@ -15,19 +15,20 @@
 [ext_resource type="PackedScene" uid="uid://davxynxtoljhh" path="res://assets/enviroment/concrete_damaged.tscn" id="7_h8027"]
 [ext_resource type="PackedScene" uid="uid://8nj8xxiulyq2" path="res://assets/enviroment/wooden_boards.tscn" id="10_wp567"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="11_t8f2k"]
-[ext_resource type="PackedScene" uid="uid://c33kv6u6krg71" path="res://src/shark.tscn" id="12_t8f2k"]
+[ext_resource type="PackedScene" path="res://src/shark.tscn" id="12_t8f2k"]
 [ext_resource type="PackedScene" uid="uid://c6uwuc3anrqfl" path="res://assets/enviroment/tire.tscn" id="13_2n2mb"]
 [ext_resource type="PackedScene" uid="uid://cotis87efch71" path="res://assets/enviroment/guardrail.tscn" id="14_ix3qq"]
 [ext_resource type="PackedScene" uid="uid://dejv5n6sml7ts" path="res://assets/enviroment/guardrail_damaged.tscn" id="15_pyq07"]
 [ext_resource type="PackedScene" uid="uid://dn488aungvqk4" path="res://assets/enviroment/city_name_end.tscn" id="16_pyq07"]
 [ext_resource type="PackedScene" uid="uid://b387dslrismdv" path="res://assets/enviroment/light_ray.tscn" id="17_qptn5"]
-[ext_resource type="PackedScene" uid="uid://cgsfa4w12oxyt" path="res://assets/Coral.tscn" id="17_yud23"]
+[ext_resource type="PackedScene" uid="uid://bn6lcckqbpsxa" path="res://assets/Coral.tscn" id="17_yud23"]
 [ext_resource type="PackedScene" uid="uid://baaxcbnw31yak" path="res://assets/Coral 2.tscn" id="18_xqsx8"]
 [ext_resource type="PackedScene" uid="uid://656ygpyavf2k" path="res://src/enemies/nails_01.tscn" id="19_jwcwl"]
 [ext_resource type="PackedScene" uid="uid://v6y8neowesqq" path="res://src/geyser.tscn" id="20_b5rwd"]
 [ext_resource type="PackedScene" uid="uid://cmqqlw36ja2r4" path="res://src/enemies/plastic_bag.tscn" id="21_jwcwl"]
 [ext_resource type="PackedScene" uid="uid://vgh02wprwwtx" path="res://src/enemies/sea_urchin.tscn" id="22_wwx8s"]
-[ext_resource type="PackedScene" uid="uid://dv3hwv7ndqd1t" path="res://src/bubble_pickup.tscn" id="23_xqsx8"]
+[ext_resource type="PackedScene" path="res://src/bubble_pickup.tscn" id="23_xqsx8"]
+[ext_resource type="PackedScene" uid="uid://cgvrufeqv88no" path="res://effects/fish_tornado.tscn" id="29_dcruu"]
 
 [sub_resource type="Gradient" id="Gradient_fhjmq"]
 
@@ -504,6 +505,15 @@ transform = Transform3D(1.86344, -0.0520706, -2.38234, 1.16171, 2.66039, 0.85052
 [node name="rock17" parent="Enviroment" instance=ExtResource("11_t8f2k")]
 transform = Transform3D(-2.10846, 1.43946, -1.62264, 1.16171, 2.66039, 0.850529, 1.83178, -0.0303178, -2.40714, 41.4693, -1.6662, 36.4265)
 
+[node name="rock37" parent="Enviroment" instance=ExtResource("11_t8f2k")]
+transform = Transform3D(-2.10846, 1.43946, -1.62264, 1.16171, 2.66039, 0.850529, 1.83178, -0.0303178, -2.40714, 23.9272, -1.6662, 40.6706)
+
+[node name="rock35" parent="Enviroment" instance=ExtResource("11_t8f2k")]
+transform = Transform3D(0.0166393, 0.914559, -2.8834, 0.0948225, 2.88186, 0.914621, 3.02346, -0.0954071, -0.01282, 46.1742, 0.0393263, 26.8399)
+
+[node name="rock36" parent="Enviroment" instance=ExtResource("11_t8f2k")]
+transform = Transform3D(1.48371, 0.752966, -2.52632, 0.0948225, 2.88186, 0.914621, 2.63443, -0.527792, 1.38991, 45.4311, 0.0393263, 14.7858)
+
 [node name="rock18" parent="Enviroment" instance=ExtResource("11_t8f2k")]
 transform = Transform3D(2.51183, -1.66467, -0.264959, 1.36903, 1.73728, 2.06355, -0.98341, -1.8334, 2.19595, -29.0781, -1.47277, 39.2037)
 
@@ -787,3 +797,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9426, 0.998909, -27.464)
 
 [node name="bubble_pickup2" parent="." instance=ExtResource("23_xqsx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6401, 0.998911, -42.0644)
+
+[node name="FishTornado" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8113, 2.08372, 27.2996)
+
+[node name="FishTornado2" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27689, 2.08372, 33.3755)
+
+[node name="FishTornado3" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7231, 2.08372, 22.3755)
+
+[node name="FishTornado4" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6778, 2.08372, -5.98895)
+
+[node name="FishTornado5" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4679, 2.08372, -37.4493)
+
+[node name="FishTornado6" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87035, 2.08372, -10.6576)
+
+[node name="FishTornado7" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.789, 2.08372, -33.6978)
+
+[node name="FishTornado8" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7277, 2.08372, 2.33296)
+
+[node name="FishTornado9" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57124, 2.08372, 42.4764)
+
+[node name="FishTornado10" parent="." instance=ExtResource("29_dcruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57124, 2.08372, 42.4764)
