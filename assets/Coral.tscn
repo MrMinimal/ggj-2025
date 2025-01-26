@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ttug58tidniu"]
+[gd_scene load_steps=5 format=3 uid="uid://cmtfk5mqqv1v4"]
 
 [ext_resource type="Shader" path="res://src/sway.gdshader" id="1_2fjhy"]
 [ext_resource type="Texture2D" uid="uid://c1ql2fm2qcijv" path="res://assets/Coral.png" id="2_1a0tw"]
