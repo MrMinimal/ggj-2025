@@ -8,5 +8,4 @@
 [node name="LevelManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_ig7tw")
-current_level_index = 1
 transition_scene = ExtResource("2_0xm2m")
