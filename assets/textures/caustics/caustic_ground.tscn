@@ -4,28 +4,30 @@
 [ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="2_nwva5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g7scn"]
-size = Vector3(20, 1, 20)
+size = Vector3(10, 10, 10)
+subdivide_width = 5
+subdivide_height = 5
 
 [sub_resource type="Gradient" id="Gradient_teeqy"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8308"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nwva5"]
 gradient = SubResource("Gradient_teeqy")
-fill_to = Vector2(0.235043, 0)
+fill_from = Vector2(0.0726496, 0)
+fill_to = Vector2(0.782051, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwva5"]
 render_priority = 0
 shader = ExtResource("1_g7scn")
 shader_parameter/caustics_noise = ExtResource("2_nwva5")
-shader_parameter/box_size = Vector3(4, 4, 4)
 shader_parameter/caustics_scale = 4.0
 shader_parameter/caustics_speed = 0.1
 shader_parameter/caustics_strength = 1.0
-shader_parameter/caustics_power = 2.0
-shader_parameter/caustics_fade_radius = 2.0
-shader_parameter/caustics_fade_strength = 0.5
+shader_parameter/caustics_power = 4.142
+shader_parameter/caustics_fade_radius = 1.49
+shader_parameter/caustics_fade_strength = 0.212
 shader_parameter/caustics_luminance_mask_strength = 0.2
 shader_parameter/chroma_split = 0.002
-shader_parameter/luma_gradient = SubResource("GradientTexture2D_r8308")
+shader_parameter/luma_gradient = SubResource("GradientTexture2D_nwva5")
 
 [node name="CausticGround" type="Node3D"]
 
