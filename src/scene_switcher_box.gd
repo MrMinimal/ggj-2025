@@ -8,6 +8,7 @@ func _ready():
 	
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	$AudioStreamPlayer.play()
 	if not body.is_in_group("player"):
 		return
 	level_manager.load_next_level()
