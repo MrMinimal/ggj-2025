@@ -1,15 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://davxynxtoljhh"]
+[gd_scene load_steps=2 format=3 uid="uid://davxynxtoljhh"]
 
 [ext_resource type="PackedScene" uid="uid://bfhupx6wsryra" path="res://assets/concrete_damaged.glb" id="1_75dm5"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_75dm5"]
-points = PackedVector3Array(1, 1, 0.4, 1, 1, -0.400032, -0.180069, 0.936374, 0.371049, -0.195198, 0.673453, 0.4, 1, -1, 0.4, 1, -1, -0.400032, -0.200306, 0.89213, -0.440252, -0.598574, 0.613547, -0.0451294, -0.623331, 0.580266, 0.28699, -0.582463, 0.338684, 0.4, -1.00018, -1, 0.4, -1.00018, -1, -0.400032, -0.233708, -0.375294, -0.436797, -1.00018, -0.790133, -0.400032, -0.794467, 0.310689, 0.0240417, -0.735719, 0.283477, 0.293159, -0.991538, -0.60415, 0.325401, -1.00726, -0.618637, 0.0667287)
-
 [node name="concrete_damaged" instance=ExtResource("1_75dm5")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
-collision_layer = 2
-collision_mask = 5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_75dm5")
