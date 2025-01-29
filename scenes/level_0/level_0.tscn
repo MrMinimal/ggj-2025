@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djmtmce8pftpl"]
+[gd_scene load_steps=21 format=3 uid="uid://djmtmce8pftpl"]
 
 [ext_resource type="Texture2D" uid="uid://b6jbp672dwd7b" path="res://assets/Untergrund.png" id="1_la06y"]
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_pidt8"]
@@ -38,13 +38,11 @@ shader_parameter/caustics_luminance_mask_strength = 0.906
 shader_parameter/chroma_split = 0.002
 shader_parameter/luma_gradient = SubResource("GradientTexture2D_nwva5")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pidt8"]
+size = Vector3(100, 5, 100)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nfv4"]
 albedo_texture = ExtResource("1_la06y")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pidt8"]
-size = Vector3(1, 37.7058, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iwtyf"]
 
 [node name="Level2" type="Node3D"]
 
@@ -54,24 +52,27 @@ surface_material_override/0 = SubResource("ShaderMaterial_arg3f")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("12_qiy75")]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.52905, -0.497715, -1.86962)
+collision_layer = 2
+collision_mask = 21
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0.998537, 0.0540788, 0, 0.0540788, -0.998537, -1, -4.36474e-08, -2.36386e-09, -50.208, 0, 49.893)
+depth = 21.09
+polygon = PackedVector2Array(5.06306, 2.17165, 5.06306, 2.23442, 12.7541, -3.11312, 47.6862, -2.97908, 99.9794, 3.94558, 99.5644, 99.4054, 50.3114, 99.1373, 44.2573, 99.6998, 39.9409, 93.5679, 59.814, 87.6103, 61.1524, 91.6313, 85.2436, 90.6931, 92.7386, 73.0004, 85.1518, 54.9053, 78.0459, 55.284, 66.8284, 57.9869, 61.0932, 57.8179, 49.3697, 59.1694, 45.237, 51.8209, 47.2612, 50.2161, 45.49, 31.3803, 50.2975, 30.1133, 52.406, 48.6112, 54.0928, 51.3986, 63.5391, 51.3986, 67.2501, 52.1588, 78.0459, 50.385, 84.3488, 49.8119, 92.513, 44.3165, 87.3027, 30.5298, 82.2168, 26.3747, 72.6896, 24.0983, 76.1941, 17.2603, 83.8169, 20.7488, 90.2472, 16.3221, 87.1689, 9.88835, 68.699, 7.20763, 39.2543, 3.99078, 18.5092, 6.00131, 8.33741, 12.5691, 5.29242, 17.6818, 6.1444, 27.5623, 10.0443, 34.3988, 22.2051, 40.8318, 26.1433, 47.0408, 24.0952, 51.6827, 20.4302, 50.2793, 9.22272, 60.8031, 10.4054, 75.1082, 10.1899, 88.6021, 17.412, 92.1646, 22.339, 78.3618, 20.0637, 64.8242, 30.637, 60.267, 33.5815, 49.5441, 34.565, 45.2518, 34.7806, 41.5814, 33.4477, 34.9342, 28.8971, 30.5111, 20.0637, 29.1707, 15.647, 22.871, 19.2607, 16.3033, 31.5739, 12.5503, 47.367, 14.4268, 51.2483, 12.9524, 63.16, 18.5819, 66.506, 33.8619, 81.3622, 36.4086, 80.4253, 43.7806, 65.0338, 42.1722, 59.6802, 37.883, 58.4757, 22.871, 45.2255, 18.3138, 30.2355, 17.2415, 21.2683, 19.5201, 22.7405, 25.1496, 36.1245, 29.1707, 38.5336, 48.4718, 35.1876, 63.8859, 44.8661, 67.2366, 59.011, 68.8453, 67.1752, 67.5049, 70.9227, 66.1646, 76.9455, 69.9175, 72.2611, 75.547, 44.021, 73.9386, 33.6199, 71.2633, 32.0459, 74.7115, 30.2355, 78.6299, 26.7557, 87.4762, 40.675, 89.6208, 38.9343, 97.7009, 16.1824, 99.8075, -0.146057, 96.3226)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.41744, 0)
+shape = SubResource("BoxShape3D_pidt8")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-06, 0, -100, 0, 1, 0, 100, 0, -4.37114e-06, 3.52905, -0.497715, -1.86962)
 flip_faces = true
 size = Vector3(1, 0.25293, 1)
 material = SubResource("StandardMaterial3D_7nfv4")
 metadata/_edit_lock_ = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
-collision_layer = 2
-collision_mask = 21
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.3529, 0)
-shape = SubResource("BoxShape3D_pidt8")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1471, 0)
-shape = SubResource("BoxShape3D_iwtyf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.657285, 0.70941, -0.254388, -0.541413, 0.679286, 0.495422, 0.52426, -0.187905, 0.830568, -0.279241, 0.98068, -0.457931)
@@ -88,195 +89,147 @@ transform = Transform3D(2.90365, 0, -1.40337, 0, 3.225, 0, 1.40337, 0, 2.90365, 
 
 [node name="rock2" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.512739, 0, -1.06088, 0, 1.17829, 0, 1.06088, 0, 0.512739, -0.151425, 0.253519, 11.1545)
-metadata/_edit_lock_ = true
 
 [node name="rock5" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.647014, 0, 0.984758, 0, 1.17829, 0, -0.984758, 0, -0.647014, -2.25661, 0.546459, 7.49217)
-metadata/_edit_lock_ = true
 
 [node name="rock34" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.620506, 0, 1.00167, 0, 1.17829, 0, -1.00167, 0, 0.620506, 18.8401, -0.331227, -8.65041)
-metadata/_edit_lock_ = true
 
 [node name="rock7" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.810116, 0, -1.59697, 0, 1.41705, 0, 1.59697, 0, -0.810116, -2.81639, 0.111015, 2.24464)
-metadata/_edit_lock_ = true
 
 [node name="rock40" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.58001, 0, -0.244709, 0, 1.41705, 0, 0.305665, 0, -1.26492, 8.40317, -0.164037, 3.3726)
-metadata/_edit_lock_ = true
 
 [node name="rock29" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.21954, 0, 1.31123, 0, 1.41705, 0, -1.31123, 0, -1.21954, 18.3958, -0.713948, -13.353)
-metadata/_edit_lock_ = true
 
 [node name="rock44" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.60844, 0, -0.787098, 0, 1.41705, 0, 0.787098, 0, -1.60844, 22.244, -0.0680046, 5.52836)
-metadata/_edit_lock_ = true
 
 [node name="rock45" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.36364, 0, -1.16063, 0, 1.41705, 0, 1.16063, 0, -1.36364, 14.3694, 0.721843, 9.35116)
-metadata/_edit_lock_ = true
 
 [node name="rock35" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(1.24801, 0, -1.28416, 0, 1.41705, 0, 1.28416, 0, 1.24801, 21.8634, -0.00556849, -6.27492)
-metadata/_edit_lock_ = true
 
 [node name="rock36" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.0455011, 0, -1.79012, 0, 1.41705, 0, 1.79012, 0, 0.0455011, 24.6833, 0.0172312, 0.00826359)
-metadata/_edit_lock_ = true
 
 [node name="rock39" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.66233, -0.111593, -0.65067, 0.149671, 1.28682, -0.734803, 0.648734, -0.582833, -1.49776, 8.22109, 0.279286, 11.5667)
-metadata/_edit_lock_ = true
 
 [node name="rock16" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.11224, 0, 1.40339, 0, 1.41705, 0, -1.40339, 0, -1.11224, -8.20856, 0.546459, -2.78272)
-metadata/_edit_lock_ = true
 
 [node name="rock17" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.521396, 0, 1.71311, 0, 1.41705, 0, -1.71311, 0, 0.521396, -9.89373, 0.193909, -9.46541)
-metadata/_edit_lock_ = true
 
 [node name="rock10" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.505122, 0, -0.708854, 0, 1.41705, 0, 1.25236, 0, 0.285907, 4.0928, -0.190743, -0.442007)
-metadata/_edit_lock_ = true
 
 [node name="rock21" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.950973, -0.0324711, -0.882511, -5.18388e-05, 1.41654, -0.0280252, 1.53376, 0.0201809, 0.547181, 6.24965, -0.397466, -5.93673)
-metadata/_edit_lock_ = true
 
 [node name="rock30" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.969398, 0, 0.39778, 0, 1.06047, 0, -0.381759, 0, 1.01008, 11.1646, -0.205409, -3.1991)
-metadata/_edit_lock_ = true
 
 [node name="rock31" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.786163, 0.00562925, -0.529103, -0.00335598, 1.02938, 0.0098494, 0.676563, 0.0116472, -0.614765, 14.5638, 0.335061, -5.27624)
-metadata/_edit_lock_ = true
 
 [node name="rock13" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.00484, -0.00486296, -0.201036, -0.00226885, 1.0294, -0.00852394, 0.257095, -0.00992212, -0.785808, -1.66212, -0.0573385, -6.27857)
-metadata/_edit_lock_ = true
 
 [node name="rock24" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.928177, 0, -0.362029, 0, 1.02946, 0, 0.462914, 0, -0.725893, 0.985908, -0.0871886, -11.578)
-metadata/_edit_lock_ = true
 
 [node name="rock27" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.477405, 0.0395375, -1.21153, 0.034807, 1.20044, 0.0322079, 1.19882, -0.019109, -0.4834, 15.3172, -0.0866191, -16.4665)
-metadata/_edit_lock_ = true
 
 [node name="rock42" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.25972, 0, -0.284858, 0, 1.20124, 0, 0.281812, 0, -1.27333, 12.9878, -0.232776, -9.61213)
-metadata/_edit_lock_ = true
 
 [node name="rock38" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.12217, 0, -0.644896, 0, 1.20124, 0, 0.637999, 0, -1.1343, 13.3642, 0.826807, 1.6017)
-metadata/_edit_lock_ = true
 
 [node name="rock14" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-0.801721, 0, -0.479395, 0, 0.84186, 0, 0.725021, 0, -0.530109, -3.66842, 0.165562, -9.29763)
-metadata/_edit_lock_ = true
 
 [node name="rock8" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(1.51697, 0.0311555, -0.00763306, -0.0314983, 0.685107, 1.03818, 0.0399919, -0.642172, 1.10722, -3.14902, 0.346807, -1.2937)
-metadata/_edit_lock_ = true
 
 [node name="rock18" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(-1.90032, -0.0278489, -0.52658, -0.0865736, 0.950949, 0.0240891, 0.884041, 0.0332624, -1.12957, -5.12369, 0.135575, -14.0492)
-metadata/_edit_lock_ = true
 
 [node name="rock19" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(2.00133, 0.126743, 0.334517, -0.164016, 0.928549, -0.256733, -0.60663, 0.167083, 1.17302, 2.85185, 0.579437, -17.3061)
-metadata/_edit_lock_ = true
 
 [node name="rock20" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(2.03001, -0.0317798, 0.312852, 0.168463, 1.40179, -0.279798, -0.500931, 0.342637, 1.17372, 9.96002, 0.0928373, -20.2619)
-metadata/_edit_lock_ = true
 
 [node name="rock3" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.168389, -0.00641111, -1.16618, -0.000641085, 1.17828, -0.00657017, 1.1662, 0.00157342, 0.16838, 5.17613, 0.546459, 9.991)
-metadata/_edit_lock_ = true
 
 [node name="rock23" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.659339, -0.0050865, -0.976537, -0.000641085, 1.17828, -0.00657017, 0.976548, 0.00420778, 0.659327, 8.50525, -0.0705274, -10.4989)
-metadata/_edit_lock_ = true
 
 [node name="rock6" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(0.73272, -0.00474669, -0.922758, -0.000641085, 1.17828, -0.00657017, 0.922768, 0.00458769, 0.732704, 3.55164, 0.157971, 6.11787)
-metadata/_edit_lock_ = true
 
 [node name="rock4" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(1.17822, 0.000401213, -0.0136975, -0.000641085, 0.837197, -0.00657017, 0.0136922, 0.00467324, 1.1782, 3.0437, 0.139268, 14.0179)
-metadata/_edit_lock_ = true
 
 [node name="rock26" parent="Enviroment/rocks" instance=ExtResource("4_la06y")]
 transform = Transform3D(1.17822, 0.000401213, -0.0136975, -0.000641085, 0.837197, -0.00657017, 0.0136922, 0.00467324, 1.1782, 5.03615, 0.149548, -12.8013)
-metadata/_edit_lock_ = true
 
 [node name="rock1" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="rock9" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.00644007, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00644007, -4.68818, 0.697679, -6.60029)
-metadata/_edit_lock_ = true
 
 [node name="rock12" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(0.795177, 0, -0.606377, 0, 1, 0, 0.606377, 0, 0.795177, 1.13006, -0.187209, -6.31504)
-metadata/_edit_lock_ = true
 
 [node name="rock48" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(0.565099, 0, -0.575151, 0, 0.773, 0, 0.840733, 0, 0.386588, 3.25989, -0.187209, -3.55576)
-metadata/_edit_lock_ = true
 
 [node name="rock47" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(0.577601, 0, -0.502447, 0, 1, 0, 0.816318, 0, 0.355516, 2.15056, 0.309225, -4.61527)
-metadata/_edit_lock_ = true
 
 [node name="rock43" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.401995, 0, -0.915643, 0, 1, 0, 0.915643, 0, -0.401995, 10.3069, 0.697679, -8.64092)
-metadata/_edit_lock_ = true
 
 [node name="rock32" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.00644004, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00644004, 12.7341, 0.402826, -3.80497)
-metadata/_edit_lock_ = true
 
 [node name="rock33" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(0.482581, 0, -0.875853, 0, 1, 0, 0.875853, 0, 0.482581, 17.0285, -0.121998, -6.53591)
-metadata/_edit_lock_ = true
 
 [node name="rock28" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.632151, 0, -0.774846, 0, 1, 0, 0.774846, 0, -0.632151, 14.3746, 0.49418, -19.617)
-metadata/_edit_lock_ = true
 
 [node name="rock25" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.00977302, 0, -1.5178, 0, 1.51783, 0, 1.5178, 0, -0.00977302, 11.9493, -0.393781, -14.8827)
-metadata/_edit_lock_ = true
 
 [node name="rock37" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-1.51776, 0, 0.0142225, 0, 1.51783, 0, -0.0142225, 0, -1.51776, 16.5875, 0.263617, -0.165)
-metadata/_edit_lock_ = true
 
 [node name="rock46" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.993297, -1.1195, -0.252751, -0.233976, 0.524778, -1.40487, 1.12358, -0.880413, -0.515998, 17.9427, 0.697679, 8.07459)
-metadata/_edit_lock_ = true
 
 [node name="rock15" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(-0.957517, 0, -0.288382, 0, 1, 0, 0.288382, 0, -0.957517, -1.49185, 0.233998, -10.869)
-metadata/_edit_lock_ = true
 
 [node name="rock11" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(1.05608, 0, -0.721599, 0, 0.789147, 0, 0.721599, 0, 1.05608, 4.55042, 0.566825, 3.46026)
-metadata/_edit_lock_ = true
 
 [node name="rock22" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(1.05608, 0, -0.721599, 0, 0.789147, 0, 0.721599, 0, 1.05608, 8.66426, 0.566825, -2.29926)
-metadata/_edit_lock_ = true
 
 [node name="rock41" parent="Enviroment/rocks" instance=ExtResource("3_rl6yr")]
 transform = Transform3D(1.05608, 0, -0.721599, 0, 0.789147, 0, 0.721599, 0, 1.05608, 5.16799, 0.569633, 5.99228)
-metadata/_edit_lock_ = true
 
 [node name="corals" type="Node3D" parent="Enviroment"]
 
