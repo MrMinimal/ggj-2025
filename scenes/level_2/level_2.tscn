@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d6fm2ah22u5" path="res://effects/unterwater_environment.tscn" id="1_b5rwd"]
 [ext_resource type="Texture2D" uid="uid://dxnwf4h3mjbus" path="res://assets/Untergrund3.png" id="1_koqjd"]
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_l8axn"]
-[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://src/player.tscn" id="1_o6l5o"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://src/player_mobile.tscn" id="1_o6l5o"]
 [ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="2_dcruu"]
 [ext_resource type="PackedScene" uid="uid://djokndfv0jnr6" path="res://assets/enviroment/bench.tscn" id="2_h8027"]
 [ext_resource type="PackedScene" uid="uid://cc08mxenmkupd" path="res://src/SceneSwitcherBox.tscn" id="2_hmj2r"]

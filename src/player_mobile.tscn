@@ -1,0 +1,93 @@
+[gd_scene load_steps=18 format=3 uid="uid://bh7uqlf3024g4"]
+
+[ext_resource type="Script" uid="uid://bbl5vkksdy2bh" path="res://src/player_mobile.gd" id="1_jki7w"]
+[ext_resource type="PackedScene" uid="uid://c4ku4c32enhwu" path="res://effects/bubble_pop_effect.tscn" id="2_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://d31f3emhes734" path="res://assets/bubble.glb" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bb4tyu87l05s7" path="res://assets/bubble_bubble_face_white.png" id="3_i3pqv"]
+[ext_resource type="Shader" uid="uid://bre4q8db4dsl2" path="res://effects/bubble-color/star_shader.gdshader" id="4_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://dp57geavkfakw" path="res://assets/sounds/ggj2025_effects_death.wav" id="4_sweqy"]
+[ext_resource type="AudioStream" uid="uid://ctalhvqsl3qfm" path="res://assets/sounds/ggj2025_effects_hit.wav" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://b2gykdcrsg2gp" path="res://effects/bubble-color/face_noise_direction.png" id="5_nvl01"]
+[ext_resource type="PackedScene" uid="uid://cv5ih4pnqwbfr" path="res://effects/wobble_effect.tscn" id="6_2hs0m"]
+[ext_resource type="Material" uid="uid://ktlvk623nn13" path="res://assets/textures/happy_face.tres" id="7_ivps1"]
+[ext_resource type="Material" uid="uid://t0075n0upsjp" path="res://assets/textures/sad_face.tres" id="7_nvl01"]
+[ext_resource type="PackedScene" uid="uid://wyjoycmn3aqa" path="res://src/hud.tscn" id="8_dw050"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
+radius = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivps1"]
+render_priority = 0
+shader = ExtResource("4_n7ghd")
+shader_parameter/albedo = Color(0.22, 0.532, 1, 1)
+shader_parameter/specular = 0.65
+shader_parameter/roughness = 0.65
+shader_parameter/metallic = 0.65
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/noise_direction_sampler = ExtResource("5_nvl01")
+shader_parameter/glitter_glow_intensity = 0.0
+shader_parameter/shimmer_glow_intensity = 1.0
+shader_parameter/fresnel_power = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("3_i3pqv")
+texture_repeat = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_urp6f"]
+resource_local_to_scene = true
+material = ExtResource("7_ivps1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b26j0"]
+resource_local_to_scene = true
+material = ExtResource("7_nvl01")
+
+[node name="Player" type="RigidBody3D" groups=["player"]]
+collision_mask = 30
+script = ExtResource("1_jki7w")
+bubble_pop_scene = ExtResource("2_1jxqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 19.9238, 0)
+current = true
+size = 11.0
+
+[node name="bubble" parent="." instance=ExtResource("2_onrkg")]
+
+[node name="Sphere" parent="bubble" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ivps1")
+
+[node name="Sphere_001" parent="bubble" index="1"]
+transform = Transform3D(0, -0.498816, -0.866708, 1, 0, 8.9407e-08, 2.98023e-08, -0.866708, 0.498815, 0.00474753, 0.0782536, 0)
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_hqtel")
+
+[node name="FaceHappy" type="MeshInstance3D" parent="bubble"]
+transform = Transform3D(1, 0, 0, 0, -0.0167544, 0.99986, 0, -0.99986, -0.0167544, 0.06, 1.02783, 0)
+mesh = SubResource("QuadMesh_urp6f")
+
+[node name="FaceSad" type="MeshInstance3D" parent="bubble"]
+transform = Transform3D(1, 0, 0, 0, -0.0167544, 0.99986, 0, -0.99986, -0.0167544, 0.06, 1.02783, 0)
+visible = false
+mesh = SubResource("QuadMesh_b26j0")
+
+[node name="AudioDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sweqy")
+
+[node name="AudioHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2hs0m")
+
+[node name="WobbleEffect" parent="." instance=ExtResource("6_2hs0m")]
+
+[node name="HUD" parent="." instance=ExtResource("8_dw050")]
+
+[connection signal="finished" from="AudioDeath" to="." method="_on_audio_death_finished"]
+
+[editable path="bubble"]
