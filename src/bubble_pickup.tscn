@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv3hwv7ndqd1t"]
 
 [ext_resource type="PackedScene" uid="uid://dad00lsl1netx" path="res://assets/bubble_pickup.glb" id="1_dtfmp"]
-[ext_resource type="Script" uid="uid://dgiwpsvlogqhh" path="res://bubble_pickup.gd" id="2_kfwwj"]
+[ext_resource type="Script" uid="uid://dgiwpsvlogqhh" path="res://src/bubble_pickup.gd" id="2_kfwwj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0864o"]
 transparency = 1

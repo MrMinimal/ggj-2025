@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jbp672dwd7b" path="res://assets/Untergrund.png" id="1_la06y"]
 [ext_resource type="PackedScene" uid="uid://p3a6shpwfenl" path="res://assets/textures/caustics/caustic_ground.tscn" id="1_pidt8"]
 [ext_resource type="Shader" uid="uid://b8jfl4pkcwlfb" path="res://assets/textures/caustics/caustic.gdshader" id="2_ep52r"]
-[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://player.tscn" id="3_7nfv4"]
+[ext_resource type="PackedScene" uid="uid://bh7uqlf3024g4" path="res://src/player.tscn" id="3_7nfv4"]
 [ext_resource type="Texture2D" uid="uid://g4yp0gwy00hk" path="res://assets/textures/caustics/caustics-generator.png" id="3_h4f02"]
 [ext_resource type="PackedScene" uid="uid://bil00qlwlqgmv" path="res://assets/enviroment/rock1.tscn" id="3_rl6yr"]
 [ext_resource type="PackedScene" uid="uid://dvodfr0r64twc" path="res://assets/enviroment/rock_2.tscn" id="4_la06y"]
